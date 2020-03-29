@@ -1,9 +1,11 @@
 import unittest
 import board
+import urubugu_gui
 
 
 class TestBoard(unittest.TestCase):
-    def test_something(self):
+    def test_try(self):
+        # urubugu_gui.
         self.assertEqual(True, False)
 
 

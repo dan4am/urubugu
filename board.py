@@ -1,11 +1,13 @@
 import numpy as np
 from numpy import half
+import time
+# import gui
 
 # BOARD = np.zeros((4,8), int)
-BOARD = np.array([ [ 0,  0,  0,  4,  4,  4,  4,  0],
-                   [ 0,  0,  0,  4,  4,  4,  4,  0],
-                   [ 4,  4,  4,  4,  4,  4,  4,  4],
-                   [ 0,  0,  0,  0,  0,  0,  0,  0]])
+BOARD = np.array([ [ 0,  0,  0,  0,  0,  0, 0,  0],
+                   [4,  4,  4,  4,  4,  4,  4,  4],
+                   [ 0,  4,  4,  4,  4,  0,  0,  0],
+                   [ 0,  4,  4,  4,  4,  0,  0,  0]])
 MAX_INIT = 4
 MAX_BEADS = 64
 player_one = True
@@ -70,7 +72,10 @@ def play(hole):
     loop = 0
     if (tmp_beads == 1):
         take_beads(current_hole,1)
-        current_hole += 1
+        if(current_hole == 16):
+            current_hole = 1
+        else:
+            current_hole += 1
         add_bead(current_hole)
         tmp_beads = beads(current_hole)
         print(BOARD)
@@ -103,13 +108,16 @@ def play(hole):
     while(not beads(current_hole)== 1):
         loop += 1
         print (loop)
-        print (BOARD)
+        # print (BOARD)
         temp_hole = 0
         take_beads(current_hole, beads(current_hole))
 
         for a_hole in range (current_hole, current_hole+tmp_beads):
             add_bead((a_hole % 16) + 1)
             temp_hole = (a_hole % 16 )+ 1
+            # print(BOARD)
+            # time.sleep(0.5)
+            # gui.draw_frame()
         if(temp_hole>8):
             result2 = hole_correspondance(temp_hole)
             row2_crsp = result2[1]
@@ -172,6 +180,11 @@ def two_players():
         print("player two wins")
     else:
         print("player one wins")
+
+
+
+####################################################GUI#########################################################"
+
 
 
 
