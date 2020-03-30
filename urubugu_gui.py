@@ -39,6 +39,7 @@ def get_img(beads):
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+GREY = (220, 220, 220)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 BEAD = 5
@@ -46,6 +47,7 @@ BETWEEN_SLOTS = 5
 SLOTS = 40
 BOARD_WIDTH = BETWEEN_SLOTS*6+ SLOTS*2 * 4
 BOARD_LENGTH = BETWEEN_SLOTS*9+ SLOTS*2 * 8
+back_button = [0,0]
 done = False
 # def Draw_board():
 
@@ -92,10 +94,10 @@ def draw_slots():
     for line in range (len(board.BOARD)):
         for row in range (len(board.BOARD[0])):
             # circle_filled=pygame.Surface(size)
-            pygame.draw.circle(screen, WHITE, board_coordinates_to_screen_coordinates(line, row), SLOTS - 5)
+            pygame.draw.circle(screen, GREY, board_coordinates_to_screen_coordinates(line, row), SLOTS - 5)
             pygame.draw.circle(screen, WHITE, board_coordinates_to_screen_coordinates(line, row), SLOTS - 2, 1)# à revoir
             font_obj = pygame.font.Font('freesansbold.ttf', 10)
-            text_surface_obj = font_obj.render(" "+str(board.BOARD[line][row]), False, BLACK, WHITE)
+            text_surface_obj = font_obj.render(" "+str(board.BOARD[line][row]), False, BLACK, GREY)
             text_rect_obj = text_surface_obj.get_rect()
             x = board_coordinates_to_screen_coordinates(line, row)[0] + 32
             y=board_coordinates_to_screen_coordinates(line, row)[1] - 32
@@ -103,7 +105,7 @@ def draw_slots():
             screen.blit(text_surface_obj, text_rect_obj)
             if(not board.BOARD[line][row] == 0):
                 screen.blit(get_img(board.BOARD[line][row]), (board_coordinates_to_screen_coordinates(line, row)[0] - 65, board_coordinates_to_screen_coordinates(line, row)[1] - 68))
-                pygame.draw.circle(screen, WHITE, board_coordinates_to_screen_coordinates(line, row), SLOTS - 2, 1)
+                pygame.draw.circle(screen, GREY, board_coordinates_to_screen_coordinates(line, row), SLOTS - 2, 1)
 
 
 def draw():
@@ -118,7 +120,15 @@ def draw():
     pygame.draw.rect(screen, BLACK, place)
     draw_frame()
     draw_slots()
+    player_display()
+    # if (board.current_player == 1):
+    #     font_obj = pygame.font.Font('freesansbold.ttf', 40)
+    #     text_surface_obj = font_obj.render("Player one", False, GREEN, GREY)
+    #     text_rect_obj = text_surface_obj.get_rect()
+    #     text_rect_obj.center = (300, 500)
+    #     screen.blit(text_surface_obj, text_rect_obj)
     pygame.display.flip()
+    # player_display()
 
 
 def game_coordinates_to_hole(x, y):
@@ -152,11 +162,14 @@ def game_coordinates_to_hole(x, y):
                 result[1] = slot_temp
                 return result
 
-    else :
+    elif (x >= back_button[0] - 60 and x <= back_button[0] + 60 and y >= back_button[1] - 20 and y <= back_button[1] + 20  ):
+        return [3,0]
+    else:
         return [0,0]
 
 
 def play(hole):
+    board.copier()
     result = board.beads(hole)
     current_hole = hole
     tmp_beads = board.beads(current_hole)
@@ -257,6 +270,27 @@ def play(hole):
             tmp_beads = board.beads(current_hole)
         print(board.BOARD)
 
+def player_display():
+    # print(board.current_player)
+    font_obj = pygame.font.Font('freesansbold.ttf', 40)
+    text_surface_obj = font_obj.render(" Back ", False, WHITE, BLACK)
+    text_rect_obj = text_surface_obj.get_rect()
+    text_rect_obj.center = (70, 550)
+    screen.blit(text_surface_obj, text_rect_obj)
+    global back_button
+    back_button = text_rect_obj.center
+    if (board.current_player == 1):
+        font_obj = pygame.font.Font('freesansbold.ttf', 40)
+        text_surface_obj = font_obj.render("Player one", False, WHITE, BLACK)
+        text_rect_obj = text_surface_obj.get_rect()
+        text_rect_obj.center = (642, 515)
+        screen.blit(text_surface_obj, text_rect_obj)
+    else :
+        font_obj = pygame.font.Font('freesansbold.ttf', 40)
+        text_surface_obj = font_obj.render("Player two", False, BLACK, GREY)
+        text_rect_obj = text_surface_obj.get_rect()
+        text_rect_obj.center = (157, 85)
+        screen.blit(text_surface_obj, text_rect_obj)
 
 pygame.display.set_caption("URUBUGU")
 def main():
@@ -265,7 +299,9 @@ def main():
     global done
     # Used to manage how fast the screen updates
     clock = pygame.time.Clock()
+
     draw()
+
     while ((not board.game_over()) and (not done)):
         # if (board.player_one):
         #     slot = int(input("player one choose slot between 1 and 16 : "))
@@ -301,21 +337,27 @@ def main():
                     if(not data[0] == 0):
                         player = data[0]
                         hole = data[1]
-                        beads = board.beads(hole)
+
                         if (player == 1):
+                            beads = board.beads(hole)
                             if(board.player_one and(not beads == 0)):
                                 play(hole)
                                 board.player(2)
+                                board.current_player = 2
                             else:
                                 # something to prevent to play for the other player
                                 pass
-                        else:
+                        elif(player == 2):
+                            beads = board.beads(hole)
                             if(not board.player_one and (not beads == 0)):
                                 play(hole)
                                 board.player(1)
+                                board.current_player = 1
                             else:
                                 #something to prevent to play for the other player
                                 pass
+                        elif(player == 3):
+                            board.back(board.back_Board)
 
         draw()
         clock.tick(60)

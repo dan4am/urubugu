@@ -13,6 +13,8 @@ MAX_BEADS = 64
 player_one = True
 in_the_back = True
 in_front = not in_the_back
+current_player = 1
+back_Board = BOARD.copy()
 # PLAYER_TWO = 2
 
 
@@ -65,7 +67,18 @@ def take_beads(hole, how_many):
     result = hole_to_index(hole)
     BOARD[result[0]][result[1]] -= how_many
 
+def copier():
+    global back_Board
+    for line in range (len (BOARD)):
+        for row in range (len(BOARD[0])):
+            back_Board[line][row] = BOARD[line][row]
+
+
 def play(hole):
+    copier()
+    print("this is it")
+    print (back_Board)
+    print("voila voila")
     result = beads(hole)
     current_hole = hole
     tmp_beads = beads(current_hole)
@@ -150,6 +163,19 @@ def play(hole):
             current_hole = temp_hole
             tmp_beads = beads(current_hole)
         print(BOARD)
+
+
+def back(board):
+    for line in range(len (board)):
+        for row in range (len (board[0])):
+            BOARD[line][row] = board[line][row]
+    if (player_one) :
+        player(2)
+        global current_player
+        current_player = 2
+    else :
+        player(1)
+        current_player = 1
 
 def game_over():
     gameover=True
