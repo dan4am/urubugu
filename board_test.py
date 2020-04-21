@@ -1,6 +1,4 @@
 import unittest
-import board
-import urubugu_gui
 
 
 class TestBoard(unittest.TestCase):

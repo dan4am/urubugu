@@ -1,14 +1,17 @@
 import board
-import threading
 import pygame
 import os
 import time
-import math
+import numpy as np
 
 
 _image_library = {}
 DATABASE = []
-
+menu_path = "compressed_pictures1/menu_button.png"
+restart_path = "compressed_pictures1/restart_button.png"
+done_path = "compressed_pictures1/done.png"
+player2_path = "compressed_pictures1/player2.png"
+default_path = "compressed_pictures1/default.png"
 def getpath(beads):
     result ="compressed_pictures1/"+str(beads)+"_beads.png"
     # print (result)
@@ -48,7 +51,17 @@ SLOTS = 40
 BOARD_WIDTH = BETWEEN_SLOTS*6+ SLOTS*2 * 4
 BOARD_LENGTH = BETWEEN_SLOTS*9+ SLOTS*2 * 8
 back_button = [0,0]
+gukenyura_button=[0,0]
+start_button=[0,0]
+help_button =[0,0]
 done = False
+menu_game_gameover=3 #menu = 0, game = 1, gameover=2
+GUKENYURA=3
+MENU=0
+REPLAY=2
+PLAY=1
+HELP=4
+click_on_hole=5
 # def Draw_board():
 
 
@@ -61,6 +74,9 @@ screen = pygame.display.set_mode(size)
 circle_filled=pygame.Surface(size)
 place =[(800-BOARD_LENGTH) / 2 , (600 - BOARD_WIDTH) / 2, BOARD_LENGTH, BOARD_WIDTH]
 
+def change_state(state):
+    global menu_game_gameover
+    menu_game_gameover = state
 
 def draw_frame():
     pygame.draw.line(screen, BLACK, [54, 122], [54, 478], 1)
@@ -69,6 +85,10 @@ def draw_frame():
     pygame.draw.line(screen, BLACK, [54, 478], [743, 478], 1)
     pygame.draw.line(screen, WHITE, [57, 300], [742, 300], 8)
     pygame.draw.line(screen, BLACK, [54, 300], [743, 300], 2)
+
+
+
+
 
 def board_coordinates_to_screen_coordinates(line, row):
         # result = board.hole_to_index(hole)
@@ -82,11 +102,6 @@ def board_coordinates_to_screen_coordinates(line, row):
         return [x, y]
 
 
-# font_obj = pygame.font.Font('freesansbold.ttf', 20)
-# def how_many_beads(line,row):
-#     result = str(board.BOARD[line][row])
-#     return result
-
 
 
 def draw_slots():
@@ -96,7 +111,7 @@ def draw_slots():
             # circle_filled=pygame.Surface(size)
             pygame.draw.circle(screen, GREY, board_coordinates_to_screen_coordinates(line, row), SLOTS - 5)
             pygame.draw.circle(screen, WHITE, board_coordinates_to_screen_coordinates(line, row), SLOTS - 2, 1)# à revoir
-            font_obj = pygame.font.Font('freesansbold.ttf', 10)
+            font_obj = pygame.font.SysFont('comicsans.ttf', 15)
             text_surface_obj = font_obj.render(" "+str(board.BOARD[line][row]), False, BLACK, GREY)
             text_rect_obj = text_surface_obj.get_rect()
             x = board_coordinates_to_screen_coordinates(line, row)[0] + 32
@@ -121,51 +136,167 @@ def draw():
     draw_frame()
     draw_slots()
     player_display()
-    # if (board.current_player == 1):
-    #     font_obj = pygame.font.Font('freesansbold.ttf', 40)
-    #     text_surface_obj = font_obj.render("Player one", False, GREEN, GREY)
-    #     text_rect_obj = text_surface_obj.get_rect()
-    #     text_rect_obj.center = (300, 500)
-    #     screen.blit(text_surface_obj, text_rect_obj)
+    # screen.blit(get_image(restart_path), 300, 200)
     pygame.display.flip()
-    # player_display()
+    player_display()
+
+def draw_end():
+    screen.fill(BLACK)
+    screen.blit(get_image(menu_path), (150,200))
+    screen.blit(get_image(restart_path), (450,200))
+    pygame.display.flip()
+
+def draw_gukenyura():
+    screen.fill(WHITE)
+    pygame.draw.rect(screen, BLACK, place)
+    draw_frame()
+    draw_slots()
+    draw_gukenyura_buttons()
+    pygame.display.flip()
+
+def draw_gukenyura_buttons():
+    screen.blit(get_image(done_path), (10, 540))
+    # screen.blit(get_image(player2_path), (70, 540))
+    screen.blit(get_image(default_path), (740, 540))
+
+def draw_left_click(clicked, tmp_position,maximum,beads):
+    draw_gukenyura_buttons()
+    if (clicked == True):
+        screen.fill(WHITE)
+        pygame.draw.rect(screen, BLACK, place)
+        draw_frame()
+        draw_slots()
+        draw_gukenyura_buttons()
+        for i in range(0, 32):
+            font_obj = pygame.font.SysFont('comicsans.ttf', 12)
+            if (maximum - (i+1 - beads) >= 0 and maximum - (i+1 - beads) <= 32):
+                text_surface_obj = font_obj.render(" " + str(i + 1) + " BEADS ", True, BLACK, GREY)
+            else:
+                text_surface_obj = font_obj.render(" " + str(i + 1) + " BEADS ", True, GREY, GREY)
+
+            text_rect_obj = text_surface_obj.get_rect()
+            if (i <= 15):
+                text_rect_obj.center = (tmp_position[0] + 22, tmp_position[1] + i * 11 + 4)
+                screen.blit(text_surface_obj, text_rect_obj)
+            else:
+                text_rect_obj.center = (tmp_position[0] + 22 + 43, tmp_position[1] + (i - 16) * 11 + 4)
+                screen.blit(text_surface_obj, text_rect_obj)
+        pygame.display.flip()
+    else:
+        screen.fill(WHITE)
+        draw_gukenyura_buttons()
+        pygame.draw.rect(screen, BLACK, place)
+        draw_frame()
+        draw_slots()
+        pygame.display.flip()
+
+
+
+def draw_menu():
+
+
+    screen.fill(WHITE)
+    font_obj = pygame.font.SysFont('comicsans.ttf', 40)
+    text_surface_obj = font_obj.render(" Dutangure ", False, WHITE, BLACK)
+    text_rect_obj = text_surface_obj.get_rect()
+    text_rect_obj.center = (400, 300)
+    screen.blit(text_surface_obj, text_rect_obj)
+    global start_button
+    start_button = text_rect_obj.center
+
+    font_obj = pygame.font.SysFont('comicsans.ttf', 40)
+    text_surface_obj = font_obj.render(" Dukenyure ", False, WHITE, BLACK)
+    text_rect_obj = text_surface_obj.get_rect()
+    text_rect_obj.center = (400, 268)
+    screen.blit(text_surface_obj, text_rect_obj)
+    global gukenyura_button
+    gukenyura_button = text_rect_obj.center
+
+    font_obj = pygame.font.SysFont('comicsans.ttf', 40)
+    text_surface_obj = font_obj.render(" Ingene bakina ", False, WHITE, BLACK)
+    text_rect_obj = text_surface_obj.get_rect()
+    text_rect_obj.center = (400, 333)
+    screen.blit(text_surface_obj, text_rect_obj)
+    global help_button
+    help_button = text_rect_obj.center
+
+
+
+    pygame.display.flip()
 
 
 def game_coordinates_to_hole(x, y):
     result =[0,0]
-    if (x >= 57 and x <= 742 ) and (y >= 125 and y <= 475):
-        if( y >= 125 and y <= 300 ):
-            result[0] = 2
-            tmp = int((x - 57) / 85)
-            if(tmp>=8) :
-                slot_temp = 8
-            else:
-                slot_temp = tmp + 1
-                slot_temp = 9 - slot_temp
-            if (y>=125 and y<=207):
-                result[1] = slot_temp
-                return  result
-            else:
-                result[1] = 17-slot_temp
-                return result
+    if(menu_game_gameover == MENU):
+        if (x >= start_button[0] - 80 and x <= start_button[0] + 80 and y >= start_button[1] - 20 and y <= start_button[1] + 20  ):
+            return [4,0]
+        elif (x >= gukenyura_button[0] - 80 and x <= gukenyura_button[0] + 80 and y >= gukenyura_button[1] - 20 and y <= gukenyura_button[1] + 20  ):
+            return [5,0]
         else:
-            result[0] = 1
-            tmp = int((x - 57) / 85)
-            if (tmp >= 8):
-                slot_temp = 8
-            else:
-                slot_temp = tmp + 1
-            if(y>300 and y <= 382 ):
-                result[1] = 17-slot_temp
-                return result
-            else:
-                result[1] = slot_temp
-                return result
+            return[0,0]
 
-    elif (x >= back_button[0] - 60 and x <= back_button[0] + 60 and y >= back_button[1] - 20 and y <= back_button[1] + 20  ):
-        return [3,0]
-    else:
-        return [0,0]
+    elif(menu_game_gameover == GUKENYURA):
+        if (x >= 57 and x <= 742) and (y >= 125 and y <= 475):#in the board
+
+            if (not (y >= 125 and y <= 300)):#in the 1st player half
+                result[0] = 8
+                tmp = int((x - 57) / 85)
+                if (tmp >= 8):
+                    slot_temp = 8
+                else:
+                    slot_temp = tmp + 1
+                if (y > 300 and y <= 382):
+                    result[1] = 17 - slot_temp
+                    return result
+                else:
+                    result[1] = slot_temp
+                    return result
+            else :
+                return [8,0]
+        elif (x >= 740 and x <= 790) and (y >= 540 and y <= 590):#default button
+            return [8,17]
+
+        else : return [8,0]
+    elif(menu_game_gameover == REPLAY):
+        if(y > 210 and y <= 390 and x > 150 and x <= 350):
+            return[6,0]
+        elif(y > 210 and y <= 390 and x > 460 and x <= 640):
+            return [7,0]
+        else : return[0,0]
+    elif(menu_game_gameover == 1):
+        if (x >= 57 and x <= 742 ) and (y >= 125 and y <= 475):
+            if( y >= 125 and y <= 300 ):
+                result[0] = 2
+                tmp = int((x - 57) / 85)
+                if(tmp>=8) :
+                    slot_temp = 8
+                else:
+                    slot_temp = tmp + 1
+                    slot_temp = 9 - slot_temp
+                if (y>=125 and y<=207):
+                    result[1] = slot_temp
+                    return  result
+                else:
+                    result[1] = 17-slot_temp
+                    return result
+            else:
+                result[0] = 1
+                tmp = int((x - 57) / 85)
+                if (tmp >= 8):
+                    slot_temp = 8
+                else:
+                    slot_temp = tmp + 1
+                if(y>300 and y <= 382 ):
+                    result[1] = 17-slot_temp
+                    return result
+                else:
+                    result[1] = slot_temp
+                    return result
+
+        elif (x >= back_button[0] - 60 and x <= back_button[0] + 60 and y >= back_button[1] - 20 and y <= back_button[1] + 20  ):
+            return [3,0]
+        else:
+            return [0,0]
 
 
 def play(hole):
@@ -272,7 +403,7 @@ def play(hole):
 
 def player_display():
     # print(board.current_player)
-    font_obj = pygame.font.Font('freesansbold.ttf', 40)
+    font_obj = pygame.font.SysFont('comicsans.ttf', 40)
     text_surface_obj = font_obj.render(" Back ", False, WHITE, BLACK)
     text_rect_obj = text_surface_obj.get_rect()
     text_rect_obj.center = (70, 550)
@@ -280,13 +411,13 @@ def player_display():
     global back_button
     back_button = text_rect_obj.center
     if (board.current_player == 1):
-        font_obj = pygame.font.Font('freesansbold.ttf', 40)
+        font_obj = pygame.font.SysFont('comicsans.ttf', 40)
         text_surface_obj = font_obj.render("Player one", False, WHITE, BLACK)
         text_rect_obj = text_surface_obj.get_rect()
         text_rect_obj.center = (642, 515)
         screen.blit(text_surface_obj, text_rect_obj)
     else :
-        font_obj = pygame.font.Font('freesansbold.ttf', 40)
+        font_obj = pygame.font.SysFont('comicsans.ttf', 40)
         text_surface_obj = font_obj.render("Player two", False, BLACK, GREY)
         text_rect_obj = text_surface_obj.get_rect()
         text_rect_obj.center = (157, 85)
@@ -300,25 +431,18 @@ def main():
     # Used to manage how fast the screen updates
     clock = pygame.time.Clock()
 
-    draw()
+    # draw()
+    clicked_default = False
+    while ( (not done)):
 
-    while ((not board.game_over()) and (not done)):
-        # if (board.player_one):
-        #     slot = int(input("player one choose slot between 1 and 16 : "))
-        #     result = board.beads(slot)
-        #     while (result == 0):
-        #         slot = int(input("player one choose another slot between 1 and 16 that one is empty : "))
-        #         result = board.beads(slot)
-        #     play(slot)
-        #     board.player(2)
-        # else:
-        #     slot = int(input("player two choose slot between 1 and 16 : "))
-        #     result = board.beads(slot)
-        #     while (result == 0):
-        #         slot = int(input("player twoo choose another slot between 1 and 16 that one is empty : "))
-        #         result = board.beads(slot)
-        #     play(slot)
-        #     board.player(1)
+        if(menu_game_gameover == 1 ):  draw()
+        elif(menu_game_gameover == 0 ):  draw_menu()
+        elif(menu_game_gameover == 3) :
+            if(clicked_default == False):
+                board.choose_board(board.BOARD_gukenyura)
+            draw_gukenyura()
+            # clicked_default = False
+        else:  draw_end()
 
         # -------- Main Program Loop -----------
         place =[(800-BOARD_LENGTH) / 2 , (600 - BOARD_WIDTH) / 2, BOARD_LENGTH, BOARD_WIDTH]
@@ -344,6 +468,8 @@ def main():
                                 play(hole)
                                 board.player(2)
                                 board.current_player = 2
+                                if(board.game_over()):
+                                    change_state(2)
                             else:
                                 # something to prevent to play for the other player
                                 pass
@@ -353,13 +479,139 @@ def main():
                                 play(hole)
                                 board.player(1)
                                 board.current_player = 1
+                                if (board.game_over()):
+                                    change_state(2)
                             else:
                                 #something to prevent to play for the other player
                                 pass
                         elif(player == 3):
                             board.back(board.back_Board)
+                        elif(player == 4):
+                            change_state(1)        # draw()
+                        elif(player == 5):
+                            change_state(3)
+                            draw_gukenyura_buttons()
+                            # board.choose_board(board.BOARD_gukenyura)
+                        elif (player == 6):
+                            change_state(0)
+                        elif (player == 7):
+                            change_state(1)
+                            board.BOARD = np.copy(board.BOARD_DEFAULT)
+                        elif (player == 8):
+                            if (clicked_default == True):
+                                maximum = 0
+                            else: maximum=32
 
-        draw()
+                            if(data[1] >=1 and data[1]<=16):
+                                clicked = True
+                                tmp_position =[0,0]
+                                tmp_position[0] = position[0]
+                                tmp_position[1] = position[1]
+                                while(True):
+                                    tmp_data = game_coordinates_to_hole(tmp_position[0],
+                                                                        int(tmp_position[1]))
+                                    beads_to_take = board.beads(tmp_data[1])
+                                    draw_left_click(clicked,tmp_position,maximum,beads_to_take)
+                                    for event in pygame.event.get():
+                                        if event.type == pygame.QUIT:
+                                            pygame.quit()
+                                            pygame.display.flip()
+                                            # done = done or board.game_over()
+                                        elif event.type == pygame.MOUSEBUTTONDOWN:
+                                            if event.button == 1:
+                                                if(clicked == False):
+                                                    position = pygame.mouse.get_pos()
+                                                    data = game_coordinates_to_hole(position[0], int(position[1]))
+                                                    print(position)
+                                                    print(data)
+                                                    if((data[1] >=1 and data[1]<=16)):
+                                                            clicked = True
+                                                            tmp_position[0] = position[0]
+                                                            tmp_position[1] = position[1]
+                                                            print(position)
+                                                            print(tmp_position)
+                                                            print(data)
+                                                    elif(data[1]==17):
+                                                        clicked = False
+                                                        board.default_player1()
+                                                        maximum = 0
+                                                else:
+                                                    position = pygame.mouse.get_pos()
+                                                    data = game_coordinates_to_hole(position[0], int(position[1]))
+                                                    if (data[1] >=1 and data[1]<=16):
+                                                        if (not( (position[0] > tmp_position[0] and position[0] <= tmp_position[
+                                                            0] + 85) and (position[1] > tmp_position[1] and position[1]<= tmp_position[1] + 175))):
+                                                            clicked = True
+                                                            tmp_position[0] = position[0]
+                                                            tmp_position[1] = position[1]
+                                                            print(position)
+                                                            print(data)
+                                                        else:
+                                                            clicked = False
+                                                            number_of_beads = 0
+                                                            temp =   position[1] - tmp_position[1]
+                                                            temp = int (temp /11) + 1
+                                                            temp_x = position[0]- tmp_position[0]
+                                                            temp_x = int(temp_x / 42) + 1
+                                                            if temp_x == 1 : number_of_beads = temp
+                                                            elif temp_x == 2 : number_of_beads = temp + 16
+                                                            print(maximum)
+                                                            tmp_data = game_coordinates_to_hole(tmp_position[0],
+                                                                                            int(tmp_position[1]))
+                                                            beads_to_take = board.beads(tmp_data[1])
+                                                            tmp_max = maximum - (number_of_beads - beads_to_take)
+                                                            # maximum = maximum - (number_of_beads - beads_to_take)
+                                                            print(tmp_max)
+                                                            if (tmp_max >= 0 and tmp_max <= 32):
+                                                                maximum = tmp_max
+                                                                board.take_beads(tmp_data[1], beads_to_take)
+                                                                for i in range(1, number_of_beads + 1):
+                                                                    board.add_bead(tmp_data[1])
+                                                            print(position)
+                                                            data = game_coordinates_to_hole(position[0], int(position[1]))
+                                                            print(data)
+                                                    elif(data[1]==17):
+                                                        clicked = False
+                                                        board.default_player1()
+                                                        maximum = 0
+                                                    elif(data[1] == 0):
+                                                        clicked = False
+                                                        if (((position[0] > tmp_position[0] and position[0] <=
+                                                                  tmp_position[
+                                                                      0] + 85) and (
+                                                                         position[1] > tmp_position[1] and position[
+                                                                     1] <= tmp_position[1] + 175))):
+                                                            number_of_beads = 0
+                                                            temp = position[1] - tmp_position[1]
+                                                            temp = int(temp / 11) + 1
+                                                            temp_x = position[0] - tmp_position[0]
+                                                            temp_x = int(temp_x / 42) + 1
+                                                            if temp_x == 1:
+                                                                number_of_beads = temp
+                                                            elif temp_x == 2:
+                                                                number_of_beads = temp + 16
+
+                                                            tmp_data = game_coordinates_to_hole(tmp_position[0],
+                                                                                                int(tmp_position[1]))
+                                                            beads_to_take = board.beads(tmp_data[1])
+                                                            tmp_max = maximum - (number_of_beads - beads_to_take)
+                                                            # maximum = maximum - (number_of_beads - beads_to_take)
+                                                            print(tmp_max)
+                                                            if(tmp_max >= 0 and tmp_max <= 32):
+                                                                maximum = tmp_max
+                                                                board.take_beads(tmp_data[1], beads_to_take)
+                                                                for i in range(1, number_of_beads + 1):
+                                                                    board.add_bead(tmp_data[1])
+                                                            print(position)
+                                                            data = game_coordinates_to_hole(position[0], int(position[1]))
+                                                            print(data)
+
+                                    clock.tick(70)
+                            elif(data[1] == 17):
+                                clicked_default = True
+                                board.default_player1()
+
+
         clock.tick(60)
     pygame.quit()
     # pygame.quit()

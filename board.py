@@ -1,13 +1,41 @@
 import numpy as np
-from numpy import half
-import time
-# import gui
 
 # BOARD = np.zeros((4,8), int)
-BOARD = np.array([ [ 0,  0,  0,  0,  0,  0, 0,  0],
-                   [4,  4,  4,  4,  4,  4,  4,  4],
-                   [ 0,  4,  4,  4,  4,  0,  0,  0],
-                   [ 0,  4,  4,  4,  4,  0,  0,  0]])
+# BOARD = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
+#                    [2,  2,  2,  2,  2,  2,  2,  2],
+#                    [0,  4,  4,  4,  4,  0,  0,  0],
+#                    [0,  4,  4,  4,  4,  0,  0,  0]])
+
+BOARD = np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
+                   [0,  0,  0,  0,  0,  0,  0,  2],
+                   [0,  4,  4,  4,  4,  0,  0,  0],
+                   [0,  4,  4,  4,  4,  0,  0,  0]])
+
+BOARD_DEFAULT = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
+                           [2,  2,  2,  2,  2,  2,  2,  2],
+                           [2,  2,  2,  2,  2,  2,  2,  2],
+                           [2,  2,  2,  2,  2,  2,  2,  2]])
+
+BOARD_DEFAULT_P1 = np.array([[0,  0,  0,  0,  0,  0,  0,  0],
+                             [0,  0,  0,  0,  0,  0,  0,  0],
+                             [2,  2,  2,  2,  2,  2,  2,  2],
+                             [2,  2,  2,  2,  2,  2,  2,  2]])
+
+BOARD_DEFAULT_P2 = np.array([[2,  2,  2,  2,  2,  2,  2,  2],
+                             [2,  2,  2,  2,  2,  2,  2,  2],
+                             [0,  0,  0,  0,  0,  0,  0,  0],
+                             [0,  0,  0,  0,  0,  0,  0,  0]
+                           ])
+
+BOARD_REPLAY = np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
+                        [0,  0,  0,  0,  0,  0,  0,  2],
+                        [0,  4,  4,  4,  4,  0,  0,  0],
+                        [0,  4,  4,  4,  4,  0,  0,  0]])
+
+BOARD_gukenyura = np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
+                             [0,  0,  0,  0,  0,  0,  0,  0],
+                             [0,  0,  0,  0,  0,  0,  0,  0],
+                             [0,  0,  0,  0,  0,  0,  0,  0]])
 MAX_INIT = 4
 MAX_BEADS = 64
 player_one = True
@@ -16,6 +44,7 @@ in_front = not in_the_back
 current_player = 1
 back_Board = BOARD.copy()
 # PLAYER_TWO = 2
+
 
 
 def player( which) :
@@ -176,6 +205,16 @@ def back(board):
     else :
         player(1)
         current_player = 1
+
+def choose_board(board):
+    for line in range(len (board)):
+        for row in range (len (board[0])):
+            BOARD[line][row] = board[line][row]
+
+def default_player1():
+    for x in range (2,4):
+        for y in range (0,8):
+            BOARD[x][y] = 2
 
 def game_over():
     gameover=True
