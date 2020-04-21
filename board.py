@@ -216,6 +216,11 @@ def default_player1():
         for y in range (0,8):
             BOARD[x][y] = 2
 
+def default_player2():
+    for x in range (0,2):
+        for y in range (0,8):
+            BOARD[x][y] = 2
+
 def game_over():
     gameover=True
     for hole in range (1, 16):

@@ -256,6 +256,10 @@ def game_coordinates_to_hole(x, y):
         elif (x >= 740 and x <= 790) and (y >= 540 and y <= 590):#default button
             return [8,17]
 
+        elif (x >= 10 and x <= 60) and (y >= 540 and y <= 590):#default button
+            return [8,18]
+
+
         else : return [8,0]
     elif(menu_game_gameover == REPLAY):
         if(y > 210 and y <= 390 and x > 150 and x <= 350):
@@ -507,7 +511,8 @@ def main():
                                 tmp_position =[0,0]
                                 tmp_position[0] = position[0]
                                 tmp_position[1] = position[1]
-                                while(True):
+                                done_gukenyura = False
+                                while(not done_gukenyura):
                                     tmp_data = game_coordinates_to_hole(tmp_position[0],
                                                                         int(tmp_position[1]))
                                     beads_to_take = board.beads(tmp_data[1])
@@ -535,6 +540,10 @@ def main():
                                                         clicked = False
                                                         board.default_player1()
                                                         maximum = 0
+                                                    elif (data[1] == 18):
+                                                        change_state(1)
+                                                        board.default_player2()
+                                                        done_gukenyura = True
                                                 else:
                                                     position = pygame.mouse.get_pos()
                                                     data = game_coordinates_to_hole(position[0], int(position[1]))
@@ -574,6 +583,10 @@ def main():
                                                         clicked = False
                                                         board.default_player1()
                                                         maximum = 0
+                                                    elif (data[1] == 18):
+                                                        change_state(1)
+                                                        board.default_player2()
+                                                        done_gukenyura = True
                                                     elif(data[1] == 0):
                                                         clicked = False
                                                         if (((position[0] > tmp_position[0] and position[0] <=
@@ -610,6 +623,10 @@ def main():
                             elif(data[1] == 17):
                                 clicked_default = True
                                 board.default_player1()
+                            elif (data[1] == 18):
+                                change_state(1)
+                                board.default_player2()
+                                done_gukenyura = True
 
 
         clock.tick(60)
