@@ -494,6 +494,7 @@ def main():
                             change_state(1)        # draw()
                         elif(player == 5):
                             change_state(3)
+                            board.player(1)
                             draw_gukenyura_buttons()
                             # board.choose_board(board.BOARD_gukenyura)
                         elif (player == 6):
@@ -501,6 +502,7 @@ def main():
                         elif (player == 7):
                             change_state(1)
                             board.BOARD = np.copy(board.BOARD_DEFAULT)
+
                         elif (player == 8):
                             if (clicked_default == True):
                                 maximum = 0
@@ -619,7 +621,7 @@ def main():
                                                             data = game_coordinates_to_hole(position[0], int(position[1]))
                                                             print(data)
 
-                                    clock.tick(70)
+                                    clock.tick(60)
                             elif(data[1] == 17):
                                 clicked_default = True
                                 board.default_player1()
