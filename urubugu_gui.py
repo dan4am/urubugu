@@ -55,7 +55,7 @@ gukenyura_button=[0,0]
 start_button=[0,0]
 help_button =[0,0]
 done = False
-menu_game_gameover=3 #menu = 0, game = 1, gameover=2
+menu_game_gameover = 0#menu = 0, game = 1, gameover=2
 GUKENYURA=3
 MENU=0
 REPLAY=2
@@ -72,7 +72,7 @@ pygame.init()
 size = (800,600)
 screen = pygame.display.set_mode(size)
 circle_filled=pygame.Surface(size)
-place =[(800-BOARD_LENGTH) / 2 , (600 - BOARD_WIDTH) / 2, BOARD_LENGTH, BOARD_WIDTH]
+place =[int((800-BOARD_LENGTH) / 2 ), int((600 - BOARD_WIDTH) / 2), BOARD_LENGTH, BOARD_WIDTH]
 
 def change_state(state):
     global menu_game_gameover
@@ -305,12 +305,15 @@ def game_coordinates_to_hole(x, y):
 
 def play(hole):
     board.copier()
+    loop_can_go_on = True
     result = board.beads(hole)
     current_hole = hole
     tmp_beads = board.beads(current_hole)
+    board.take_beads(current_hole, board.beads(current_hole))
+    tmp_beads_at_previous_play = 0
     loop = 0
     if (tmp_beads == 1):
-        board.take_beads(current_hole,1)
+        # board.take_beads(current_hole,1)
         draw()
         time.sleep(0.5)
         if (current_hole == 16):
@@ -320,7 +323,9 @@ def play(hole):
         board.add_bead(current_hole)
         draw()
         time.sleep(0.5)
+        tmp_beads_at_previous_play = tmp_beads
         tmp_beads = board.beads(current_hole)
+
         # print(board.BOARD)
         if(current_hole > 8):
             result3 = board.hole_correspondance(current_hole)
@@ -336,13 +341,16 @@ def play(hole):
             if (not empty_p2_holes):
                 beads_row1 = board.beads(row1_crsp)
                 beads_row2 = board.beads(row2_crsp)
+                tmp_beads_at_previous_play = tmp_beads
                 tmp_beads = beads_row1 + beads_row2
-                board.take_beads(row1_crsp, beads_row1)
-                draw()
-                time.sleep(0.5)
-                board.take_beads(row2_crsp, beads_row2)
-                draw()
-                time.sleep(0.5)
+                if (not board.beads(row1_crsp) == 0):
+                    time.sleep(0.5)
+                    board.take_beads(row1_crsp, beads_row1)
+                    draw()
+                if (not board.beads(row2_crsp) == 0):
+                    time.sleep(0.5)
+                    board.take_beads(row2_crsp, beads_row2)
+                    draw()
                 current_hole -= 1
                 if (not board.player_one):
                     board.player(1)
@@ -351,22 +359,44 @@ def play(hole):
             else:
                 if (not board.player_one):
                     board.player(1)
+                else:
+                    board.player(2)
 
-    while(not board.beads(current_hole)== 1):
+                if (board.beads(current_hole) == 1):
+                    loop_can_go_on = False
+                else:
+                    loop_can_go_on = True
+                    tmp_beads = board.beads(current_hole)
+                    board.take_beads(current_hole, board.beads(current_hole))
+
+        else:
+            if(board.beads(current_hole) == 1):
+                loop_can_go_on = False
+            else:
+                loop_can_go_on = True
+                tmp_beads = board.beads(current_hole)
+                board.take_beads(current_hole, board.beads(current_hole))
+            ##if (tmp_beads >15 ):
+    while(loop_can_go_on):
         loop += 1
         print (loop)
         # print (BOARD)
         temp_hole = 0
-        board.take_beads(current_hole, board.beads(current_hole))
-        draw()
-        time.sleep(0.5)
+        # if(loop_can_go_on):
 
-        for a_hole in range (current_hole, current_hole+tmp_beads):
-            board.add_bead((a_hole % 16) + 1)
-            draw()
-            temp_hole = (a_hole % 16 )+ 1
-            # print(BOARD)
+        draw()
+        # time.sleep(0.5)
+
+        for a_hole in range (current_hole+1, current_hole+tmp_beads+1):
             time.sleep(0.5)
+            remainder = a_hole % 16
+            if( remainder == 0):
+                remainder = 16
+            board.add_bead(remainder )
+            draw()
+            temp_hole = (remainder )
+            # print(BOARD)
+
             # gui.draw_frame()
         if(temp_hole>8):
             result2 = board.hole_correspondance(temp_hole)
@@ -378,31 +408,50 @@ def play(hole):
 
             empty_p2_holes = board.beads(row1_crsp) == 0 and board.beads(row2_crsp) == 0
             if(not empty_p2_holes):
+                loop_can_go_on = True
                 beads_row1 = board.beads(row1_crsp)
                 beads_row2 = board.beads(row2_crsp)
+                tmp_beads_at_previous_play = tmp_beads
                 tmp_beads = beads_row1 + beads_row2
-                board.take_beads(row1_crsp,beads_row1)
-                draw()
-                time.sleep(0.5)
-                board.take_beads(row2_crsp,beads_row2)
-                draw()
-                time.sleep(0.5)
+                if (not board.beads(row1_crsp) == 0):
+                    time.sleep(0.5)
+                    board.take_beads(row1_crsp,beads_row1)
+                    draw()
+                if (not board.beads(row2_crsp) == 0):
+                    time.sleep(0.5)
+                    board.take_beads(row2_crsp,beads_row2)
+                    draw()
+                # time.sleep(0.5)
                 if (not board.player_one):board.player(1)
                 else:board.player(2)
-            else:
+            else: # if the corresponding rows in P2 are empty
                 if (not board.player_one):
                     board.player(1)
                 else:
                     board.player(2)
-                current_hole = temp_hole
-                tmp_beads = board.beads(current_hole)
+                if (board.beads(temp_hole) == 1):
+                    loop_can_go_on = False
+                else:
+                    loop_can_go_on = True
+                    current_hole = temp_hole
+                    tmp_beads_at_previous_play = tmp_beads
+                    tmp_beads = board.beads(current_hole)
+                    time.sleep(0.5)
+                    board.take_beads(current_hole, board.beads(current_hole))
         else:
             # if (not player_one):
             #     player(1)
             # else:
             #     player(2)
-            current_hole = temp_hole
-            tmp_beads = board.beads(current_hole)
+            if (board.beads(temp_hole) == 1):
+                loop_can_go_on = False
+            else:
+                loop_can_go_on = True
+                current_hole = temp_hole
+                tmp_beads_at_previous_play = tmp_beads
+                tmp_beads = board.beads(current_hole)
+                time.sleep(0.5)
+                board.take_beads(current_hole, board.beads(current_hole))
         print(board.BOARD)
 
 def player_display():
@@ -475,7 +524,7 @@ def main():
                                 if(board.game_over()):
                                     change_state(2)
                             else:
-                                # something to prevent to play for the other player
+                                # something to prevent the other player to play
                                 pass
                         elif(player == 2):
                             beads = board.beads(hole)
@@ -486,7 +535,7 @@ def main():
                                 if (board.game_over()):
                                     change_state(2)
                             else:
-                                #something to prevent to play for the other player
+                                # something to prevent the other player to play
                                 pass
                         elif(player == 3):
                             board.back(board.back_Board)
