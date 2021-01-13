@@ -1,8 +1,9 @@
 import board
+import numpy as np
 import pygame
 import os
 import time
-import numpy as np
+import artificial_intelligence
 
 
 _image_library = {}
@@ -27,7 +28,7 @@ def get_image(path):
 
 def database():
     global DATABASE
-    for bead in range (1,64):
+    for bead in range (1,65):
         image = get_image(getpath(bead))
         DATABASE.append(image)
 
@@ -55,7 +56,7 @@ gukenyura_button=[0,0]
 start_button=[0,0]
 help_button =[0,0]
 done = False
-menu_game_gameover = 0#menu = 0, game = 1, gameover=2
+menu_game_gameover = 1#menu = 0, game = 1, gameover=2
 GUKENYURA=3
 MENU=0
 REPLAY=2
@@ -528,8 +529,10 @@ def main():
                                 pass
                         elif(player == 2):
                             beads = board.beads(hole)
+                            hole_to_play = artificial_intelligence.hole_to_play()
                             if(not board.player_one and (not beads == 0)):
-                                play(hole)
+                                # play(hole)
+                                play(hole_to_play)
                                 board.player(1)
                                 board.current_player = 1
                                 if (board.game_over()):

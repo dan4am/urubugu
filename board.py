@@ -1,15 +1,24 @@
 import numpy as np
 
 # BOARD = np.zeros((4,8), int)
+BOARD = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
+                   [2,  2,  2,  2,  2,  2,  2,  2],
+                   [0,  4,  4,  4,  4,  0,  0,  0],
+                   [0,  4,  4,  4,  4,  0,  0,  0]])
 # BOARD = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
 #                    [2,  2,  2,  2,  2,  2,  2,  2],
 #                    [0,  4,  4,  4,  4,  0,  0,  0],
 #                    [0,  4,  4,  4,  4,  0,  0,  0]])
+# BOARD = np.array([ [0,  0,  0,  0,  0,  0,  1,  0],
+#                    [0,  0,  0,  1,  1,  3,  0,  2],
+#                    [4,  4,  4,  4,  0,  0,  16,  0],
+#                    [0,  4,  4,  4,  3,  0,  0,  1]])
 
-BOARD = np.array([ [0,  0,  0,  0,  0,  0,  1,  0],
-                   [0,  0,  0,  1,  1,  3,  0,  2],
-                   [4,  4,  4,  4,  0,  0,  17,  0],
-                   [0,  4,  4,  4,  3,  0,  0,  1]])
+# BOARD = np.array([[0 ,0 ,3 ,3 ,0 ,3 ,3 ,1],
+#  [4 ,8 ,7 ,6 ,6 ,5 ,5 ,4],
+#  [1 ,1 ,1 ,0 ,0 ,0 ,0 ,0],
+#  [1 ,0 ,0 ,0 ,0 ,1 ,0 ,1]]
+# )
 
 BOARD_DEFAULT = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
                            [2,  2,  2,  2,  2,  2,  2,  2],
@@ -36,12 +45,19 @@ BOARD_gukenyura = np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0]])
+
+BOARD_AI =         np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
+                             [0,  0,  0,  0,  0,  0,  0,  0],
+                             [0,  0,  0,  0,  0,  0,  0,  0],
+                             [0,  0,  0,  0,  0,  0,  0,  0]])
 MAX_INIT = 4
 MAX_BEADS = 64
 player_one = True
-in_the_back = True
-in_front = not in_the_back
 current_player = 1
+# player_one = False
+# current_player = 2
+in_the_back = False
+in_front = not in_the_back
 back_Board = BOARD.copy()
 # PLAYER_TWO = 2
 
@@ -78,6 +94,8 @@ def hole_to_index(hole):#handling that the value does not exceed 16
             # in_front = not in_the_back
             return [0, 8 - hole]
 
+
+
 def hole_correspondance(hole):
     if(hole > 8):
         row2_p2_corsp = 25 - hole
@@ -103,7 +121,7 @@ def copier():
             back_Board[line][row] = BOARD[line][row]
 
 
-def play(hole):
+def play(hole, board):
     copier()
     loop_can_go_on = True
     result = beads(hole)
@@ -234,6 +252,167 @@ def play(hole):
 
                 take_beads(current_hole, beads(current_hole))
         print(BOARD)
+
+def player( which) :
+    if(which == 2 ):
+        global player_one
+        player_one = False
+    elif(which == 1):
+        # global player_one
+        player_one = True
+
+def copy_to_board_ai():
+    for i in range(0,4):
+        for j in range (0,8):
+            BOARD_AI[i][j]  = BOARD[i][j]
+
+
+def beads_AI(hole, board):
+    result = hole_to_index(hole)
+    return board[result[0]][result[1]]
+
+
+
+def add_bead_AI(hole,board):
+    result = hole_to_index(hole)
+    board[result[0]][result[1]] += 1
+
+
+
+def take_beads_AI(hole, how_many,board):
+    result = hole_to_index(hole)
+    board[result[0]][result[1]] -= how_many
+
+def prep_to_simulate():
+    BOARD_AI = np.copy(BOARD)
+
+def play_AI(hole, board):
+    # board = np.copy(BOARD)
+    loop_can_go_on = True
+    current_hole = hole
+    tmp_beads = beads_AI(current_hole,board)
+    take_beads_AI(current_hole, beads(current_hole),board)
+    loop = 0
+    if (tmp_beads == 1):
+        if (current_hole == 16):
+            current_hole = 1
+        else:
+            current_hole += 1
+        add_bead_AI(current_hole,board)
+        tmp_beads = beads_AI(current_hole,board)
+        # print(BOARD)
+        if (current_hole > 8):
+            result3 = hole_correspondance(current_hole)
+            row2_crsp = result3[1]
+            row1_crsp = result3[0]
+            if (player_one):
+                player(2)
+            else:
+                player(1)
+
+            empty_p2_holes = beads_AI(row1_crsp,board) == 0 and beads_AI(row2_crsp,board) == 0
+            if (not empty_p2_holes):
+                beads_row1 = beads_AI(row1_crsp,board)
+                beads_row2 = beads_AI(row2_crsp,board)
+                tmp_beads_at_previous_play = tmp_beads
+                tmp_beads = beads_row1 + beads_row2
+                if (not beads_AI(row1_crsp,board) == 0):
+                    take_beads_AI(row1_crsp, beads_row1,board)
+                if (not beads_AI(row2_crsp,board) == 0):
+                    take_beads_AI(row2_crsp, beads_row2,board)
+                current_hole -= 1
+                if (not player_one):
+                    player(1)
+                else:
+                    player(2)
+            else:
+                if (not player_one):
+                    player(1)
+                else:
+                    player(2)
+
+                if (beads_AI(current_hole, board) == 1):
+                    loop_can_go_on = False
+                else:
+                    loop_can_go_on = True
+                    tmp_beads = beads_AI(current_hole, board)
+                    take_beads(current_hole, beads_AI(current_hole, board))
+        else:
+            if (beads_AI(current_hole, board) == 1):
+                loop_can_go_on = False
+            else:
+                loop_can_go_on = True
+                tmp_beads = beads_AI(current_hole, board)
+                take_beads_AI(current_hole, beads_AI(current_hole, board),board)
+            ##if (tmp_beads >15 ):
+    while (loop_can_go_on):
+        loop += 1
+        # print(loop)
+        # print (BOARD)
+        temp_hole = 0
+        # if(loop_can_go_on):
+
+        for a_hole in range(current_hole + 1, current_hole + tmp_beads + 1):
+
+            remainder = a_hole % 16
+            if (remainder == 0):
+                remainder = 16
+            add_bead_AI(remainder,board)
+            temp_hole = (remainder)
+
+        if (temp_hole > 8):
+            result2 = hole_correspondance(temp_hole)
+            row2_crsp = result2[1]
+            row1_crsp = result2[0]
+
+            if (player_one):
+                player(2)
+            else:
+                player(1)
+            empty_p2_holes = beads_AI(row1_crsp,board) == 0 and beads_AI(row2_crsp,board) == 0
+            if (not empty_p2_holes):
+                loop_can_go_on = True
+                beads_row1 = beads_AI(row1_crsp,board)
+                beads_row2 = beads_AI(row2_crsp,board)
+                tmp_beads_at_previous_play = tmp_beads
+                tmp_beads = beads_row1 + beads_row2
+                if (not beads_AI(row1_crsp,board) == 0):
+
+                    take_beads_AI(row1_crsp, beads_row1,board)
+
+                if (not beads_AI(row2_crsp,board) == 0):
+
+                    take_beads_AI(row2_crsp, beads_row2,board)
+
+                if (not player_one):
+                    player(1)
+                else:
+                    player(2)
+            else:  # if the corresponding rows in P2 are empty
+                if (not player_one):
+                    player(1)
+                else:
+                    player(2)
+                if (beads_AI(temp_hole,board) == 1):
+                    loop_can_go_on = False
+                else:
+                    loop_can_go_on = True
+                    current_hole = temp_hole
+                    tmp_beads_at_previous_play = tmp_beads
+                    tmp_beads = beads_AI(current_hole,board)
+
+                    take_beads_AI(current_hole, tmp_beads,board)
+        else:
+            if (beads_AI(temp_hole,board) == 1):
+                loop_can_go_on = False
+            else:
+                loop_can_go_on = True
+                current_hole = temp_hole
+                tmp_beads_at_previous_play = tmp_beads
+                tmp_beads = beads_AI(current_hole,board)
+
+                take_beads_AI(current_hole, tmp_beads,board)
+        # print(board)
 
 
 def back(board):
