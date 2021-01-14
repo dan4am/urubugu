@@ -93,6 +93,7 @@ def main():
     print (str(beads_left(2)))
 
     print (simulate_all_the_plays())
+    print (hole_to_play())
 
 if __name__ == "__main__":
     main()

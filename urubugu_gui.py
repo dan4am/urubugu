@@ -56,13 +56,15 @@ gukenyura_button=[0,0]
 start_button=[0,0]
 help_button =[0,0]
 done = False
-menu_game_gameover = 1#menu = 0, game = 1, gameover=2
+menu_game_gameover = 0#menu = 0, game = 1, gameover=2
 GUKENYURA=3
 MENU=0
 REPLAY=2
 PLAY=1
 HELP=4
 click_on_hole=5
+vs_computer = True
+# vs_computer = False
 # def Draw_board():
 
 
@@ -523,19 +525,37 @@ def main():
                                 board.player(2)
                                 board.current_player = 2
                                 if(board.game_over()):
+                                    time.sleep(0.5)
                                     change_state(2)
                             else:
                                 # something to prevent the other player to play
                                 pass
-                        elif(player == 2):
+
+                            if (vs_computer):
+                                time.sleep(0.5)
+                                hole_to_play = artificial_intelligence.hole_to_play()
+                                beads = board.beads(hole_to_play)
+                                if (not board.player_one and (not beads == 0)):
+                                    # play(hole)
+                                    play(hole_to_play)
+                                    board.player(1)
+                                    board.current_player = 1
+                                    if (board.game_over()):
+                                        time.sleep(0.5)
+                                        change_state(2)
+                                else:
+                                    # something to prevent the other player to play
+                                    pass
+                        elif(player == 2 and (not vs_computer)):
                             beads = board.beads(hole)
-                            hole_to_play = artificial_intelligence.hole_to_play()
+                            # hole_to_play = artificial_intelligence.hole_to_play()
                             if(not board.player_one and (not beads == 0)):
-                                # play(hole)
-                                play(hole_to_play)
+                                play(hole)
+                                # play(hole_to_play)
                                 board.player(1)
                                 board.current_player = 1
                                 if (board.game_over()):
+                                    time.sleep(0.5)
                                     change_state(2)
                             else:
                                 # something to prevent the other player to play

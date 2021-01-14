@@ -1,10 +1,10 @@
 import numpy as np
 
-# BOARD = np.zeros((4,8), int)
-BOARD = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
-                   [2,  2,  2,  2,  2,  2,  2,  2],
-                   [0,  4,  4,  4,  4,  0,  0,  0],
-                   [0,  4,  4,  4,  4,  0,  0,  0]])
+# # BOARD = np.zeros((4,8), int)
+# BOARD = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
+#                    [2,  2,  2,  2,  2,  2,  2,  2],
+#                    [0,  0,  2,  0,  0,  0,  0,  0],
+#                    [4,  7, 4,  5,  4,  3,  2,  1]])
 # BOARD = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
 #                    [2,  2,  2,  2,  2,  2,  2,  2],
 #                    [0,  4,  4,  4,  4,  0,  0,  0],
@@ -14,11 +14,11 @@ BOARD = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
 #                    [4,  4,  4,  4,  0,  0,  16,  0],
 #                    [0,  4,  4,  4,  3,  0,  0,  1]])
 
-# BOARD = np.array([[0 ,0 ,3 ,3 ,0 ,3 ,3 ,1],
-#  [4 ,8 ,7 ,6 ,6 ,5 ,5 ,4],
-#  [1 ,1 ,1 ,0 ,0 ,0 ,0 ,0],
-#  [1 ,0 ,0 ,0 ,0 ,1 ,0 ,1]]
-# )
+BOARD = np.array([[1 ,1 ,3 ,3 ,1 ,4 ,4 ,1],
+ [4 ,8 ,7 ,6 ,6 ,5 ,5 ,4],
+ [0 ,0 ,0 ,0 ,0 ,0 ,0 ,0],
+ [0 ,0 ,0 ,0 ,0 ,1 ,0 ,0]]
+)
 
 BOARD_DEFAULT = np.array([ [2,  2,  2,  2,  2,  2,  2,  2],
                            [2,  2,  2,  2,  2,  2,  2,  2],
@@ -52,10 +52,10 @@ BOARD_AI =         np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0]])
 MAX_INIT = 4
 MAX_BEADS = 64
-player_one = True
-current_player = 1
-# player_one = False
-# current_player = 2
+# player_one = True
+# current_player = 1
+player_one = False
+current_player = 2
 in_the_back = False
 in_front = not in_the_back
 back_Board = BOARD.copy()
@@ -291,7 +291,7 @@ def play_AI(hole, board):
     loop_can_go_on = True
     current_hole = hole
     tmp_beads = beads_AI(current_hole,board)
-    take_beads_AI(current_hole, beads(current_hole),board)
+    take_beads_AI(current_hole, tmp_beads,board)
     loop = 0
     if (tmp_beads == 1):
         if (current_hole == 16):
@@ -336,7 +336,7 @@ def play_AI(hole, board):
                 else:
                     loop_can_go_on = True
                     tmp_beads = beads_AI(current_hole, board)
-                    take_beads(current_hole, beads_AI(current_hole, board))
+                    take_beads_AI(current_hole, tmp_beads,board)
         else:
             if (beads_AI(current_hole, board) == 1):
                 loop_can_go_on = False
