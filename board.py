@@ -52,10 +52,10 @@ BOARD_AI =         np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0]])
 MAX_INIT = 4
 MAX_BEADS = 64
-# player_one = True
-# current_player = 1
-player_one = False
-current_player = 2
+player_one = True
+current_player = 1
+# player_one = False
+# current_player = 2
 in_the_back = False
 in_front = not in_the_back
 back_Board = BOARD.copy()

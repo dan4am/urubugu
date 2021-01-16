@@ -14,7 +14,7 @@ done_path = "compressed_pictures1/done.png"
 player2_path = "compressed_pictures1/player2.png"
 default_path = "compressed_pictures1/default.png"
 def getpath(beads):
-    result ="compressed_pictures1/"+str(beads)+"_beads.png"
+    result ="compressed_pictures2/"+str(beads)+"_beads.png"
     # print (result)
     return result
 def get_image(path):
@@ -122,7 +122,7 @@ def draw_slots():
             text_rect_obj.center = (x, y)
             screen.blit(text_surface_obj, text_rect_obj)
             if(not board.BOARD[line][row] == 0):
-                screen.blit(get_img(board.BOARD[line][row]), (board_coordinates_to_screen_coordinates(line, row)[0] - 65, board_coordinates_to_screen_coordinates(line, row)[1] - 68))
+                screen.blit(get_img(board.BOARD[line][row]), (board_coordinates_to_screen_coordinates(line, row)[0] - 65, board_coordinates_to_screen_coordinates(line, row)[1] - 55))
                 pygame.draw.circle(screen, GREY, board_coordinates_to_screen_coordinates(line, row), SLOTS - 2, 1)
 
 
@@ -533,7 +533,8 @@ def main():
 
                             if (vs_computer):
                                 time.sleep(0.5)
-                                hole_to_play = artificial_intelligence.hole_to_play()
+                                hole_to_play = artificial_intelligence.hole_to_play_medium() #TODO if the game is over by the time player one finishes
+                                #add averification for game over
                                 beads = board.beads(hole_to_play)
                                 if (not board.player_one and (not beads == 0)):
                                     # play(hole)

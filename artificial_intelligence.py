@@ -85,7 +85,7 @@ def merge(left, right, merged):
     return merged
 
 
-def hole_to_play():
+def hole_to_play_medium():
     return (simulate_all_the_plays()[0][0])
 
 
@@ -93,7 +93,7 @@ def main():
     print (str(beads_left(2)))
 
     print (simulate_all_the_plays())
-    print (hole_to_play())
+    print (hole_to_play_medium())
 
 if __name__ == "__main__":
     main()
