@@ -13,6 +13,13 @@ restart_path = "compressed_pictures1/restart_button.png"
 done_path = "compressed_pictures1/done.png"
 player2_path = "compressed_pictures1/player2.png"
 default_path = "compressed_pictures1/default.png"
+dukenyure_button_unclicked_path = "picture/dukenyure_button_unclicked.png"
+dukenyure_button_clicked_path = "picture/dukenyure_button_clicked.png"
+dukenyure_button_clicked_path = "picture/dukenyure_button_clicked.png"
+dukine_button_unclicked_path = "picture/dukine_button_unclicked.png"
+dukine_button_clicked_path = "picture/dukine_button_clicked.png"
+ingeneBakina_button_unclicked_path = "picture/ingeneBakina_button_uncliked.png"
+ingeneBakina_button_clicked_path = "picture/ingeneBakina_button_cliked.png"
 def getpath(beads):
     result ="compressed_pictures2/"+str(beads)+"_beads.png"
     # print (result)
@@ -199,30 +206,39 @@ def draw_menu():
 
 
     screen.fill(WHITE)
-    font_obj = pygame.font.SysFont('comicsans.ttf', 40)
-    text_surface_obj = font_obj.render(" Dutangure ", False, WHITE, BLACK)
-    text_rect_obj = text_surface_obj.get_rect()
-    text_rect_obj.center = (400, 300)
-    screen.blit(text_surface_obj, text_rect_obj)
+    # font_obj = pygame.font.SysFont('comicsans.ttf', 40)
+    # text_surface_obj = font_obj.render(" Dutangure ", False, WHITE, BLACK)
+    # text_rect_obj = text_surface_obj.get_rect()
+    # text_rect_obj.center = (400, 300)
+    # screen.blit(text_surface_obj, text_rect_obj)
+    # global start_button
+    # start_button = text_rect_obj.center
+    #
+    # font_obj = pygame.font.SysFont('comicsans.ttf', 40)
+    # text_surface_obj = font_obj.render(" Dukenyure ", False, WHITE, BLACK)
+    # text_rect_obj = text_surface_obj.get_rect()
+    # text_rect_obj.center = (400, 268)
+    # screen.blit(text_surface_obj, text_rect_obj)
+    # global gukenyura_button
+    # gukenyura_button = text_rect_obj.center
+    #
+    # font_obj = pygame.font.SysFont('comicsans.ttf', 40)
+    # text_surface_obj = font_obj.render(" Ingene bakina ", False, WHITE, BLACK)
+    # text_rect_obj = text_surface_obj.get_rect()
+    # text_rect_obj.center = (400, 333)
+    # screen.blit(text_surface_obj, text_rect_obj)
+    # global help_button
+    # help_button = text_rect_obj.center
+
+    screen.blit(get_image(dukine_button_unclicked_path), (225, 185))
     global start_button
-    start_button = text_rect_obj.center
-
-    font_obj = pygame.font.SysFont('comicsans.ttf', 40)
-    text_surface_obj = font_obj.render(" Dukenyure ", False, WHITE, BLACK)
-    text_rect_obj = text_surface_obj.get_rect()
-    text_rect_obj.center = (400, 268)
-    screen.blit(text_surface_obj, text_rect_obj)
+    start_button = [225,185]
+    screen.blit(get_image(dukenyure_button_unclicked_path), (225, 265))
     global gukenyura_button
-    gukenyura_button = text_rect_obj.center
-
-    font_obj = pygame.font.SysFont('comicsans.ttf', 40)
-    text_surface_obj = font_obj.render(" Ingene bakina ", False, WHITE, BLACK)
-    text_rect_obj = text_surface_obj.get_rect()
-    text_rect_obj.center = (400, 333)
-    screen.blit(text_surface_obj, text_rect_obj)
+    gukenyura_button = [225, 265]
+    screen.blit(get_image(ingeneBakina_button_unclicked_path), (225, 345))
     global help_button
-    help_button = text_rect_obj.center
-
+    help_button = [225, 345]
 
 
     pygame.display.flip()
@@ -231,9 +247,9 @@ def draw_menu():
 def game_coordinates_to_hole(x, y):
     result =[0,0]
     if(menu_game_gameover == MENU):
-        if (x >= start_button[0] - 80 and x <= start_button[0] + 80 and y >= start_button[1] - 20 and y <= start_button[1] + 20  ):
+        if (x >= start_button[0] and x <= start_button[0] + 350 and y >= start_button[1] and y <= start_button[1] + 69  ):
             return [4,0]
-        elif (x >= gukenyura_button[0] - 80 and x <= gukenyura_button[0] + 80 and y >= gukenyura_button[1] - 20 and y <= gukenyura_button[1] + 20  ):
+        elif (x >= gukenyura_button[0] and x <= gukenyura_button[0] + 350 and y >= gukenyura_button[1] and y <= gukenyura_button[1] + 69  ):
             return [5,0]
         else:
             return[0,0]
@@ -564,11 +580,51 @@ def main():
                         elif(player == 3):
                             board.back(board.back_Board)
                         elif(player == 4):
-                            change_state(1)        # draw()
+                            while not event.type == pygame.MOUSEBUTTONUP:
+                                screen.fill(WHITE)
+                                screen.blit(get_image(dukine_button_clicked_path), (225, 185))
+                                screen.blit(get_image(dukenyure_button_unclicked_path), (225, 265))
+                                screen.blit(get_image(ingeneBakina_button_unclicked_path), (225, 345))
+
+
+                                pygame.display.flip()
+                                pygame.event.pump()
+                                for event in pygame.event.get():
+                                    if event.type == pygame.QUIT:
+                                        done = True
+                                        # done = done or board.game_over()
+                                    elif event.type == pygame.MOUSEBUTTONUP:
+                                        tmp_pos = pygame.mouse.get_pos();
+                                        if (tmp_pos[0] >= start_button[0] and tmp_pos[0] <= start_button[0] + 350 and tmp_pos[1] >= start_button[
+                                            1] and tmp_pos[1] <= start_button[1] + 69):
+                                            change_state(1)
+                                            # continue
+                                clock.tick(60)
+                                   # draw()
                         elif(player == 5):
-                            change_state(3)
-                            board.player(1)
-                            draw_gukenyura_buttons()
+                            while not event.type == pygame.MOUSEBUTTONUP:
+                                screen.fill(WHITE)
+                                screen.blit(get_image(dukine_button_unclicked_path), (225, 185))
+                                screen.blit(get_image(dukenyure_button_clicked_path), (225, 265))
+                                screen.blit(get_image(ingeneBakina_button_unclicked_path), (225, 345))
+
+
+                                pygame.display.flip()
+                                pygame.event.pump()
+                                for event in pygame.event.get():
+                                    if event.type == pygame.QUIT:
+                                        done = True
+                                        # done = done or board.game_over()
+                                    elif event.type == pygame.MOUSEBUTTONUP:
+                                        tmp_pos = pygame.mouse.get_pos();
+                                        if (tmp_pos[0] >= gukenyura_button[0] and tmp_pos[0] <= gukenyura_button[0] + 350 and
+                                                tmp_pos[1] >= gukenyura_button[1] and tmp_pos[1] <= gukenyura_button[1] + 69):
+                                            change_state(3)
+                                            board.player(1)
+                                            draw_gukenyura_buttons()
+                                clock.tick(60)
+
+
                             # board.choose_board(board.BOARD_gukenyura)
                         elif (player == 6):
                             change_state(0)

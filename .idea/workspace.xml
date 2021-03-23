@@ -2,75 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd5aca37-0f33-4257-9c8a-65b68e48c840" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/10_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/11_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/12_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/13_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/14_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/15_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/16_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/17_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/18_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/19_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/1_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/20_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/21_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/22_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/23_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/24_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/25_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/26_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/27_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/28_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/29_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/2_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/30_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/31_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/32_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/33_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/34_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/35_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/36_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/37_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/38_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/39_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/3_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/40_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/41_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/42_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/43_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/44_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/45_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/46_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/47_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/48_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/49_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/4_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/50_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/51_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/52_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/53_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/54_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/55_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/56_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/57_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/58_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/59_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/5_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/60_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/61_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/62_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/63_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/64_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/6_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/7_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/8_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compressed_pictures2/9_beads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/papers on AI for games/Artificial Intelligence for Games.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/buttons.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/dukenyure_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/dukenyure_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/dukine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/dukine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/ingeneBakina_button_cliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/ingeneBakina_button_uncliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/kinanIMachine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/kinanIMachine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/picture/dukenyure_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/picture/dukenyure_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/picture/dukine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/picture/dukine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/picture/ingeneBakina_button_cliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/picture/ingeneBakina_button_uncliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/picture/kinanIMachine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/picture/kinanIMachine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artificial_intelligence.py" beforeDir="false" afterPath="$PROJECT_DIR$/artificial_intelligence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compressed_pictures1/41_beads.png" beforeDir="false" afterPath="$PROJECT_DIR$/compressed_pictures1/41_beads.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/urubugu_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/urubugu_gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,11 +64,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Program Files/Git/bin/git.exe" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dan4a\PycharmProjects\urubugu" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.urubugu_gui">
     <configuration name="artificial_intelligence" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -332,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610631369649</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="optimisation : cropped beads images&#10;             + added paper on AI for games">
+      <created>1610774293915</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610774293915</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,29 +323,35 @@
     <MESSAGE value="corrected bug : when player plays more than 16 beads" />
     <MESSAGE value="new feature : artificial intelligence draft" />
     <MESSAGE value="bug correction : play_AI bug corrected" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug correction : play_AI bug corrected" />
+    <MESSAGE value="optimisation : cropped beads images&#10;             + added paper on AI" />
+    <MESSAGE value="optimisation : cropped beads images&#10;             + added paper on AI for games" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimisation : cropped beads images&#10;             + added paper on AI for games" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="395" y="0" key="CommitChangelistDialog2" timestamp="1610631368714">
+    <state x="395" y="0" key="CommitChangelistDialog2" timestamp="1610774289454">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1610631368714" />
-    <state width="1515" height="152" key="GridCell.Tab.0.bottom" timestamp="1610772936626">
+    <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1610774289454" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1610774339057">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="152" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610772936626" />
-    <state width="1515" height="152" key="GridCell.Tab.0.center" timestamp="1610772936626">
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1610774339057" />
+    <state width="1515" height="152" key="GridCell.Tab.0.bottom" timestamp="1616461028650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="152" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610772936626" />
-    <state width="1515" height="152" key="GridCell.Tab.0.left" timestamp="1610772936626">
+    <state width="1515" height="152" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616461028650" />
+    <state width="1515" height="152" key="GridCell.Tab.0.center" timestamp="1616461028650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="152" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610772936626" />
-    <state width="1515" height="152" key="GridCell.Tab.0.right" timestamp="1610772936626">
+    <state width="1515" height="152" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616461028650" />
+    <state width="1515" height="152" key="GridCell.Tab.0.left" timestamp="1616461028650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="152" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610772936626" />
+    <state width="1515" height="152" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616461028650" />
+    <state width="1515" height="152" key="GridCell.Tab.0.right" timestamp="1616461028650">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="152" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616461028650" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1610629609332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -399,10 +368,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610629609332" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610631385550">
+    <state x="330" y="114" key="SettingsEditor" timestamp="1616454992420">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610631385550" />
+    <state x="330" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616454992420" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610774314094">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610774314094" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1610774339057">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1610774339057" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
