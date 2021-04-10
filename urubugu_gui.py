@@ -13,6 +13,9 @@ restart_path = "compressed_pictures1/restart_button.png"
 done_path = "compressed_pictures1/done.png"
 player2_path = "compressed_pictures1/player2.png"
 default_path = "compressed_pictures1/default.png"
+
+config_language = "bi"
+languages = ["fr", "en"]
 dukenyure_button_unclicked_path = "picture/dukenyure_button_unclicked.png"
 dukenyure_button_clicked_path = "picture/dukenyure_button_clicked.png"
 dukenyure_button_clicked_path = "picture/dukenyure_button_clicked.png"
@@ -20,6 +23,30 @@ dukine_button_unclicked_path = "picture/dukine_button_unclicked.png"
 dukine_button_clicked_path = "picture/dukine_button_clicked.png"
 ingeneBakina_button_unclicked_path = "picture/ingeneBakina_button_uncliked.png"
 ingeneBakina_button_clicked_path = "picture/ingeneBakina_button_cliked.png"
+
+#language button
+
+bi_flag_path = "picture/flag_bi.png"
+fr_flag_path = "picture/flag_fr.png"
+en_flag_path = "picture/flag_en.png"
+
+def get_flag_path(flag):
+    if(flag == "bi" ):
+        return bi_flag_path
+    elif(flag == "fr"):
+        return fr_flag_path
+    else:
+        return en_flag_path
+
+language_drop_down_button_clicked_path = "picture/language_drop_down_menu_clicked.png"
+language_drop_down_button_unclicked_path = "picture/language_drop_down_menu_unclicked.png"
+language_drop_down_path = "picture/language_drop_down.png"
+selection_flag_path = "picture/selection_of_flag.png"
+selection_flag_path_white = "picture/selection_of_flag_white.png"
+selection_flag_path2 = "picture/selection_of_flag2.png"
+selection_flag_path2_white = "picture/selection_of_flag2_white.png"
+
+
 def getpath(beads):
     result ="compressed_pictures2/"+str(beads)+"_beads.png"
     # print (result)
@@ -62,6 +89,9 @@ back_button = [0,0]
 gukenyura_button=[0,0]
 start_button=[0,0]
 help_button =[0,0]
+language_button=[0,0]
+language_button_choice_1=[0,0]
+language_button_choice_2=[0,0]
 done = False
 menu_game_gameover = 0#menu = 0, game = 1, gameover=2
 GUKENYURA=3
@@ -83,6 +113,17 @@ size = (800,600)
 screen = pygame.display.set_mode(size)
 circle_filled=pygame.Surface(size)
 place =[int((800-BOARD_LENGTH) / 2 ), int((600 - BOARD_WIDTH) / 2), BOARD_LENGTH, BOARD_WIDTH]
+
+def change_language(language):
+    global config_language
+    if language == languages[0]:
+        languages[0] = config_language
+        config_language = language
+    else:
+        languages[1] = config_language
+        config_language = language
+
+
 
 def change_state(state):
     global menu_game_gameover
@@ -202,44 +243,44 @@ def draw_left_click(clicked, tmp_position,maximum,beads):
 
 
 
-def draw_menu():
+def draw_menu(play = None, set = None, lang = None):
 
 
     screen.fill(WHITE)
-    # font_obj = pygame.font.SysFont('comicsans.ttf', 40)
-    # text_surface_obj = font_obj.render(" Dutangure ", False, WHITE, BLACK)
-    # text_rect_obj = text_surface_obj.get_rect()
-    # text_rect_obj.center = (400, 300)
-    # screen.blit(text_surface_obj, text_rect_obj)
-    # global start_button
-    # start_button = text_rect_obj.center
-    #
-    # font_obj = pygame.font.SysFont('comicsans.ttf', 40)
-    # text_surface_obj = font_obj.render(" Dukenyure ", False, WHITE, BLACK)
-    # text_rect_obj = text_surface_obj.get_rect()
-    # text_rect_obj.center = (400, 268)
-    # screen.blit(text_surface_obj, text_rect_obj)
-    # global gukenyura_button
-    # gukenyura_button = text_rect_obj.center
-    #
-    # font_obj = pygame.font.SysFont('comicsans.ttf', 40)
-    # text_surface_obj = font_obj.render(" Ingene bakina ", False, WHITE, BLACK)
-    # text_rect_obj = text_surface_obj.get_rect()
-    # text_rect_obj.center = (400, 333)
-    # screen.blit(text_surface_obj, text_rect_obj)
-    # global help_button
-    # help_button = text_rect_obj.center
 
-    screen.blit(get_image(dukine_button_unclicked_path), (225, 185))
+    if(play):
+        screen.blit(get_image(dukine_button_clicked_path), (225, 185))
+    else:
+        screen.blit(get_image(dukine_button_unclicked_path), (225, 185))
     global start_button
     start_button = [225,185]
-    screen.blit(get_image(dukenyure_button_unclicked_path), (225, 265))
+    if(set):
+        screen.blit(get_image(dukenyure_button_clicked_path), (225, 265))
+    else:
+        screen.blit(get_image(dukenyure_button_unclicked_path), (225, 265))
     global gukenyura_button
     gukenyura_button = [225, 265]
+
     screen.blit(get_image(ingeneBakina_button_unclicked_path), (225, 345))
     global help_button
     help_button = [225, 345]
 
+    if (lang == 2):
+        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_path), (75, 105)), (50, 30))
+        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (74,35)), (50,30))
+        for i in range(2):
+            if(not languages[i] == config_language):
+                screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(languages[i])), (38, 25)), (56, 68 + i * 35 ))
+    elif(lang == 1):
+        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (74, 35)), (50, 30))
+    else:
+        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_unclicked_path), (74, 35)),
+                    (50, 30))
+
+    global language_button
+    language_button = [50, 30]
+    screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(config_language)), (38,25)), (56,35))
+    # pygame.transform.smoothscale(get_image(getpath(self.intoke)), (105, 161))
 
     pygame.display.flip()
 
@@ -251,6 +292,10 @@ def game_coordinates_to_hole(x, y):
             return [4,0]
         elif (x >= gukenyura_button[0] and x <= gukenyura_button[0] + 350 and y >= gukenyura_button[1] and y <= gukenyura_button[1] + 69  ):
             return [5,0]
+
+        elif (x >= language_button[0] and x <= language_button[0] + 74 and y >= language_button[1] and y <= language_button[1] + 35  ):
+            return [20,0]
+        # (74, 35)
         else:
             return[0,0]
 
@@ -496,6 +541,16 @@ def player_display():
         screen.blit(text_surface_obj, text_rect_obj)
 
 pygame.display.set_caption("URUBUGU")
+
+
+
+
+
+
+
+
+
+
 def main():
     # Loop until the user clicks the close button.
     # done = False
@@ -582,10 +637,12 @@ def main():
                         elif(player == 4):
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
-                                screen.blit(get_image(dukine_button_clicked_path), (225, 185))
-                                screen.blit(get_image(dukenyure_button_unclicked_path), (225, 265))
-                                screen.blit(get_image(ingeneBakina_button_unclicked_path), (225, 345))
-
+                                tmp_pos = pygame.mouse.get_pos();
+                                if (tmp_pos[0] >= start_button[0] and tmp_pos[0] <= start_button[0] + 350 and
+                                        tmp_pos[1] >= start_button[1] and tmp_pos[1] <= start_button[1] + 69):
+                                    draw_menu(play=1)
+                                else:
+                                    draw_menu()
 
                                 pygame.display.flip()
                                 pygame.event.pump()
@@ -604,10 +661,12 @@ def main():
                         elif(player == 5):
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
-                                screen.blit(get_image(dukine_button_unclicked_path), (225, 185))
-                                screen.blit(get_image(dukenyure_button_clicked_path), (225, 265))
-                                screen.blit(get_image(ingeneBakina_button_unclicked_path), (225, 345))
-
+                                tmp_pos = pygame.mouse.get_pos();
+                                if (tmp_pos[0] >= gukenyura_button[0] and tmp_pos[0] <= gukenyura_button[0] + 350 and
+                                        tmp_pos[1] >= gukenyura_button[1] and tmp_pos[1] <= gukenyura_button[1] + 69):
+                                    draw_menu(set=1)
+                                else:
+                                    draw_menu()
 
                                 pygame.display.flip()
                                 pygame.event.pump()
@@ -624,8 +683,108 @@ def main():
                                             draw_gukenyura_buttons()
                                 clock.tick(60)
 
+                        elif (player == 20):
+                            while not event.type == pygame.MOUSEBUTTONUP:
+                                screen.fill(WHITE)
+                                tmp_pos = pygame.mouse.get_pos();
+                                if (tmp_pos[0] >= language_button[0] and tmp_pos[0] <= language_button[0] + 74
+                                        and tmp_pos[1] >= language_button[1] and tmp_pos[1] <= language_button[1] + 35):
+                                    draw_menu(lang=1)
+                                else:
+                                    draw_menu()
+                                # pygame.display.flip()
+                                pygame.event.pump()
+                                for event in pygame.event.get():
+                                    if event.type == pygame.QUIT:
+                                        done = True
+                                        # done = done or board.game_over()
+                                    elif event.type == pygame.MOUSEBUTTONUP:
+                                        tmp_pos = pygame.mouse.get_pos()
+                                        if (tmp_pos[0] >= language_button[0] and tmp_pos[0] <= language_button[0] + 74
+                                                and tmp_pos[1] >= language_button[1] and tmp_pos[1] <= language_button[1] + 35  ):
+                                                draw_menu(lang=2)
+                                                temp_done = False
+                                                while (not temp_done):
+                                                    pos = pygame.mouse.get_pos()
 
-                            # board.choose_board(board.BOARD_gukenyura)
+                                                    # print( pos )
+                                                    if ((pos[0]>= 50 and pos[0] < 125) and (pos[1]>= 66 and pos[1] < 101)):
+                                                        # draw_menu(lang=2)
+                                                        screen.blit(pygame.transform.smoothscale(get_image(selection_flag_path),
+                                                            (70, 34)), (52, 63))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[0])), (38, 25)),
+                                                                    (56, 68 + 0 * 35))
+
+                                                        screen.blit(
+                                                            pygame.transform.smoothscale(
+                                                                get_image(selection_flag_path2_white),
+                                                                (70, 34)), (52, 99))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[1])), (38, 25)),
+                                                            (56, 68 + 35))
+
+                                                        pygame.display.flip()
+
+                                                    elif ((pos[0] >= 50 and pos[0] < 125) and (pos[1] >= 102 and pos[1] < 137)):
+                                                        # draw_menu(lang=2)
+                                                        screen.blit(
+                                                            pygame.transform.smoothscale(get_image(selection_flag_path_white),
+                                                                                         (70, 34)), (52, 63))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[0])), (38, 25)),
+                                                            (56, 68 + 0 * 35))
+
+                                                        screen.blit(
+                                                            pygame.transform.smoothscale(get_image(selection_flag_path2),
+                                                                                         (70, 34)), (52, 99))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[1])), (38, 25)),
+                                                            (56, 68 + 35))
+                                                        pygame.display.flip()
+
+                                                    else:
+                                                        draw_menu(lang=2)
+
+                                                    for event in pygame.event.get():
+                                                        if event.type == pygame.QUIT:
+                                                            # temp_done = True
+                                                            pygame.quit()
+                                                            pass
+                                                        elif event.type == pygame.MOUSEBUTTONDOWN:
+                                                            pos = pygame.mouse.get_pos()
+                                                            if (pos[0]>= 50 and pos[0] < 125) and (pos[1]>= 66 and pos[1] < 101):
+                                                                dummy_language = languages[0]
+                                                                change_language(dummy_language)
+                                                                temp_done =True
+
+                                                            elif (pos[0] >= 50 and pos[0] < 125) and (pos[1] >= 102 and pos[1] < 137):
+                                                                dummy_language = languages[1]
+                                                                change_language(dummy_language)
+                                                                temp_done = True
+                                                            else:
+                                                            # elif (pos[0] >= language_button[0] and pos[0] <=
+                                                            #         language_button[0] + 74
+                                                            #         and pos[1] >= language_button[1] and pos[1]
+                                                            #       <= language_button[1] + 35):
+                                                                temp_done= True
+                                                    clock.tick(20)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                clock.tick(60)
                         elif (player == 6):
                             change_state(0)
                         elif (player == 7):

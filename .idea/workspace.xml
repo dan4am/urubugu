@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd5aca37-0f33-4257-9c8a-65b68e48c840" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/buttons.pptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/dukenyure_button_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/dukenyure_button_unclicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/dukine_button_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/dukine_button_unclicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/ingeneBakina_button_cliked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/ingeneBakina_button_uncliked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/kinanIMachine_button_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/kinanIMachine_button_unclicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/picture/dukenyure_button_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/picture/dukenyure_button_unclicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/picture/dukine_button_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/picture/dukine_button_unclicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/picture/ingeneBakina_button_cliked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/picture/ingeneBakina_button_uncliked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/picture/kinanIMachine_button_clicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/picture/kinanIMachine_button_unclicked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/urubugu_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/urubugu_gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610774293915</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="optimisation : updated menu appereance">
+      <created>1616461182470</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616461182470</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,33 +313,34 @@
     <MESSAGE value="bug correction : play_AI bug corrected" />
     <MESSAGE value="optimisation : cropped beads images&#10;             + added paper on AI" />
     <MESSAGE value="optimisation : cropped beads images&#10;             + added paper on AI for games" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimisation : cropped beads images&#10;             + added paper on AI for games" />
+    <MESSAGE value="optimisation : updated menu appereance" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimisation : updated menu appereance" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="395" y="0" key="CommitChangelistDialog2" timestamp="1610774289454">
+    <state x="395" y="0" key="CommitChangelistDialog2" timestamp="1616461179470">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1610774289454" />
+    <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616461179470" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1610774339057">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1610774339057" />
-    <state width="1515" height="152" key="GridCell.Tab.0.bottom" timestamp="1616461028650">
+    <state width="1515" height="205" key="GridCell.Tab.0.bottom" timestamp="1616545350160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="152" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616461028650" />
-    <state width="1515" height="152" key="GridCell.Tab.0.center" timestamp="1616461028650">
+    <state width="1515" height="205" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616545350160" />
+    <state width="1515" height="205" key="GridCell.Tab.0.center" timestamp="1616545350160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="152" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616461028650" />
-    <state width="1515" height="152" key="GridCell.Tab.0.left" timestamp="1616461028650">
+    <state width="1515" height="205" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616545350160" />
+    <state width="1515" height="205" key="GridCell.Tab.0.left" timestamp="1616545350160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="152" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616461028650" />
-    <state width="1515" height="152" key="GridCell.Tab.0.right" timestamp="1616461028650">
+    <state width="1515" height="205" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616545350160" />
+    <state width="1515" height="205" key="GridCell.Tab.0.right" timestamp="1616545350160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="152" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616461028650" />
+    <state width="1515" height="205" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616545350160" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1610629609332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -372,10 +361,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="330" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616454992420" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610774314094">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616461190431">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610774314094" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616461190431" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1610774339057">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
