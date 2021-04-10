@@ -13,16 +13,16 @@ restart_path = "compressed_pictures1/restart_button.png"
 done_path = "compressed_pictures1/done.png"
 player2_path = "compressed_pictures1/player2.png"
 default_path = "compressed_pictures1/default.png"
-
+design = "test_design2/"
 config_language = "bi"
 languages = ["fr", "en"]
-dukenyure_button_unclicked_path = "picture/dukenyure_button_unclicked.png"
-dukenyure_button_clicked_path = "picture/dukenyure_button_clicked.png"
-dukenyure_button_clicked_path = "picture/dukenyure_button_clicked.png"
-dukine_button_unclicked_path = "picture/dukine_button_unclicked.png"
-dukine_button_clicked_path = "picture/dukine_button_clicked.png"
-ingeneBakina_button_unclicked_path = "picture/ingeneBakina_button_uncliked.png"
-ingeneBakina_button_clicked_path = "picture/ingeneBakina_button_cliked.png"
+dukenyure_button_unclicked_path = "picture/"+design+"bi/dukenyure_button_unclicked.png"
+dukenyure_button_clicked_path = "picture/"+design+"bi/dukenyure_button_clicked.png"
+dukenyure_button_clicked_path = "picture/"+design+"bi/dukenyure_button_clicked.png"
+dukine_button_unclicked_path = "picture/"+design+"bi/dukine_button_unclicked.png"
+dukine_button_clicked_path = "picture/"+design+"bi/dukine_button_clicked.png"
+ingeneBakina_button_unclicked_path = "picture/"+design+"bi/ingeneBakina_button_uncliked.png"
+ingeneBakina_button_clicked_path = "picture/"+design+"bi/ingeneBakina_button_cliked.png"
 
 #language button
 
@@ -38,13 +38,14 @@ def get_flag_path(flag):
     else:
         return en_flag_path
 
-language_drop_down_button_clicked_path = "picture/language_drop_down_menu_clicked.png"
-language_drop_down_button_unclicked_path = "picture/language_drop_down_menu_unclicked.png"
+language_drop_down_button_clicked_path = "picture/"+"language_drop_down_menu_clicked.png"
+language_drop_down_button_unclicked_path = "picture/"+"language_drop_down_menu_unclicked.png"
 language_drop_down_path = "picture/language_drop_down.png"
 selection_flag_path = "picture/selection_of_flag.png"
 selection_flag_path_white = "picture/selection_of_flag_white.png"
 selection_flag_path2 = "picture/selection_of_flag2.png"
 selection_flag_path2_white = "picture/selection_of_flag2_white.png"
+background_click_path = "picture/background_click.png"
 
 
 def getpath(beads):
@@ -115,13 +116,46 @@ circle_filled=pygame.Surface(size)
 place =[int((800-BOARD_LENGTH) / 2 ), int((600 - BOARD_WIDTH) / 2), BOARD_LENGTH, BOARD_WIDTH]
 
 def change_language(language):
-    global config_language
+    global config_language, dukenyure_button_clicked_path, dukenyure_button_unclicked_path, dukine_button_clicked_path, \
+        dukine_button_unclicked_path, ingeneBakina_button_unclicked_path, ingeneBakina_button_clicked_path
     if language == languages[0]:
         languages[0] = config_language
         config_language = language
     else:
         languages[1] = config_language
         config_language = language
+
+
+    if language == "bi":
+
+        dukenyure_button_unclicked_path = "picture/"+design+"bi/dukenyure_button_unclicked.png"
+        dukenyure_button_clicked_path = "picture/"+design+"bi/dukenyure_button_clicked.png"
+        dukine_button_unclicked_path = "picture/"+design+"bi/dukine_button_unclicked.png"
+        dukine_button_clicked_path = "picture/"+design+"bi/dukine_button_clicked.png"
+        ingeneBakina_button_clicked_path = "picture/"+design+"bi/ingeneBakina_button_cliked.png"
+        ingeneBakina_button_unclicked_path = "picture/"+design+"bi/ingeneBakina_button_uncliked.png"
+        # pass
+
+
+
+    if language == "fr":
+        # pass
+        dukenyure_button_unclicked_path = "picture/"+design+"fr/dukenyure_button_unclicked.png"
+        dukenyure_button_clicked_path = "picture/"+design+"fr/dukenyure_button_clicked.png"
+        dukine_button_unclicked_path = "picture/"+design+"fr/dukine_button_unclicked.png"
+        dukine_button_clicked_path = "picture/"+design+"fr/dukine_button_clicked.png"
+        ingeneBakina_button_clicked_path = "picture/"+design+"fr/ingeneBakina_button_cliked.png"
+        ingeneBakina_button_unclicked_path = "picture/"+design+"fr/ingeneBakina_button_uncliked.png"
+
+
+    if language == "en":
+
+        dukenyure_button_unclicked_path = "picture/"+design+"en/dukenyure_button_unclicked.png"
+        dukenyure_button_clicked_path="picture/"+design+"en/dukenyure_button_clicked.png"
+        dukine_button_unclicked_path="picture/"+design+"en/dukine_button_unclicked.png"
+        dukine_button_clicked_path = "picture/"+design+"en/dukine_button_clicked.png"
+        ingeneBakina_button_clicked_path="picture/"+design+"en/ingeneBakina_button_cliked.png"
+        ingeneBakina_button_unclicked_path="picture/"+design+"en/ingeneBakina_button_uncliked.png"
 
 
 
@@ -249,23 +283,24 @@ def draw_menu(play = None, set = None, lang = None):
     screen.fill(WHITE)
 
     if(play):
-        screen.blit(get_image(dukine_button_clicked_path), (225, 185))
+        screen.blit(pygame.transform.smoothscale(get_image(dukine_button_clicked_path), (350,69)), (225, 185))
     else:
-        screen.blit(get_image(dukine_button_unclicked_path), (225, 185))
+        screen.blit(pygame.transform.smoothscale(get_image(dukine_button_unclicked_path), (350,69)), (225, 185))
     global start_button
     start_button = [225,185]
     if(set):
-        screen.blit(get_image(dukenyure_button_clicked_path), (225, 265))
+        screen.blit(pygame.transform.smoothscale(get_image(dukenyure_button_clicked_path), (350,69)), (225, 265))
     else:
-        screen.blit(get_image(dukenyure_button_unclicked_path), (225, 265))
+        screen.blit(pygame.transform.smoothscale(get_image(dukenyure_button_unclicked_path), (350, 69)), (225, 265))
     global gukenyura_button
     gukenyura_button = [225, 265]
 
-    screen.blit(get_image(ingeneBakina_button_unclicked_path), (225, 345))
+    screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_unclicked_path),(350,69)), (225, 345))
     global help_button
     help_button = [225, 345]
 
     if (lang == 2):
+        screen.blit(get_image(background_click_path), (0, 0))
         screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_path), (75, 105)), (50, 30))
         screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (74,35)), (50,30))
         for i in range(2):
