@@ -13,22 +13,23 @@ restart_path = "compressed_pictures1/restart_button.png"
 done_path = "compressed_pictures1/done.png"
 player2_path = "compressed_pictures1/player2.png"
 default_path = "compressed_pictures1/default.png"
-design = "test_design2/"
+design = "design_2/"
+# design = "design_1/"
 config_language = "bi"
 languages = ["fr", "en"]
-dukenyure_button_unclicked_path = "picture/"+design+"bi/dukenyure_button_unclicked.png"
-dukenyure_button_clicked_path = "picture/"+design+"bi/dukenyure_button_clicked.png"
-dukenyure_button_clicked_path = "picture/"+design+"bi/dukenyure_button_clicked.png"
-dukine_button_unclicked_path = "picture/"+design+"bi/dukine_button_unclicked.png"
-dukine_button_clicked_path = "picture/"+design+"bi/dukine_button_clicked.png"
-ingeneBakina_button_unclicked_path = "picture/"+design+"bi/ingeneBakina_button_uncliked.png"
-ingeneBakina_button_clicked_path = "picture/"+design+"bi/ingeneBakina_button_cliked.png"
+dukenyure_button_unclicked_path = "buttons/"+design+"bi/dukenyure_button_unclicked.png"
+dukenyure_button_clicked_path = "buttons/"+design+"bi/dukenyure_button_clicked.png"
+dukenyure_button_clicked_path = "buttons/"+design+"bi/dukenyure_button_clicked.png"
+dukine_button_unclicked_path = "buttons/"+design+"bi/dukine_button_unclicked.png"
+dukine_button_clicked_path = "buttons/"+design+"bi/dukine_button_clicked.png"
+ingeneBakina_button_unclicked_path = "buttons/"+design+"bi/ingeneBakina_button_uncliked.png"
+ingeneBakina_button_clicked_path = "buttons/"+design+"bi/ingeneBakina_button_cliked.png"
 
 #language button
 
-bi_flag_path = "picture/flag_bi.png"
-fr_flag_path = "picture/flag_fr.png"
-en_flag_path = "picture/flag_en.png"
+bi_flag_path = "buttons/flag_bi.png"
+fr_flag_path = "buttons/flag_fr.png"
+en_flag_path = "buttons/flag_en.png"
 
 def get_flag_path(flag):
     if(flag == "bi" ):
@@ -38,14 +39,14 @@ def get_flag_path(flag):
     else:
         return en_flag_path
 
-language_drop_down_button_clicked_path = "picture/"+"language_drop_down_menu_clicked.png"
-language_drop_down_button_unclicked_path = "picture/"+"language_drop_down_menu_unclicked.png"
-language_drop_down_path = "picture/language_drop_down.png"
-selection_flag_path = "picture/selection_of_flag.png"
-selection_flag_path_white = "picture/selection_of_flag_white.png"
-selection_flag_path2 = "picture/selection_of_flag2.png"
-selection_flag_path2_white = "picture/selection_of_flag2_white.png"
-background_click_path = "picture/background_click.png"
+language_drop_down_button_clicked_path = "buttons/"+"language_drop_down_menu_clicked.png"
+language_drop_down_button_unclicked_path = "buttons/"+"language_drop_down_menu_unclicked.png"
+language_drop_down_path = "buttons/language_drop_down.png"
+selection_flag_path = "buttons/selection_of_flag.png"
+selection_flag_path_white = "buttons/selection_of_flag_white.png"
+selection_flag_path2 = "buttons/selection_of_flag2.png"
+selection_flag_path2_white = "buttons/selection_of_flag2_white.png"
+background_click_path = "buttons/background_click.png"
 
 
 def getpath(beads):
@@ -128,34 +129,34 @@ def change_language(language):
 
     if language == "bi":
 
-        dukenyure_button_unclicked_path = "picture/"+design+"bi/dukenyure_button_unclicked.png"
-        dukenyure_button_clicked_path = "picture/"+design+"bi/dukenyure_button_clicked.png"
-        dukine_button_unclicked_path = "picture/"+design+"bi/dukine_button_unclicked.png"
-        dukine_button_clicked_path = "picture/"+design+"bi/dukine_button_clicked.png"
-        ingeneBakina_button_clicked_path = "picture/"+design+"bi/ingeneBakina_button_cliked.png"
-        ingeneBakina_button_unclicked_path = "picture/"+design+"bi/ingeneBakina_button_uncliked.png"
+        dukenyure_button_unclicked_path = "buttons/"+design+"bi/dukenyure_button_unclicked.png"
+        dukenyure_button_clicked_path = "buttons/"+design+"bi/dukenyure_button_clicked.png"
+        dukine_button_unclicked_path = "buttons/"+design+"bi/dukine_button_unclicked.png"
+        dukine_button_clicked_path = "buttons/"+design+"bi/dukine_button_clicked.png"
+        ingeneBakina_button_clicked_path = "buttons/"+design+"bi/ingeneBakina_button_cliked.png"
+        ingeneBakina_button_unclicked_path = "buttons/"+design+"bi/ingeneBakina_button_uncliked.png"
         # pass
 
 
 
     if language == "fr":
         # pass
-        dukenyure_button_unclicked_path = "picture/"+design+"fr/dukenyure_button_unclicked.png"
-        dukenyure_button_clicked_path = "picture/"+design+"fr/dukenyure_button_clicked.png"
-        dukine_button_unclicked_path = "picture/"+design+"fr/dukine_button_unclicked.png"
-        dukine_button_clicked_path = "picture/"+design+"fr/dukine_button_clicked.png"
-        ingeneBakina_button_clicked_path = "picture/"+design+"fr/ingeneBakina_button_cliked.png"
-        ingeneBakina_button_unclicked_path = "picture/"+design+"fr/ingeneBakina_button_uncliked.png"
+        dukenyure_button_unclicked_path = "buttons/"+design+"fr/dukenyure_button_unclicked.png"
+        dukenyure_button_clicked_path = "buttons/"+design+"fr/dukenyure_button_clicked.png"
+        dukine_button_unclicked_path = "buttons/"+design+"fr/dukine_button_unclicked.png"
+        dukine_button_clicked_path = "buttons/"+design+"fr/dukine_button_clicked.png"
+        ingeneBakina_button_clicked_path = "buttons/"+design+"fr/ingeneBakina_button_cliked.png"
+        ingeneBakina_button_unclicked_path = "buttons/"+design+"fr/ingeneBakina_button_uncliked.png"
 
 
     if language == "en":
 
-        dukenyure_button_unclicked_path = "picture/"+design+"en/dukenyure_button_unclicked.png"
-        dukenyure_button_clicked_path="picture/"+design+"en/dukenyure_button_clicked.png"
-        dukine_button_unclicked_path="picture/"+design+"en/dukine_button_unclicked.png"
-        dukine_button_clicked_path = "picture/"+design+"en/dukine_button_clicked.png"
-        ingeneBakina_button_clicked_path="picture/"+design+"en/ingeneBakina_button_cliked.png"
-        ingeneBakina_button_unclicked_path="picture/"+design+"en/ingeneBakina_button_uncliked.png"
+        dukenyure_button_unclicked_path = "buttons/"+design+"en/dukenyure_button_unclicked.png"
+        dukenyure_button_clicked_path="buttons/"+design+"en/dukenyure_button_clicked.png"
+        dukine_button_unclicked_path="buttons/"+design+"en/dukine_button_unclicked.png"
+        dukine_button_clicked_path = "buttons/"+design+"en/dukine_button_clicked.png"
+        ingeneBakina_button_clicked_path="buttons/"+design+"en/ingeneBakina_button_cliked.png"
+        ingeneBakina_button_unclicked_path="buttons/"+design+"en/ingeneBakina_button_uncliked.png"
 
 
 
