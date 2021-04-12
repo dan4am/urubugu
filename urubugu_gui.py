@@ -60,6 +60,54 @@ def get_flag_path(flag):
 language_drop_down_button_clicked_path = "buttons/"+design+"language_drop_down_menu_clicked.png"
 language_drop_down_button_unclicked_path = "buttons/"+design+"language_drop_down_menu_unclicked.png"
 language_drop_down_path = "buttons/"+design+"language_drop_down.png"
+
+def animate_drop_down_button(clock):
+    time = 0
+    destination = 0
+
+
+    vitesse = 3
+    acceleration = 0.528
+    screen.blit(get_image(background_click_path), (0, 0))
+    while (not destination >= 70):
+
+        destination = int(-0.5 * acceleration * time * time) + (vitesse * time) + destination
+        screen.blit(
+
+            pygame.transform.smoothscale(get_image(language_drop_down_path),
+                                         (75, 35+destination)), (50, 30 ))
+
+        for i in range(2):
+            if (not languages[i] == config_language):
+                ##ANIMATION ALTERNATIVE
+
+                # screen.blit(pygame.transform.smoothscale(
+                #     get_image(get_flag_path(languages[i])), (38, int(destination* (5/14)))),
+                #     (56, 68 + i * 35 ))
+
+                screen.blit(pygame.transform.smoothscale(
+                    get_image(get_flag_path(languages[i])), (38, 25)),
+                    (56, 68 + i * 35 - 70 + destination))
+
+        path = "buttons/design_2/masquer scroll down.png"
+        screen.blit(pygame.transform.smoothscale(
+            get_image(path), (75, 30)),
+            (50, 0))
+
+
+        screen.blit(pygame.transform.smoothscale(
+            get_image(language_drop_down_button_clicked_path), (75, 35)),
+            (50, 30))
+
+        screen.blit(pygame.transform.smoothscale(
+            get_image(get_flag_path(config_language)), (38, 25)), (56, 35))
+
+        pygame.display.flip()
+        clock.tick(60)
+        time += 1
+
+
+
 selection_flag_path = "buttons/"+design+"selection_of_flag.png"
 selection_flag_path_white = "buttons/"+design+"selection_of_flag_white.png"
 selection_flag_path2 = "buttons/"+design+"selection_of_flag2.png"
@@ -113,7 +161,7 @@ language_button=[0,0]
 language_button_choice_1=[0,0]
 language_button_choice_2=[0,0]
 done = False
-menu_game_gameover = 0#menu = 0, game = 1, gameover=2
+menu_game_gameover = 0#menu = 0, game = 1, gameover=2, gukenyura = 3
 GUKENYURA=3
 MENU=0
 REPLAY=2
@@ -144,44 +192,6 @@ def change_language(language):
     else:
         languages[1] = config_language
         config_language = language
-
-
-    # if language == "bi":
-    #
-    #     dukenyure_button_unclicked_path = "buttons/"+design+"bi/dukenyure_button_unclicked.png"
-    #     dukenyure_button_clicked_path = "buttons/"+design+"bi/dukenyure_button_clicked.png"
-    #     dukine_button_unclicked_path = "buttons/"+design+"bi/dukine_button_unclicked.png"
-    #     dukine_button_clicked_path = "buttons/"+design+"bi/dukine_button_clicked.png"
-    #     ingeneBakina_button_clicked_path = "buttons/"+design+"bi/ingeneBakina_button_cliked.png"
-    #     ingeneBakina_button_unclicked_path = "buttons/"+design+"bi/ingeneBakina_button_uncliked.png"
-    #     default_clicked_path ="buttons/design_1/bi/default_button_clicked.png"
-    #     default_unclicked_path = "buttons/design_1/bi/default_button_unclicked.png"
-    #     # pass
-    #
-    #
-    #
-    # if language == "fr":
-    #     # pass
-    #     dukenyure_button_unclicked_path = "buttons/"+design+"fr/dukenyure_button_unclicked.png"
-    #     dukenyure_button_clicked_path = "buttons/"+design+"fr/dukenyure_button_clicked.png"
-    #     dukine_button_unclicked_path = "buttons/"+design+"fr/dukine_button_unclicked.png"
-    #     dukine_button_clicked_path = "buttons/"+design+"fr/dukine_button_clicked.png"
-    #     ingeneBakina_button_clicked_path = "buttons/"+design+"fr/ingeneBakina_button_cliked.png"
-    #     ingeneBakina_button_unclicked_path = "buttons/"+design+"fr/ingeneBakina_button_uncliked.png"
-    #     default_clicked_path = "buttons/"+design+"/fr/default_button_clicked.png"
-    #     default_unclicked_path = "buttons/"+design+"/fr/default_button_unclicked.png"
-    #
-    #
-    # if language == "en":
-    #
-    #     dukenyure_button_unclicked_path = "buttons/"+design+"en/dukenyure_button_unclicked.png"
-    #     dukenyure_button_clicked_path="buttons/"+design+"en/dukenyure_button_clicked.png"
-    #     dukine_button_unclicked_path="buttons/"+design+"en/dukine_button_unclicked.png"
-    #     dukine_button_clicked_path = "buttons/"+design+"en/dukine_button_clicked.png"
-    #     ingeneBakina_button_clicked_path="buttons/"+design+"en/ingeneBakina_button_cliked.png"
-    #     ingeneBakina_button_unclicked_path="buttons/"+design+"en/ingeneBakina_button_uncliked.png"
-    #     default_clicked_path = "buttons/"+design+"/en/default_button_clicked.png"
-    #     default_unclicked_path = "buttons/"+design+"/en/default_button_unclicked.png"
 
     dukenyure_button_unclicked_path = "buttons/"+design+"/"+ language +"/dukenyure_button_unclicked.png"
     dukenyure_button_clicked_path="buttons/"+design+"/"+ language +"/dukenyure_button_clicked.png"
@@ -354,14 +364,15 @@ def draw_menu(play = None, set = None, lang = None):
     if (lang == 2):
         screen.blit(get_image(background_click_path), (0, 0))
         screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_path), (75, 105)), (50, 30))
-        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (74,35)), (50,30))
+        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (75,35)), (50,30))
+
         for i in range(2):
             if(not languages[i] == config_language):
                 screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(languages[i])), (38, 25)), (56, 68 + i * 35 ))
     elif(lang == 1):
-        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (74, 35)), (50, 30))
+        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (75, 35)), (50, 30))
     else:
-        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_unclicked_path), (74, 35)),
+        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_unclicked_path), (75, 35)),
                     (50, 30))
 
     global language_button
@@ -789,111 +800,113 @@ def main():
                                         tmp_pos = pygame.mouse.get_pos()
                                         if (tmp_pos[0] >= language_button[0] and tmp_pos[0] <= language_button[0] + 74
                                                 and tmp_pos[1] >= language_button[1] and tmp_pos[1] <= language_button[1] + 35  ):
-                                                draw_menu(lang=2)
-                                                temp_done = False
-                                                while (not temp_done):
-                                                    pos = pygame.mouse.get_pos()
+                                            animate_drop_down_button(clock)
+                                            draw_menu(lang=2)
+                                            temp_done = False
+                                            while (not temp_done):
+                                                pos = pygame.mouse.get_pos()
 
-                                                    # print( pos )
-                                                    if ((pos[0]>= 50 and pos[0] < 125) and (pos[1]>= 66 and pos[1] < 101)):
-                                                        # draw_menu(lang=2)
-                                                        if(design == "design_2/"):
-                                                            screen.blit(pygame.transform.smoothscale(get_image(selection_flag_path),
-                                                                (69, 32)), (53, 65))
-                                                            screen.blit(pygame.transform.smoothscale(
-                                                                get_image(get_flag_path(languages[0])), (38, 25)),
-                                                                        (56, 68 + 0 * 35))
+                                                # print( pos )
+                                                if ((pos[0]>= 50 and pos[0] < 125) and (pos[1]>= 66 and pos[1] < 101)):
+                                                    # draw_menu(lang=2)
+                                                    if(design == "design_2/"):
+                                                        screen.blit(pygame.transform.smoothscale(get_image(selection_flag_path),
+                                                            (69, 32)), (53, 65))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[0])), (38, 25)),
+                                                                    (56, 68 + 0 * 35))
 
-                                                            screen.blit(
-                                                                pygame.transform.smoothscale(
-                                                                    get_image(selection_flag_path2_white),
-                                                                    (69, 32)), (53, 99))
-                                                            screen.blit(pygame.transform.smoothscale(
-                                                                get_image(get_flag_path(languages[1])), (38, 25)),
-                                                                (56, 68 + 35))
+                                                        screen.blit(
+                                                            pygame.transform.smoothscale(
+                                                                get_image(selection_flag_path2_white),
+                                                                (69, 32)), (53, 99))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[1])), (38, 25)),
+                                                            (56, 68 + 35))
 
-                                                            pygame.display.flip()
+                                                        pygame.display.flip()
 
-                                                        elif (design == "design_1/"):
-                                                            screen.blit(pygame.transform.smoothscale(
-                                                                get_image(selection_flag_path),
-                                                                (69, 35)), (52, 62))
-                                                            screen.blit(pygame.transform.smoothscale(
-                                                                get_image(get_flag_path(languages[0])), (38, 25)),
-                                                                (56, 68 + 0 * 35))
+                                                    elif (design == "design_1/"):
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(selection_flag_path),
+                                                            (70, 35)), (52, 62))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[0])), (38, 25)),
+                                                            (56, 68 + 0 * 35))
 
-                                                            screen.blit(
-                                                                pygame.transform.smoothscale(
-                                                                    get_image(selection_flag_path2_white),
-                                                                    (68, 32)), (53, 100))
-                                                            screen.blit(pygame.transform.smoothscale(
-                                                                get_image(get_flag_path(languages[1])), (38, 25)),
-                                                                (56, 68 + 35))
+                                                        screen.blit(
+                                                            pygame.transform.smoothscale(
+                                                                get_image(selection_flag_path2_white),
+                                                                (69, 32)), (53, 100))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[1])), (38, 25)),
+                                                            (56, 68 + 35))
 
-                                                            pygame.display.flip()
+                                                        pygame.display.flip()
 
-                                                    elif ((pos[0] >= 50 and pos[0] < 125) and (pos[1] >= 102 and pos[1] < 137)):
-                                                        # draw_menu(lang=2)
+                                                elif ((pos[0] >= 50 and pos[0] < 125) and (pos[1] >= 102 and pos[1] < 137)):
+                                                    # draw_menu(lang=2)
 
-                                                        if (design == "design_2/"):
-                                                            screen.blit(
-                                                                pygame.transform.smoothscale(get_image(selection_flag_path_white),
-                                                                                             (69, 32)), (53, 65))
-                                                            screen.blit(pygame.transform.smoothscale(
-                                                                get_image(get_flag_path(languages[0])), (38, 25)),
-                                                                (56, 68 + 0 * 35))
+                                                    if (design == "design_2/"):
+                                                        screen.blit(
+                                                            pygame.transform.smoothscale(get_image(selection_flag_path_white),
+                                                                                         (69, 32)), (53, 65))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[0])), (38, 25)),
+                                                            (56, 68 + 0 * 35))
 
-                                                            screen.blit(
-                                                                pygame.transform.smoothscale(get_image(selection_flag_path2),
-                                                                                             (69, 33)), (53, 99))
-                                                            screen.blit(pygame.transform.smoothscale(
-                                                                get_image(get_flag_path(languages[1])), (38, 25)),
-                                                                (56, 68 + 35))
-                                                            pygame.display.flip()
+                                                        screen.blit(
+                                                            pygame.transform.smoothscale(get_image(selection_flag_path2),
+                                                                                         (69, 33)), (53, 99))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[1])), (38, 25)),
+                                                            (56, 68 + 35))
+                                                        pygame.display.flip()
 
-                                                        elif (design == "design_1/"):
-                                                            screen.blit(
-                                                                pygame.transform.smoothscale(
-                                                                    get_image(selection_flag_path_white),
-                                                                    (69, 35)), (52, 62))
-                                                            screen.blit(pygame.transform.smoothscale(
-                                                                get_image(get_flag_path(languages[0])), (38, 25)),
-                                                                (56, 68 + 0 * 35))
+                                                    elif (design == "design_1/"):
+                                                        screen.blit(
+                                                            pygame.transform.smoothscale(
+                                                                get_image(selection_flag_path_white),
+                                                                (70, 35)), (52, 62))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[0])), (38, 25)),
+                                                            (56, 68 + 0 * 35))
 
-                                                            screen.blit(
-                                                                pygame.transform.smoothscale(
-                                                                    get_image(selection_flag_path2),
-                                                                    (68, 32)), (53, 100))
-                                                            screen.blit(pygame.transform.smoothscale(
-                                                                get_image(get_flag_path(languages[1])), (38, 25)),
-                                                                (56, 68 + 35))
-                                                            pygame.display.flip()
-                                                    else:
-                                                        draw_menu(lang=2)
+                                                        screen.blit(
+                                                            pygame.transform.smoothscale(
+                                                                get_image(selection_flag_path2),
+                                                                (69, 32)), (53, 100))
+                                                        screen.blit(pygame.transform.smoothscale(
+                                                            get_image(get_flag_path(languages[1])), (38, 25)),
+                                                            (56, 68 + 35))
+                                                        pygame.display.flip()
+                                                else:
+                                                    draw_menu(lang=2)
+                                                    # pass
 
-                                                    for event in pygame.event.get():
-                                                        if event.type == pygame.QUIT:
-                                                            # temp_done = True
-                                                            pygame.quit()
-                                                            pass
-                                                        elif event.type == pygame.MOUSEBUTTONDOWN:
-                                                            pos = pygame.mouse.get_pos()
-                                                            if (pos[0]>= 50 and pos[0] < 125) and (pos[1]>= 66 and pos[1] < 101):
-                                                                dummy_language = languages[0]
-                                                                change_language(dummy_language)
-                                                                temp_done =True
+                                                for event in pygame.event.get():
+                                                    if event.type == pygame.QUIT:
+                                                        # temp_done = True
+                                                        pygame.quit()
+                                                        pass
+                                                    elif event.type == pygame.MOUSEBUTTONDOWN:
+                                                        pos = pygame.mouse.get_pos()
+                                                        if (pos[0]>= 50 and pos[0] < 125) and (pos[1]>= 66 and pos[1] < 101):
+                                                            dummy_language = languages[0]
+                                                            change_language(dummy_language)
+                                                            temp_done =True
 
-                                                            elif (pos[0] >= 50 and pos[0] < 125) and (pos[1] >= 102 and pos[1] < 137):
-                                                                dummy_language = languages[1]
-                                                                change_language(dummy_language)
-                                                                temp_done = True
-                                                            else:
-                                                            # elif (pos[0] >= language_button[0] and pos[0] <=
-                                                            #         language_button[0] + 74
-                                                            #         and pos[1] >= language_button[1] and pos[1]
-                                                            #       <= language_button[1] + 35):
-                                                                temp_done= True
-                                                    clock.tick(20)
+                                                        elif (pos[0] >= 50 and pos[0] < 125) and (pos[1] >= 102 and pos[1] < 137):
+                                                            dummy_language = languages[1]
+                                                            change_language(dummy_language)
+                                                            temp_done = True
+                                                        else:
+                                                        # elif (pos[0] >= language_button[0] and pos[0] <=
+                                                        #         language_button[0] + 74
+                                                        #         and pos[1] >= language_button[1] and pos[1]
+                                                        #       <= language_button[1] + 35):
+                                                            temp_done= True
+                                                clock.tick(60)
 
 
 
