@@ -7,9 +7,24 @@ import artificial_intelligence
 
 
 _image_library = {}
-# design = "design_1/"
-design = "design_2/"
+
+
+config_language = "bi"
+languages = ["fr", "en"]
+design = "design_1/"
+# design = "design_2/"
 DATABASE = []
+
+####################
+# play state assets#
+####################
+
+player1_banner_path="buttons/"+design+"/bi/player1_banner.png"
+player2_banner_path="buttons/"+design+"/bi/player2_banner.png"
+back_button_clicked_path = "buttons/"+design+"/bi/back_button_clicked.png"
+back_button_unclicked_path = "buttons/"+design+"/bi/back_button_unclicked.png"
+hider_pannel_path = "buttons/design_1/hider_white.png"
+
 
 ###################
 # game-over assets#
@@ -33,8 +48,7 @@ default_clicked_path = "buttons/"+design+"/bi/default_button_clicked.png"
 # language assets#
 ##################
 
-config_language = "bi"
-languages = ["fr", "en"]
+
 dukenyure_button_unclicked_path = "buttons/"+design+"bi/dukenyure_button_unclicked.png"
 dukenyure_button_clicked_path = "buttons/"+design+"bi/dukenyure_button_clicked.png"
 dukenyure_button_clicked_path = "buttons/"+design+"bi/dukenyure_button_clicked.png"
@@ -185,7 +199,7 @@ place =[int((800-BOARD_LENGTH) / 2 ), int((600 - BOARD_WIDTH) / 2), BOARD_LENGTH
 def change_language(language):
     global config_language, dukenyure_button_clicked_path, dukenyure_button_unclicked_path, dukine_button_clicked_path, \
         dukine_button_unclicked_path, ingeneBakina_button_unclicked_path, ingeneBakina_button_clicked_path,\
-        default_clicked_path,default_unclicked_path
+        default_clicked_path,default_unclicked_path,back_button_unclicked_path,back_button_clicked_path,player1_banner_path,player2_banner_path
     if language == languages[0]:
         languages[0] = config_language
         config_language = language
@@ -201,6 +215,10 @@ def change_language(language):
     ingeneBakina_button_unclicked_path="buttons/"+design+"/"+ language +"/ingeneBakina_button_uncliked.png"
     default_clicked_path = "buttons/"+design+"/"+ language +"/default_button_clicked.png"
     default_unclicked_path = "buttons/"+design+"/"+ language +"/default_button_unclicked.png"
+    back_button_unclicked_path = "buttons/"+design+"/"+ language +"/back_button_unclicked.png"
+    back_button_clicked_path = "buttons/"+design+"/"+ language +"/back_button_clicked.png"
+    player1_banner_path="buttons/"+design+"/"+ language +"/player1_banner.png"
+    player2_banner_path="buttons/"+design+"/"+ language +"/player2_banner.png"
 
 
 def change_state(state):
@@ -252,7 +270,7 @@ def draw_slots():
                 pygame.draw.circle(screen, GREY, board_coordinates_to_screen_coordinates(line, row), SLOTS - 2, 1)
 
 
-def draw():
+def draw(back = None):
     pygame.event.pump()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -267,7 +285,10 @@ def draw():
     player_display()
     # screen.blit(get_image(restart_path), 300, 200)
     pygame.display.flip()
-    player_display()
+    if (back):
+        player_display(back = 1)
+    else:
+        player_display()
 
 def draw_end():
     screen.fill(BLACK)
@@ -459,7 +480,7 @@ def game_coordinates_to_hole(x, y):
                     result[1] = slot_temp
                     return result
 
-        elif (x >= back_button[0] - 60 and x <= back_button[0] + 60 and y >= back_button[1] - 20 and y <= back_button[1] + 20  ):
+        elif (x >= back_button[0] and x <= back_button[0] + 105 and y >= back_button[1] and y <= back_button[1] +  50 ):
             return [3,0]
         else:
             return [0,0]
@@ -616,27 +637,21 @@ def play(hole):
                 board.take_beads(current_hole, board.beads(current_hole))
         print(board.BOARD)
 
-def player_display():
-    # print(board.current_player)
-    font_obj = pygame.font.SysFont('comicsans.ttf', 40)
-    text_surface_obj = font_obj.render(" Back ", False, WHITE, BLACK)
-    text_rect_obj = text_surface_obj.get_rect()
-    text_rect_obj.center = (70, 550)
-    screen.blit(text_surface_obj, text_rect_obj)
+def player_display(back = None):
     global back_button
-    back_button = text_rect_obj.center
+    if(back):
+        screen.blit(pygame.transform.smoothscale(get_image(back_button_clicked_path), (105, 50)), (50, 510))
+        back_button = (50,510)
+    else:
+        screen.blit(pygame.transform.smoothscale(get_image(back_button_unclicked_path), (105, 50)), (50, 510))
+        back_button = (50, 510)
+
     if (board.current_player == 1):
-        font_obj = pygame.font.SysFont('comicsans.ttf', 40)
-        text_surface_obj = font_obj.render("Player one", False, WHITE, BLACK)
-        text_rect_obj = text_surface_obj.get_rect()
-        text_rect_obj.center = (642, 515)
-        screen.blit(text_surface_obj, text_rect_obj)
+
+        screen.blit(pygame.transform.smoothscale(get_image(player1_banner_path), (310, 63)), (447, 485))
     else :
-        font_obj = pygame.font.SysFont('comicsans.ttf', 40)
-        text_surface_obj = font_obj.render("Player two", False, BLACK, GREY)
-        text_rect_obj = text_surface_obj.get_rect()
-        text_rect_obj.center = (157, 85)
-        screen.blit(text_surface_obj, text_rect_obj)
+
+        screen.blit(pygame.transform.smoothscale(get_image(player2_banner_path), (310, 63)), (47, 55))
 
 pygame.display.set_caption("URUBUGU")
 
@@ -731,7 +746,40 @@ def main():
                                 # something to prevent the other player to play
                                 pass
                         elif(player == 3):
-                            board.back(board.back_Board)
+                            while not event.type == pygame.MOUSEBUTTONUP:
+                                tmp_pos = pygame.mouse.get_pos();
+                                if (tmp_pos[0] >= back_button[0] and tmp_pos[0] <= back_button[0] + 105
+                                        and tmp_pos[1] >= back_button[1] and tmp_pos[1] <= back_button[1] + 50):
+                                    screen.blit(
+                                        pygame.transform.smoothscale(get_image(hider_pannel_path), (105, 60)),
+                                        (50, 510))
+                                    screen.blit(
+                                        pygame.transform.smoothscale(get_image(back_button_clicked_path), (105, 50)),
+                                        (50, 510))
+                                    # draw(back=1)
+                                    pass
+                                else:
+                                    screen.blit(
+                                        pygame.transform.smoothscale(get_image(hider_pannel_path), (105, 60)),
+                                        (50, 510))
+
+                                    screen.blit(
+                                        pygame.transform.smoothscale(get_image(back_button_unclicked_path), (105, 50)),
+                                        (50, 510))
+                                    # draw()
+                                pygame.display.flip()
+                                pygame.event.pump()
+                                for event in pygame.event.get():
+                                    if event.type == pygame.QUIT:
+                                        pygame.quit()
+                                        # done = done or board.game_over()
+                                    elif event.type == pygame.MOUSEBUTTONUP:
+                                        tmp_pos = pygame.mouse.get_pos()
+                                        if (tmp_pos[0] >= back_button[0] and tmp_pos[0] <= back_button[0] + 105
+                                        and tmp_pos[1] >= back_button[1] and tmp_pos[1] <= back_button[1] + 50):
+                                            board.back(board.back_Board)
+
+
                         elif(player == 4):
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)

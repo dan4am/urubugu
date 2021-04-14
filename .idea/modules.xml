@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$USER_HOME$/Documents/GitHub/first-game/.idea/first-game.iml" filepath="$USER_HOME$/Documents/GitHub/first-game/.idea/first-game.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/urubugu.iml" filepath="$PROJECT_DIR$/.idea/urubugu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../urubugu-master/urubugu-master/.idea/urubugu.iml" filepath="$PROJECT_DIR$/../urubugu-master/urubugu-master/.idea/urubugu.iml" />
     </modules>
   </component>
 </project>

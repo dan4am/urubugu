@@ -2,7 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd5aca37-0f33-4257-9c8a-65b68e48c840" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/bi/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/bi/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/bi/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/bi/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/en/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/en/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/en/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/en/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/fr/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/fr/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/fr/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/fr/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_1/hider_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/bi/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/bi/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/bi/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/bi/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/en/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/en/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/en/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/en/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/fr/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/fr/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/fr/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/fr/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buttons/design_2/hider_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/buttons.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/buttons.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buttons/selection_of_flag2_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/buttons/selection_of_flag2_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urubugu_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/urubugu_gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +87,7 @@
       <recent name="C:\Users\dan4a\PycharmProjects\urubugu" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.urubugu_gui">
+  <component name="RunManager" selected="Python.urubugu_gui (1)">
     <configuration name="artificial_intelligence" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="urubugu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,7 +153,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="urubugu_gui (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="urubugu" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -131,12 +161,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../urubugu-master/urubugu-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../urubugu-master/urubugu-master/urubugu_gui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -185,11 +214,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.urubugu_gui (1)" />
         <item itemvalue="Python.urubugu_gui" />
         <item itemvalue="Python.artificial_intelligence" />
         <item itemvalue="Python.board" />
         <item itemvalue="Python.first-game" />
-        <item itemvalue="Python.gui" />
       </list>
     </recent_temporary>
   </component>
@@ -325,22 +354,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1610774339057" />
-    <state width="1515" height="205" key="GridCell.Tab.0.bottom" timestamp="1616545350160">
+    <state width="1515" height="204" key="GridCell.Tab.0.bottom" timestamp="1618341144041">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="205" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616545350160" />
-    <state width="1515" height="205" key="GridCell.Tab.0.center" timestamp="1616545350160">
+    <state width="1899" height="274" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618262569564" />
+    <state width="1515" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618341144041" />
+    <state width="1515" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618323881443" />
+    <state width="1515" height="204" key="GridCell.Tab.0.center" timestamp="1618341144041">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="205" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616545350160" />
-    <state width="1515" height="205" key="GridCell.Tab.0.left" timestamp="1616545350160">
+    <state width="1899" height="274" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618262569564" />
+    <state width="1515" height="204" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618341144041" />
+    <state width="1515" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618323881443" />
+    <state width="1515" height="204" key="GridCell.Tab.0.left" timestamp="1618341144040">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="205" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616545350160" />
-    <state width="1515" height="205" key="GridCell.Tab.0.right" timestamp="1616545350160">
+    <state width="1899" height="274" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618262569564" />
+    <state width="1515" height="204" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618341144040" />
+    <state width="1515" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618323881443" />
+    <state width="1515" height="204" key="GridCell.Tab.0.right" timestamp="1618341144041">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="205" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616545350160" />
+    <state width="1899" height="274" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618262569564" />
+    <state width="1515" height="204" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618341144041" />
+    <state width="1515" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618323881443" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1610629609332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
