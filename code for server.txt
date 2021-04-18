@@ -1,0 +1,4 @@
+A = G_M = get other player move
+B = S_M = send my move
+C = G_S_P =Get Starting settings
+D = S_S_P =Set Starting settings 

@@ -46,7 +46,7 @@ BOARD_gukenyura = np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0]])
 
-BOARD_AI =         np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
+BOARD_AI =np.array([ [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0],
                              [0,  0,  0,  0,  0,  0,  0,  0]])
@@ -60,6 +60,7 @@ in_the_back = False
 in_front = not in_the_back
 back_Board = BOARD.copy()
 # PLAYER_TWO = 2
+
 
 
 
@@ -109,6 +110,19 @@ def beads (hole):
 def add_bead(hole):
     result = hole_to_index(hole)
     BOARD[result[0]][result[1]] += 1
+
+def add_beads(hole, number_of_beads_to_add):
+    result = hole_to_index(hole)
+    BOARD[result[0]][result[1]] = number_of_beads_to_add
+
+def stringify():
+    result = ""
+    for i in range(1,16):
+        result = result + str(beads(i)) + ", "
+    result = result + str (beads(16))
+
+    return result
+
 
 def take_beads(hole, how_many):
     result = hole_to_index(hole)

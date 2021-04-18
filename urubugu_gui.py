@@ -4,26 +4,28 @@ import pygame
 import os
 import time
 import artificial_intelligence
+from network import Network
+import online_helper
 
 
 _image_library = {}
 
 
-config_language = "bi"
-languages = ["fr", "en"]
-design = "design_1/"
-# design = "design_2/"
+config_language = "fr"
+languages = ["bi", "en"]
+# design = "design_1/"
+design = "design_2/"
 DATABASE = []
 
 ####################
 # play state assets#
 ####################
 
-player1_banner_path="buttons/"+design+"/bi/player1_banner.png"
-player2_banner_path="buttons/"+design+"/bi/player2_banner.png"
-back_button_clicked_path = "buttons/"+design+"/bi/back_button_clicked.png"
-back_button_unclicked_path = "buttons/"+design+"/bi/back_button_unclicked.png"
-hider_pannel_path = "buttons/design_1/hider_white.png"
+player1_banner_path="buttons/"+design+config_language+"/player1_banner.png"
+player2_banner_path="buttons/"+design+config_language+"/player2_banner.png"
+back_button_clicked_path = "buttons/"+design+config_language+"/back_button_clicked.png"
+back_button_unclicked_path = "buttons/"+design+config_language+"/back_button_unclicked.png"
+hider_pannel_path = "buttons/"+design+"/hider_white.png"
 
 
 ###################
@@ -42,20 +44,24 @@ done_unclicked_path = "buttons/"+design+"/done_button_unclicked.png"
 done_clicked_path = "buttons/"+design+"/done_button_clicked.png"
 player2_path = "compressed_pictures1/player2.png"
 default_path="buttons/"+design+"/bi/default_button_unclicked.png"
-default_unclicked_path = "buttons/"+design+"/bi/default_button_unclicked.png"
-default_clicked_path = "buttons/"+design+"/bi/default_button_clicked.png"
+default_unclicked_path = "buttons/"+design+config_language+"/default_button_unclicked.png"
+default_clicked_path = "buttons/"+design+config_language+"/default_button_clicked.png"
+menu_gukenyura_button_unclicked_path="buttons/"+design+"/menu_gukenyura_button_unclicked.png"
+menu_gukenyura_button_clicked_path="buttons/"+design+"/menu_gukenyura_button_clicked.png"
+
+
 ##################
 # language assets#
 ##################
 
 
-dukenyure_button_unclicked_path = "buttons/"+design+"bi/dukenyure_button_unclicked.png"
-dukenyure_button_clicked_path = "buttons/"+design+"bi/dukenyure_button_clicked.png"
-dukenyure_button_clicked_path = "buttons/"+design+"bi/dukenyure_button_clicked.png"
-dukine_button_unclicked_path = "buttons/"+design+"bi/dukine_button_unclicked.png"
-dukine_button_clicked_path = "buttons/"+design+"bi/dukine_button_clicked.png"
-ingeneBakina_button_unclicked_path = "buttons/"+design+"bi/ingeneBakina_button_uncliked.png"
-ingeneBakina_button_clicked_path = "buttons/"+design+"bi/ingeneBakina_button_cliked.png"
+dukenyure_button_unclicked_path = "buttons/"+design+config_language+"/dukenyure_button_unclicked.png"
+dukenyure_button_clicked_path = "buttons/"+design+config_language+"/dukenyure_button_clicked.png"
+dukenyure_button_clicked_path = "buttons/"+design+config_language+"/dukenyure_button_clicked.png"
+dukine_button_unclicked_path = "buttons/"+design+config_language+"/dukine_button_unclicked.png"
+dukine_button_clicked_path = "buttons/"+design+config_language+"/dukine_button_clicked.png"
+ingeneBakina_button_unclicked_path = "buttons/"+design+config_language+"/ingeneBakina_button_uncliked.png"
+ingeneBakina_button_clicked_path = "buttons/"+design+config_language+"/ingeneBakina_button_cliked.png"
 
 #language button
 
@@ -175,13 +181,13 @@ language_button=[0,0]
 language_button_choice_1=[0,0]
 language_button_choice_2=[0,0]
 done = False
-menu_game_gameover = 0#menu = 0, game = 1, gameover=2, gukenyura = 3
+menu_game_gameover = 0 #menu = 0, game = 1, gameover=2, gukenyura = 3
 GUKENYURA=3
 MENU=0
 REPLAY=2
 PLAY=1
 HELP=4
-click_on_hole=5
+click_on_hole = 5
 vs_computer = True
 # vs_computer = False
 # def Draw_board():
@@ -296,23 +302,29 @@ def draw_end():
     screen.blit(get_image(restart_path), (450,200))
     pygame.display.flip()
 
-def draw_gukenyura(default = None, done = None):
+def draw_gukenyura(default = None, done = None, menu = None):
     screen.fill(WHITE)
     pygame.draw.rect(screen, BLACK, place)
     draw_frame()
     draw_slots()
+
     if (default):
         draw_gukenyura_buttons(default=1)
     elif (done):
         draw_gukenyura_buttons(done=1)
     else:
         draw_gukenyura_buttons()
+    if (menu):
+        draw_gukenyura_buttons(menu=1)
+    elif (menu):
+        draw_gukenyura_buttons(menu=1)
+
     pygame.display.flip()
 
 
 
 
-def draw_gukenyura_buttons(default = None, done = None):
+def draw_gukenyura_buttons(default = None, done = None, menu = None):
     if(done):
         screen.blit(pygame.transform.smoothscale(get_image(done_clicked_path),(92,52)), (30, 520))
     else:
@@ -323,6 +335,10 @@ def draw_gukenyura_buttons(default = None, done = None):
     else:
         screen.blit(pygame.transform.smoothscale(get_image(default_unclicked_path), (92, 52)), (678, 520))
 
+    if (menu):
+        screen.blit(pygame.transform.smoothscale(get_image(menu_gukenyura_button_clicked_path),(40,40)), (30, 30))
+    else:
+        screen.blit(pygame.transform.smoothscale(get_image(menu_gukenyura_button_unclicked_path), (40, 40)), (30, 30))
 
     # screen.blit(get_image(player2_path), (70, 540))
 
@@ -360,7 +376,7 @@ def draw_left_click(clicked, tmp_position,maximum,beads):
 
 
 
-def draw_menu(play = None, set = None, lang = None):
+def draw_menu(play = None, set = None, lang = None, help = None):
 
 
     screen.fill(WHITE)
@@ -371,6 +387,7 @@ def draw_menu(play = None, set = None, lang = None):
         screen.blit(pygame.transform.smoothscale(get_image(dukine_button_unclicked_path), (350,69)), (225, 185))
     global start_button
     start_button = [225,185]
+
     if(set):
         screen.blit(pygame.transform.smoothscale(get_image(dukenyure_button_clicked_path), (350,69)), (225, 265))
     else:
@@ -378,7 +395,10 @@ def draw_menu(play = None, set = None, lang = None):
     global gukenyura_button
     gukenyura_button = [225, 265]
 
-    screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_unclicked_path),(350,69)), (225, 345))
+    if(help):
+        screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_clicked_path),(350,69)), (225, 345))
+    else:
+        screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_unclicked_path), (350, 69)), (225, 345))
     global help_button
     help_button = [225, 345]
 
@@ -415,6 +435,9 @@ def game_coordinates_to_hole(x, y):
         elif (x >= language_button[0] and x <= language_button[0] + 74 and y >= language_button[1] and y <= language_button[1] + 35  ):
             return [20,0]
         # (74, 35)
+        elif (x >= help_button[0] and x <= help_button[0] + 350 and y >= help_button[1] and y <= help_button[1] + 69  ):
+            return [21,0]
+
         else:
             return[0,0]
 
@@ -442,6 +465,8 @@ def game_coordinates_to_hole(x, y):
         elif (x >= 30 and x <= 122) and (y >= 520 and y <= 572):#done button
             return [8,18]
 
+        elif (x >= 30 and x <= 70) and (y >= 30 and y <= 70):#back to menu button
+            return [8,19]
 
         else : return [8,0]
     elif(menu_game_gameover == REPLAY):
@@ -450,7 +475,7 @@ def game_coordinates_to_hole(x, y):
         elif(y > 210 and y <= 390 and x > 460 and x <= 640):
             return [7,0]
         else : return[0,0]
-    elif(menu_game_gameover == 1):
+    elif(menu_game_gameover == PLAY):
         if (x >= 57 and x <= 742 ) and (y >= 125 and y <= 475):
             if( y >= 125 and y <= 300 ):
                 result[0] = 2
@@ -665,18 +690,60 @@ pygame.display.set_caption("URUBUGU")
 
 
 def main():
-    # Loop until the user clicks the close button.
-    # done = False
-    global done
-    # Used to manage how fast the screen updates
-    clock = pygame.time.Clock()
 
-    # draw()
+    global done
+    clock = pygame.time.Clock()
+    n = Network()
+    online_player_id = n.player_number
+
+    ######Preparing the online game###############
+
+    if (online_player_id):
+        online_player_id = online_player_id[-1]
+        board.player(int(online_player_id))
+        print("online player_id =" + str (online_player_id))
+        pygame.display.set_caption("URUBUGU + player" +str(online_player_id) )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # -------- Main Program Loop -----------
     clicked_default = False
     while ( (not done)):
 
         if(menu_game_gameover == 1 ):  draw()
-        elif(menu_game_gameover == 0 ):  draw_menu()
+        elif(menu_game_gameover == 0 ):
+            if(design == "design_2/"):
+                position_menu = pygame.mouse.get_pos()
+                x= position_menu[0]
+                y= position_menu[1]
+                if (x >= start_button[0] and x <= start_button[0] + 350 and y >= start_button[1] and y <= start_button[
+                    1] + 69):
+                    draw_menu(play=1)
+                elif (x >= gukenyura_button[0] and x <= gukenyura_button[0] + 350 and y >= gukenyura_button[1] and y <=
+                      gukenyura_button[1] + 69):
+                    draw_menu(set=1)
+                elif (x >= language_button[0] and x <= language_button[0] + 74 and y >= language_button[1] and y <=
+                      language_button[1] + 35):
+                    draw_menu(lang=1)
+                elif (x >= help_button[0] and x <= help_button[0] + 350 and y >= help_button[1] and y <=
+                      help_button[1] + 69):
+                    draw_menu(help=1)
+                else:
+                    draw_menu()
+            else:
+                draw_menu()
         elif(menu_game_gameover == 3) :
             if(clicked_default == False):
                 board.choose_board(board.BOARD_gukenyura)
@@ -684,14 +751,12 @@ def main():
             # clicked_default = False
         else:  draw_end()
 
-        # -------- Main Program Loop -----------
+
         place =[(800-BOARD_LENGTH) / 2 , (600 - BOARD_WIDTH) / 2, BOARD_LENGTH, BOARD_WIDTH]
-        # board.player(2)
         pygame.event.pump()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 done = True
-                # done = done or board.game_over()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     position =pygame.mouse.get_pos()
@@ -780,7 +845,7 @@ def main():
                                             board.back(board.back_Board)
 
 
-                        elif(player == 4):
+                        elif(player == 4): # click on Dukine (Play) button
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
                                 tmp_pos = pygame.mouse.get_pos();
@@ -800,11 +865,21 @@ def main():
                                         tmp_pos = pygame.mouse.get_pos();
                                         if (tmp_pos[0] >= start_button[0] and tmp_pos[0] <= start_button[0] + 350 and tmp_pos[1] >= start_button[
                                             1] and tmp_pos[1] <= start_button[1] + 69):
+                                            board.choose_board(board.BOARD_REPLAY)
+                                            reply = online_helper.get_starting_setting(n)
+                                            print(reply)
+                                            result2 = online_helper.string_to_list(reply)
+                                            board.player(2)
+                                            for i in range (len (result2)):
+                                                board.add_beads(i+1, result2[i])
+                                            board.player(1)
                                             change_state(1)
+                                            # board.player(2)
+                                            # print(board.stringify())
                                             # continue
                                 clock.tick(60)
-                                   # draw()
-                        elif(player == 5):
+
+                        elif(player == 5):#click on dukenyure (setting up board) button
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
                                 tmp_pos = pygame.mouse.get_pos();
@@ -956,7 +1031,28 @@ def main():
                                                             temp_done= True
                                                 clock.tick(60)
 
+                        elif (player == 21):
+                            while not event.type == pygame.MOUSEBUTTONUP:
+                                screen.fill(WHITE)
+                                tmp_pos = pygame.mouse.get_pos();
+                                if (tmp_pos[0] >= help_button[0] and tmp_pos[0] <= help_button[0] + 350 and
+                                        tmp_pos[1] >= help_button[1] and tmp_pos[1] <= help_button[1] + 69):
+                                    draw_menu(help=1)
+                                else:
+                                    draw_menu()
 
+                                pygame.display.flip()
+                                pygame.event.pump()
+                                for event in pygame.event.get():
+                                    if event.type == pygame.QUIT:
+                                        done = True
+                                        # done = done or board.game_over()
+                                    elif event.type == pygame.MOUSEBUTTONUP:
+                                        tmp_pos = pygame.mouse.get_pos();
+                                        if (tmp_pos[0] >= help_button[0] and tmp_pos[0] <= help_button[0] + 350 and
+                                        tmp_pos[1] >= help_button[1] and tmp_pos[1] <= help_button[1] + 69):
+                                            pass
+                                clock.tick(40)
 
 
 
@@ -1012,6 +1108,7 @@ def main():
                                                             print(position)
                                                             print(tmp_position)
                                                             print(data)
+
                                                     elif(data[1]==17):
                                                         while not event.type == pygame.MOUSEBUTTONUP:
                                                             screen.fill(WHITE)
@@ -1070,13 +1167,43 @@ def main():
                                                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
                                                                             572):
                                                                         change_state(1)
+                                                                        print(online_helper.send_starting_setting(n, board.stringify()))
                                                                         board.default_player2()
                                                                         done_gukenyura = True
 
                                                             clock.tick(60)
-                                                        # change_state(1)
-                                                        # board.default_player2()
-                                                        # done_gukenyura_ = True
+
+
+                                                    elif(data[1] == 19 ):
+                                                        while not event.type == pygame.MOUSEBUTTONUP:
+                                                            screen.fill(WHITE)
+                                                            tmp_pos = pygame.mouse.get_pos()
+                                                            if (tmp_pos[0] >= 30 and tmp_pos[0] <=
+                                                                    70 and
+                                                                    tmp_pos[1] >= 30 and tmp_pos[1] <=
+                                                                    70):
+                                                                draw_gukenyura(menu=1)
+                                                            else:
+                                                                draw_gukenyura()
+
+                                                            pygame.display.flip()
+                                                            pygame.event.pump()
+                                                            for event in pygame.event.get():
+                                                                if event.type == pygame.QUIT:
+                                                                    pygame.quit()
+                                                                    # done = done or board.game_over()
+                                                                elif event.type == pygame.MOUSEBUTTONUP:
+                                                                    tmp_pos = pygame.mouse.get_pos();
+                                                                    if (tmp_pos[0] >= 30 and tmp_pos[0] <=
+                                                                    70 and
+                                                                    tmp_pos[1] >= 30 and tmp_pos[1] <=
+                                                                    70):
+                                                                        change_state(0)
+                                                                        done_gukenyura = True
+
+                                                            clock.tick(60)
+
+
                                                 else:
                                                     position = pygame.mouse.get_pos()
                                                     data = game_coordinates_to_hole(position[0], int(position[1]))
@@ -1170,13 +1297,41 @@ def main():
                                                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
                                                                             572):
                                                                         change_state(1)
+                                                                        print(online_helper.send_starting_setting(n,board.stringify()))
                                                                         board.default_player2()
                                                                         done_gukenyura = True
 
                                                             clock.tick(60)
-                                                        # change_state(1)
-                                                        # board.default_player2()
-                                                        # done_gukenyura = True
+
+                                                    elif(data[1] == 19):
+                                                        while not event.type == pygame.MOUSEBUTTONUP:
+                                                            screen.fill(WHITE)
+                                                            tmp_pos = pygame.mouse.get_pos()
+                                                            if (tmp_pos[0] >= 30 and tmp_pos[0] <=
+                                                                    70 and
+                                                                    tmp_pos[1] >= 30 and tmp_pos[1] <=
+                                                                    70):
+                                                                draw_gukenyura(menu=1)
+                                                            else:
+                                                                draw_gukenyura()
+
+                                                            pygame.display.flip()
+                                                            pygame.event.pump()
+                                                            for event in pygame.event.get():
+                                                                if event.type == pygame.QUIT:
+                                                                    pygame.quit()
+                                                                    # done = done or board.game_over()
+                                                                elif event.type == pygame.MOUSEBUTTONUP:
+                                                                    tmp_pos = pygame.mouse.get_pos();
+                                                                    if (tmp_pos[0] >= 30 and tmp_pos[0] <=
+                                                                    70 and
+                                                                    tmp_pos[1] >= 30 and tmp_pos[1] <=
+                                                                    70):
+                                                                        change_state(0)
+                                                                        done_gukenyura = True
+
+                                                            clock.tick(60)
+
                                                     elif(data[1] == 0):
                                                         clicked = False
                                                         if (((position[0] > tmp_position[0] and position[0] <=
@@ -1266,13 +1421,41 @@ def main():
                                                     tmp_pos[1] >= 520 and tmp_pos[1] <=
                                                     572):
                                                 change_state(1)
+                                                print(online_helper.send_starting_setting(n, board.stringify()))
                                                 board.default_player2()
                                                 done_gukenyura = True
 
                                     clock.tick(60)
-                                # change_state(1)
-                                # board.default_player2()
-                                # done_gukenyura = True
+
+                            elif(data[1] == 19):
+                                while not event.type == pygame.MOUSEBUTTONUP:
+                                    screen.fill(WHITE)
+                                    tmp_pos = pygame.mouse.get_pos()
+                                    if (tmp_pos[0] >= 30 and tmp_pos[0] <=
+                                            70 and
+                                            tmp_pos[1] >= 30 and tmp_pos[1] <=
+                                            70):
+                                        draw_gukenyura(menu=1)
+                                    else:
+                                        draw_gukenyura()
+
+                                    pygame.display.flip()
+                                    pygame.event.pump()
+                                    for event in pygame.event.get():
+                                        if event.type == pygame.QUIT:
+                                            pygame.quit()
+                                            # done = done or board.game_over()
+                                        elif event.type == pygame.MOUSEBUTTONUP:
+                                            tmp_pos = pygame.mouse.get_pos();
+                                            if (tmp_pos[0] >= 30 and tmp_pos[0] <=
+                                                    70 and
+                                                    tmp_pos[1] >= 30 and tmp_pos[1] <=
+                                                    70):
+                                                change_state(0)
+                                                done_gukenyura = True
+
+                                    clock.tick(60)
+
 
 
         clock.tick(60)
