@@ -28,9 +28,15 @@ def decode_data(data_string, player):
 
     if code == "A":
         if player == 1:
-            return player_one_moves.pop(0)
+            if (len(player_two_moves) > 0):
+                return "H1"+player_two_moves.pop(0)
+            else:
+                return "H0 player 2 has no moves "
         else :
-            return player_two_moves.pop(0)
+            if (len(player_one_moves) > 0):
+                return "G1" + player_one_moves.pop(0)
+            else:
+                return "G0 player 1 has no moves "
 
     if code == "B":
         if player == 1:
@@ -41,10 +47,18 @@ def decode_data(data_string, player):
             return (" your move have been successfully registered player 2")
 
     if code == "C":
+
         if player == 1:
-            return player_two_starting_settings
+            if(len(player_two_starting_settings) == 0):
+                return "F0 Waiting for P2 to finish setting up board"
+            else:
+                return "F1"+player_two_starting_settings
         else :
-            return player_one_starting_settings
+            if (len(player_one_starting_settings) == 0):
+                return "E0 Waiting for P1 to finish setting up board"
+            else:
+                return "E1" + player_one_starting_settings
+
     if code == "D":
         if player == 1:
             player_one_starting_settings = data_string[1:]

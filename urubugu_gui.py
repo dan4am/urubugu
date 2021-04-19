@@ -10,12 +10,27 @@ import online_helper
 
 _image_library = {}
 
+online_game = True
 
 config_language = "fr"
 languages = ["bi", "en"]
 # design = "design_1/"
 design = "design_2/"
 DATABASE = []
+
+
+#######################
+# Online gaming assets#
+#######################
+waiting_for_player1_banner_path="buttons/"+design+config_language+"/waiting_for_player1_banner.png"
+waiting_for_player2_banner_path="buttons/"+design+config_language+"/waiting_for_player2_banner.png"
+
+
+
+
+
+
+
 
 ####################
 # play state assets#
@@ -181,14 +196,16 @@ language_button=[0,0]
 language_button_choice_1=[0,0]
 language_button_choice_2=[0,0]
 done = False
-menu_game_gameover = 0 #menu = 0, game = 1, gameover=2, gukenyura = 3
+Current_state = 0 #menu = 0, game = 1, gameover=2, gukenyura = 3
 GUKENYURA=3
 MENU=0
 REPLAY=2
 PLAY=1
 HELP=4
+WAITING = 5
 click_on_hole = 5
-vs_computer = True
+vs_computer = False
+online_player_id = 0
 # vs_computer = False
 # def Draw_board():
 
@@ -228,8 +245,8 @@ def change_language(language):
 
 
 def change_state(state):
-    global menu_game_gameover
-    menu_game_gameover = state
+    global Current_state
+    Current_state = state
 
 def draw_frame():
     pygame.draw.line(screen, BLACK, [54, 122], [54, 478], 1)
@@ -376,7 +393,10 @@ def draw_left_click(clicked, tmp_position,maximum,beads):
 
 
 
-def draw_menu(play = None, set = None, lang = None, help = None):
+def draw_menu(play = None, set = None, lang = None, help = None, waiting = None):
+    # for event in pygame.event.get():
+    #     if event.type == pygame.QUIT:
+    #         pygame.quit()
 
 
     screen.fill(WHITE)
@@ -421,12 +441,28 @@ def draw_menu(play = None, set = None, lang = None, help = None):
     screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(config_language)), (38,25)), (56,35))
     # pygame.transform.smoothscale(get_image(getpath(self.intoke)), (105, 161))
 
+    if (waiting):
+        screen.blit(get_image(background_click_path), (0, 0))
+        global online_player_id
+        # print(online_player_id)
+        if (online_player_id == 2):
+            # print("waiting for player 1")
+            # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player1_banner_path), (310, 63)), (447, 485))
+            screen.blit(get_image(waiting_for_player1_banner_path), (65, 223))
+        else:
+            # print("waiting for player 2")
+            # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player2_banner_path), (310, 63)), (47, 55))
+            screen.blit( get_image(waiting_for_player2_banner_path), (65, 223))
+        pygame.display.flip()
+
+
+
     pygame.display.flip()
 
 
 def game_coordinates_to_hole(x, y):
     result =[0,0]
-    if(menu_game_gameover == MENU):
+    if(Current_state == MENU):
         if (x >= start_button[0] and x <= start_button[0] + 350 and y >= start_button[1] and y <= start_button[1] + 69  ):
             return [4,0]
         elif (x >= gukenyura_button[0] and x <= gukenyura_button[0] + 350 and y >= gukenyura_button[1] and y <= gukenyura_button[1] + 69  ):
@@ -441,7 +477,7 @@ def game_coordinates_to_hole(x, y):
         else:
             return[0,0]
 
-    elif(menu_game_gameover == GUKENYURA):
+    elif(Current_state == GUKENYURA):
         if (x >= 57 and x <= 742) and (y >= 125 and y <= 475):#in the board
 
             if (not (y >= 125 and y <= 300)):#in the 1st player half
@@ -469,13 +505,13 @@ def game_coordinates_to_hole(x, y):
             return [8,19]
 
         else : return [8,0]
-    elif(menu_game_gameover == REPLAY):
+    elif(Current_state == REPLAY):
         if(y > 210 and y <= 390 and x > 150 and x <= 350):
             return[6,0]
         elif(y > 210 and y <= 390 and x > 460 and x <= 640):
             return [7,0]
         else : return[0,0]
-    elif(menu_game_gameover == PLAY):
+    elif(Current_state == PLAY):
         if (x >= 57 and x <= 742 ) and (y >= 125 and y <= 475):
             if( y >= 125 and y <= 300 ):
                 result[0] = 2
@@ -678,6 +714,26 @@ def player_display(back = None):
 
         screen.blit(pygame.transform.smoothscale(get_image(player2_banner_path), (310, 63)), (47, 55))
 
+
+###########################""online helper methods################################
+
+
+def waiting_banner():
+    # for event in pygame.event.get():
+    #     if event.type == pygame.QUIT:
+    #         pygame.quit()
+
+    if (board.current_player == 2):
+        print("waiting for player 1" )
+        screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player1_banner_path), (310, 63)), (447, 485))
+    else :
+        print("waiting for player 2")
+        screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player2_banner_path), (310, 63)), (47, 55))
+    pygame.display.flip()
+
+
+
+
 pygame.display.set_caption("URUBUGU")
 
 
@@ -691,18 +747,21 @@ pygame.display.set_caption("URUBUGU")
 
 def main():
 
-    global done
+    global done, online_player_id
     clock = pygame.time.Clock()
-    n = Network()
-    online_player_id = n.player_number
 
-    ######Preparing the online game###############
 
-    if (online_player_id):
-        online_player_id = online_player_id[-1]
-        board.player(int(online_player_id))
-        print("online player_id =" + str (online_player_id))
-        pygame.display.set_caption("URUBUGU + player" +str(online_player_id) )
+    if online_game:
+        n = Network()
+        online_player_id = n.player_number
+
+        ######Preparing the online game###############
+
+        if (online_player_id):
+            online_player_id = int (online_player_id[-1])
+            # board.player(int(online_player_id))
+            print("online player_id =" + str (online_player_id))
+            pygame.display.set_caption("URUBUGU + player" +str(online_player_id) )
 
 
 
@@ -722,8 +781,8 @@ def main():
     clicked_default = False
     while ( (not done)):
 
-        if(menu_game_gameover == 1 ):  draw()
-        elif(menu_game_gameover == 0 ):
+        if(Current_state == 1):  draw()
+        elif(Current_state == 0):
             if(design == "design_2/"):
                 position_menu = pygame.mouse.get_pos()
                 x= position_menu[0]
@@ -744,11 +803,23 @@ def main():
                     draw_menu()
             else:
                 draw_menu()
-        elif(menu_game_gameover == 3) :
+        elif(Current_state == 3) :
             if(clicked_default == False):
                 board.choose_board(board.BOARD_gukenyura)
             draw_gukenyura()
             # clicked_default = False
+        elif(Current_state == 5):
+            draw_menu(waiting = 1)
+            reply = online_helper.decode_reply(online_helper.get_starting_setting(n))
+            if (not reply == "waiting"):
+                result2 = online_helper.string_to_list(reply)
+                board.player(2)
+                for i in range(len(result2)):
+                    board.add_beads(i + 1, result2[i])
+                board.player(3 - online_player_id )
+                board.current_player = 3 - online_player_id
+                change_state(1)
+
         else:  draw_end()
 
 
@@ -764,10 +835,11 @@ def main():
                     data = game_coordinates_to_hole(position[0],int(position[1]))
                     print(data)
                     if(not data[0] == 0):
-                        player = data[0]
+                        clicked_button = data[0]
+                        # player = board.current_player
                         hole = data[1]
 
-                        if (player == 1):
+                        if (clicked_button == 1):
                             beads = board.beads(hole)
                             if(board.player_one and(not beads == 0)):
                                 play(hole)
@@ -796,7 +868,7 @@ def main():
                                 else:
                                     # something to prevent the other player to play
                                     pass
-                        elif(player == 2 and (not vs_computer)):
+                        elif(clicked_button == 2 and (not vs_computer)):
                             beads = board.beads(hole)
                             # hole_to_play = artificial_intelligence.hole_to_play()
                             if(not board.player_one and (not beads == 0)):
@@ -810,7 +882,7 @@ def main():
                             else:
                                 # something to prevent the other player to play
                                 pass
-                        elif(player == 3):
+                        elif(clicked_button == 3): # play state back button clicked
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 tmp_pos = pygame.mouse.get_pos();
                                 if (tmp_pos[0] >= back_button[0] and tmp_pos[0] <= back_button[0] + 105
@@ -845,7 +917,7 @@ def main():
                                             board.back(board.back_Board)
 
 
-                        elif(player == 4): # click on Dukine (Play) button
+                        elif(clicked_button == 4): # menu state click on Dukine (Play) button
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
                                 tmp_pos = pygame.mouse.get_pos();
@@ -859,27 +931,38 @@ def main():
                                 pygame.event.pump()
                                 for event in pygame.event.get():
                                     if event.type == pygame.QUIT:
-                                        done = True
+                                        pygame.quit()
                                         # done = done or board.game_over()
                                     elif event.type == pygame.MOUSEBUTTONUP:
                                         tmp_pos = pygame.mouse.get_pos();
                                         if (tmp_pos[0] >= start_button[0] and tmp_pos[0] <= start_button[0] + 350 and tmp_pos[1] >= start_button[
                                             1] and tmp_pos[1] <= start_button[1] + 69):
-                                            board.choose_board(board.BOARD_REPLAY)
-                                            reply = online_helper.get_starting_setting(n)
-                                            print(reply)
-                                            result2 = online_helper.string_to_list(reply)
-                                            board.player(2)
-                                            for i in range (len (result2)):
-                                                board.add_beads(i+1, result2[i])
-                                            board.player(1)
-                                            change_state(1)
+                                            board.choose_board(board.BOARD_DEFAULT_P1)
+                                            if online_game:
+                                                print(online_helper.send_starting_setting( n, board.stringify()))
+                                                reply = online_helper.decode_reply(online_helper.get_starting_setting(n))
+                                                print(reply)
+                                                if (reply == "waiting"):
+                                                    change_state(5)
+                                                    # draw_menu(waiting=1)
+                                                    # reply = online_helper.decode_reply(
+                                                    #     online_helper.get_starting_setting(n))
+
+
+                                                else:
+                                                    result2 = online_helper.string_to_list(reply)
+                                                    board.player(2)
+                                                    for i in range (len (result2)):
+                                                        board.add_beads(i+1, result2[i])
+                                                    board.player(1)
+                                                    change_state(1)
+                                                    # break
                                             # board.player(2)
                                             # print(board.stringify())
                                             # continue
                                 clock.tick(60)
 
-                        elif(player == 5):#click on dukenyure (setting up board) button
+                        elif(clicked_button == 5):#menu state click on dukenyure (setting up board) button
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
                                 tmp_pos = pygame.mouse.get_pos();
@@ -904,7 +987,7 @@ def main():
                                             draw_gukenyura_buttons()
                                 clock.tick(40)
 
-                        elif (player == 20):
+                        elif (clicked_button == 20): #Menu state language menu drop down clicked
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
                                 tmp_pos = pygame.mouse.get_pos();
@@ -1031,7 +1114,7 @@ def main():
                                                             temp_done= True
                                                 clock.tick(60)
 
-                        elif (player == 21):
+                        elif (clicked_button == 21):
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
                                 tmp_pos = pygame.mouse.get_pos();
@@ -1067,13 +1150,13 @@ def main():
 
 
                                 clock.tick(60)
-                        elif (player == 6):
+                        elif (clicked_button == 6):
                             change_state(0)
-                        elif (player == 7):
+                        elif (clicked_button == 7):
                             change_state(1)
                             board.BOARD = np.copy(board.BOARD_DEFAULT)
 
-                        elif (player == 8):
+                        elif (clicked_button == 8):
                             if (clicked_default == True):
                                 maximum = 0
                             else: maximum=32
@@ -1167,8 +1250,11 @@ def main():
                                                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
                                                                             572):
                                                                         change_state(1)
-                                                                        print(online_helper.send_starting_setting(n, board.stringify()))
-                                                                        board.default_player2()
+                                                                        if online_game: #online game handler
+                                                                            print(online_helper.send_starting_setting(n, board.stringify()))
+                                                                            board.default_player2()
+                                                                        else:
+                                                                            board.default_player2()
                                                                         done_gukenyura = True
 
                                                             clock.tick(60)
@@ -1364,7 +1450,7 @@ def main():
                                                             data = game_coordinates_to_hole(position[0], int(position[1]))
                                                             print(data)
 
-                                    clock.tick(30)
+                                    clock.tick(60)
                             elif(data[1] == 17):
                                 while not event.type == pygame.MOUSEBUTTONUP:
                                     screen.fill(WHITE)

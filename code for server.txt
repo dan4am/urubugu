@@ -1,4 +1,22 @@
 A = G_M = get other player move
 B = S_M = send my move
-C = G_S_P =Get Starting settings
-D = S_S_P =Set Starting settings 
+C = G_S_P = Get Starting settings
+D = S_S_P =Set Starting settings
+
+Server Responses:
+
+get starting settings:
+
+	E0 = W_P1 = Waiting for P1
+	E1 = P1 = P1 has finished setting up board
+
+	F0 = W_P2 = Waiting for P2
+	F1 = P2 = P2 has finished setting up board
+
+Get other player's move
+
+	G0 = W_M1 = waiting for player one to move
+	G1 = M1 = P1 moved
+
+	H0 = W_M2 = waiting for player two to move
+	H1 = M2 = P2 moved
