@@ -47,8 +47,8 @@ hider_pannel_path = "buttons/"+design+"/hider_white.png"
 # game-over assets#
 ###################
 
-menu_path = "compressed_pictures1/menu_button.png"
-restart_path = "compressed_pictures1/restart_button.png"
+menu_path = "buttons/menu_button.png"
+restart_path = "buttons/restart_button.png"
 
 ###################
 # gukenyura assets#
@@ -151,7 +151,7 @@ background_click_path = "buttons/background_click.png"
 
 
 def getpath(beads):
-    result ="compressed_pictures2/"+str(beads)+"_beads.png"
+    result ="compressed_pictures/"+str(beads)+"_beads.png"
     # print (result)
     return result
 def get_image(path):
@@ -202,7 +202,8 @@ MENU=0
 REPLAY=2
 PLAY=1
 HELP=4
-WAITING = 5
+WAITING_FROM_MENU = 5
+WAITING_FROM_SET_BOARD = 6
 click_on_hole = 5
 vs_computer = False
 online_player_id = 0
@@ -312,14 +313,14 @@ def draw(back = None):
         player_display(back = 1)
     else:
         player_display()
-
+#https://fr.chaturbate.com/janet_rossreborn/"
 def draw_end():
     screen.fill(BLACK)
     screen.blit(get_image(menu_path), (150,200))
     screen.blit(get_image(restart_path), (450,200))
     pygame.display.flip()
 
-def draw_gukenyura(default = None, done = None, menu = None):
+def draw_gukenyura(default = None, done = None, menu = None, waiting = None):
     screen.fill(WHITE)
     pygame.draw.rect(screen, BLACK, place)
     draw_frame()
@@ -329,12 +330,25 @@ def draw_gukenyura(default = None, done = None, menu = None):
         draw_gukenyura_buttons(default=1)
     elif (done):
         draw_gukenyura_buttons(done=1)
-    else:
-        draw_gukenyura_buttons()
-    if (menu):
-        draw_gukenyura_buttons(menu=1)
     elif (menu):
         draw_gukenyura_buttons(menu=1)
+    else:
+        draw_gukenyura_buttons()
+
+    if (waiting):
+        screen.blit(get_image(background_click_path), (0, 0))
+        global online_player_id
+        # print(online_player_id)
+        if (online_player_id == 2):
+            # print("waiting for player 1")
+            # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player1_banner_path), (310, 63)), (447, 485))
+            screen.blit(get_image(waiting_for_player1_banner_path), (65, 223))
+        else:
+            # print("waiting for player 2")
+            # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player2_banner_path), (310, 63)), (47, 55))
+            screen.blit( get_image(waiting_for_player2_banner_path), (65, 223))
+        pygame.display.flip()
+
 
     pygame.display.flip()
 
@@ -781,8 +795,8 @@ def main():
     clicked_default = False
     while ( (not done)):
 
-        if(Current_state == 1):  draw()
-        elif(Current_state == 0):
+        if(Current_state == PLAY):  draw()
+        elif(Current_state == MENU):
             if(design == "design_2/"):
                 position_menu = pygame.mouse.get_pos()
                 x= position_menu[0]
@@ -803,12 +817,12 @@ def main():
                     draw_menu()
             else:
                 draw_menu()
-        elif(Current_state == 3) :
+        elif(Current_state == GUKENYURA) :
             if(clicked_default == False):
                 board.choose_board(board.BOARD_gukenyura)
             draw_gukenyura()
             # clicked_default = False
-        elif(Current_state == 5):
+        elif(Current_state == WAITING_FROM_MENU):
             draw_menu(waiting = 1)
             reply = online_helper.decode_reply(online_helper.get_starting_setting(n))
             if (not reply == "waiting"):
@@ -816,14 +830,48 @@ def main():
                 board.player(2)
                 for i in range(len(result2)):
                     board.add_beads(i + 1, result2[i])
-                board.player(3 - online_player_id )
-                board.current_player = 3 - online_player_id
-                change_state(1)
+                if online_player_id == 1:
+                    board.player(1)
+                    board.current_player = 1
+                else:
+                    board.player(2)
+                    board.current_player = 2
+                change_state(PLAY)
+
+        elif(Current_state == WAITING_FROM_SET_BOARD):
+            draw_gukenyura(waiting=1)
+            reply = online_helper.decode_reply(online_helper.get_starting_setting(n))
+            if (not reply == "waiting"):
+                result2 = online_helper.string_to_list(reply)
+                board.player(2)
+                for i in range(len(result2)):
+                    board.add_beads(i + 1, result2[i])
+                if online_player_id == 1:
+                    board.player(1)
+                    board.current_player = 1
+                else:
+                    board.player(2)
+                    board.current_player = 2
+                change_state(PLAY)
 
         else:  draw_end()
 
 
         place =[(800-BOARD_LENGTH) / 2 , (600 - BOARD_WIDTH) / 2, BOARD_LENGTH, BOARD_WIDTH]
+        if (online_game):
+            if board.current_player == 2:
+                result = online_helper.decode_reply(online_helper.get_other_player_move(n))
+                if result == "waiting":
+                    print (result)
+                else:
+                    play(int(result))
+                    board.player(1)
+                    board.current_player = 1
+                    if (board.game_over()):
+                        time.sleep(0.5)
+                        change_state(REPLAY)
+
+
         pygame.event.pump()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -842,12 +890,14 @@ def main():
                         if (clicked_button == 1):
                             beads = board.beads(hole)
                             if(board.player_one and(not beads == 0)):
+                                if (online_game):
+                                    print(online_helper.send_my_move(n, str(hole)))
                                 play(hole)
                                 board.player(2)
                                 board.current_player = 2
                                 if(board.game_over()):
                                     time.sleep(0.5)
-                                    change_state(2)
+                                    change_state(REPLAY)
                             else:
                                 # something to prevent the other player to play
                                 pass
@@ -868,7 +918,7 @@ def main():
                                 else:
                                     # something to prevent the other player to play
                                     pass
-                        elif(clicked_button == 2 and (not vs_computer)):
+                        elif(clicked_button == 2 and (not vs_computer) and (not online_game)):
                             beads = board.beads(hole)
                             # hole_to_play = artificial_intelligence.hole_to_play()
                             if(not board.player_one and (not beads == 0)):
@@ -943,7 +993,7 @@ def main():
                                                 reply = online_helper.decode_reply(online_helper.get_starting_setting(n))
                                                 print(reply)
                                                 if (reply == "waiting"):
-                                                    change_state(5)
+                                                    change_state(WAITING_FROM_MENU)
                                                     # draw_menu(waiting=1)
                                                     # reply = online_helper.decode_reply(
                                                     #     online_helper.get_starting_setting(n))
@@ -954,8 +1004,13 @@ def main():
                                                     board.player(2)
                                                     for i in range (len (result2)):
                                                         board.add_beads(i+1, result2[i])
-                                                    board.player(1)
-                                                    change_state(1)
+                                                    if online_player_id == 1:
+                                                        board.player(1)
+                                                        board.current_player = 1
+                                                    else:
+                                                        board.player(2)
+                                                        board.current_player = 2
+                                                    change_state(PLAY)
                                                     # break
                                             # board.player(2)
                                             # print(board.stringify())
@@ -1249,11 +1304,30 @@ def main():
                                                                             122 and
                                                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
                                                                             572):
-                                                                        change_state(1)
+
                                                                         if online_game: #online game handler
+
                                                                             print(online_helper.send_starting_setting(n, board.stringify()))
-                                                                            board.default_player2()
+                                                                            reply = online_helper.decode_reply(
+                                                                                online_helper.get_starting_setting(n))
+                                                                            print(reply)
+                                                                            if (reply == "waiting"):
+                                                                                change_state(WAITING_FROM_SET_BOARD)
+                                                                            else:
+                                                                                result2 = online_helper.string_to_list(
+                                                                                    reply)
+                                                                                board.player(2)
+                                                                                for i in range(len(result2)):
+                                                                                    board.add_beads(i + 1, result2[i])
+                                                                                if online_player_id == 1:
+                                                                                    board.player(1)
+                                                                                    board.current_player = 1
+                                                                                else:
+                                                                                    board.player(2)
+                                                                                    board.current_player = 2
+                                                                                change_state(PLAY)
                                                                         else:
+                                                                            change_state(1)
                                                                             board.default_player2()
                                                                         done_gukenyura = True
 
@@ -1382,11 +1456,33 @@ def main():
                                                                             122 and
                                                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
                                                                             572):
-                                                                        change_state(1)
-                                                                        print(online_helper.send_starting_setting(n,board.stringify()))
-                                                                        board.default_player2()
-                                                                        done_gukenyura = True
+                                                                        if online_game:  # online game handler
 
+                                                                            print(online_helper.send_starting_setting(n,
+                                                                                                                      board.stringify()))
+                                                                            reply = online_helper.decode_reply(
+                                                                                online_helper.get_starting_setting(n))
+                                                                            print(reply)
+                                                                            if (reply == "waiting"):
+                                                                                change_state(WAITING_FROM_SET_BOARD)
+
+                                                                            else:
+                                                                                result2 = online_helper.string_to_list(
+                                                                                    reply)
+                                                                                board.player(2)
+                                                                                for i in range(len(result2)):
+                                                                                    board.add_beads(i + 1, result2[i])
+                                                                                if online_player_id == 1:
+                                                                                    board.player(1)
+                                                                                    board.current_player = 1
+                                                                                else:
+                                                                                    board.player(2)
+                                                                                    board.current_player = 2
+                                                                                change_state(PLAY)
+                                                                        else:
+                                                                            change_state(1)
+                                                                            board.default_player2()
+                                                                        done_gukenyura = True
                                                             clock.tick(60)
 
                                                     elif(data[1] == 19):
@@ -1506,14 +1602,36 @@ def main():
                                                     122 and
                                                     tmp_pos[1] >= 520 and tmp_pos[1] <=
                                                     572):
-                                                change_state(1)
-                                                print(online_helper.send_starting_setting(n, board.stringify()))
-                                                board.default_player2()
+                                                if online_game:  # online game handler
+
+                                                    print(online_helper.send_starting_setting(n, board.stringify()))
+                                                    reply = online_helper.decode_reply(
+                                                        online_helper.get_starting_setting(n))
+                                                    print(reply)
+                                                    if (reply == "waiting"):
+                                                        change_state(WAITING_FROM_SET_BOARD)
+
+                                                    else:
+                                                        result2 = online_helper.string_to_list(
+                                                            reply)
+                                                        board.player(2)
+                                                        for i in range(len(result2)):
+                                                            board.add_beads(i + 1, result2[i])
+                                                        if online_player_id == 1:
+                                                            board.player(1)
+                                                            board.current_player = 1
+                                                        else:
+                                                            board.player(2)
+                                                            board.current_player = 2
+                                                        change_state(PLAY)
+                                                else:
+                                                    change_state(1)
+                                                    board.default_player2()
                                                 done_gukenyura = True
 
                                     clock.tick(60)
 
-                            elif(data[1] == 19):
+                            elif(data[1] == 19): # menu button clicked from the gukenyura (set up board) state
                                 while not event.type == pygame.MOUSEBUTTONUP:
                                     screen.fill(WHITE)
                                     tmp_pos = pygame.mouse.get_pos()

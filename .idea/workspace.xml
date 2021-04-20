@@ -2,18 +2,210 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd5aca37-0f33-4257-9c8a-65b68e48c840" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/buttons/design_2/fr/waiting_for_player1_banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buttons/design_2/fr/waiting_for_player2_banner.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buttons/design_2/fr/waiting_for_player2_banner.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/10_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/11_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/12_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/13_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/14_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/15_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/16_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/17_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/18_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/19_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/1_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/20_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/21_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/22_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/23_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/24_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/25_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/26_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/27_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/28_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/29_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/2_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/30_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/31_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/32_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/33_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/34_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/35_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/36_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/37_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/38_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/39_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/3_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/40_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/41_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/42_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/43_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/44_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/45_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/46_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/47_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/48_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/49_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/4_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/50_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/51_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/52_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/53_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/54_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/55_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/56_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/57_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/58_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/59_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/5_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/60_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/61_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/62_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/63_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/64_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/6_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/7_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/8_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compressed_pictures/9_beads.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/buttons.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/buttons.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code for server.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code for server.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buttons/menu_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/buttons/menu_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buttons/restart_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/buttons/restart_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/10_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/11_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/12_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/13_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/14_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/15_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/16_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/17_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/18_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/19_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/1_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/20_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/21_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/22_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/23_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/24_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/25_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/26_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/27_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/28_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/29_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/2_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/30_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/31_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/32_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/33_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/34_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/35_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/36_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/37_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/38_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/39_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/3_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/40_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/41_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/42_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/43_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/44_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/45_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/46_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/47_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/48_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/49_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/4_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/50_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/51_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/52_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/53_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/54_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/55_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/56_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/57_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/58_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/59_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/5_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/60_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/61_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/62_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/63_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/64_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/6_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/7_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/8_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/9_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/done.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/menu_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/menu_button1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/menu_button2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/player2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/restart_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures1/restart_button1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/10_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/11_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/12_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/13_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/14_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/15_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/16_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/17_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/18_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/19_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/1_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/20_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/21_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/22_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/23_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/24_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/25_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/26_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/27_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/28_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/29_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/2_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/30_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/31_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/32_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/33_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/34_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/35_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/36_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/37_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/38_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/39_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/3_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/40_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/41_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/42_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/43_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/44_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/45_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/46_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/47_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/48_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/49_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/4_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/50_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/51_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/52_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/53_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/54_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/55_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/56_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/57_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/58_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/59_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/5_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/60_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/61_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/62_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/63_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/64_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/6_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/7_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/8_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_pictures2/9_beads.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/urubugu_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/urubugu_gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +236,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="dan4am &lt;39918471+dan4am@users.noreply.github.com&gt;" />
+        <option value="virt" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -73,7 +271,7 @@
       <recent name="C:\Users\dan4a\PycharmProjects\urubugu" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.online_helper">
+  <component name="RunManager" selected="Python.urubugu_gui">
     <configuration name="network" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="urubugu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -184,9 +382,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.online_helper" />
         <item itemvalue="Python.urubugu_gui" />
         <item itemvalue="Python.server" />
+        <item itemvalue="Python.online_helper" />
         <item itemvalue="Python.network" />
       </list>
     </recent_temporary>
@@ -302,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618790367842</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="updated : online event handler,waiting for Px screen &#10;added : virtual env">
+      <created>1618794239531</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1618794239531</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +541,8 @@
     <MESSAGE value="optimisation : updated play state appearance : back button and players banners." />
     <MESSAGE value="Started the code for online gaming" />
     <MESSAGE value="updating commit thread" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating commit thread" />
+    <MESSAGE value="updated : online event handler,waiting for Px screen &#10;added : virtual env" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated : online event handler,waiting for Px screen &#10;added : virtual env" />
   </component>
   <component name="WindowStateProjectService">
     <state x="279" y="-995" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618702091601">
@@ -352,10 +558,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="117" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.824@0.0.1536.824" timestamp="1618761252840" />
-    <state x="494" y="-1080" key="CommitChangelistDialog2" timestamp="1618790366450">
+    <state x="494" y="-1080" key="CommitChangelistDialog2" timestamp="1618794237792">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state x="494" y="-1080" key="CommitChangelistDialog2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618790366450" />
+    <state x="494" y="-1080" key="CommitChangelistDialog2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618794237792" />
     <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618358485298" />
     <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616461179470" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1610774339057">
@@ -371,59 +577,71 @@
     </state>
     <state x="691" y="-826" key="FileChooserDialogImpl/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618781462763" />
     <state x="553" y="201" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1618761225841" />
-    <state width="1899" height="140" key="GridCell.Tab.0.bottom" timestamp="1618793812248">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="949" height="347" key="GridCell.Tab.0.bottom" timestamp="1618870470925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618793812248" />
+    <state width="669" height="140" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
+    <state width="949" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
-    <state width="1515" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618761350705" />
-    <state width="1899" height="140" key="GridCell.Tab.0.center" timestamp="1618793812248">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="757" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
+    <state width="949" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
+    <state width="949" height="347" key="GridCell.Tab.0.center" timestamp="1618870470925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="140" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618793812248" />
+    <state width="669" height="140" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
+    <state width="949" height="140" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
-    <state width="1515" height="140" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618761350705" />
-    <state width="1899" height="140" key="GridCell.Tab.0.left" timestamp="1618793812248">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="757" height="140" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
+    <state width="949" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
+    <state width="949" height="347" key="GridCell.Tab.0.left" timestamp="1618870470925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="140" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618793812248" />
+    <state width="669" height="140" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
+    <state width="949" height="140" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
-    <state width="1515" height="140" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618761350705" />
-    <state width="1899" height="140" key="GridCell.Tab.0.right" timestamp="1618793812248">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="757" height="140" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
+    <state width="949" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
+    <state width="949" height="347" key="GridCell.Tab.0.right" timestamp="1618870470925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="140" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618793812248" />
+    <state width="669" height="140" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
+    <state width="949" height="140" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
-    <state width="1515" height="140" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618761350705" />
-    <state width="1899" height="347" key="GridCell.Tab.1.bottom" timestamp="1618788855537">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="757" height="140" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
+    <state width="949" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
+    <state width="949" height="347" key="GridCell.Tab.1.bottom" timestamp="1618870470925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618788855537" />
+    <state width="1899" height="347" key="GridCell.Tab.1.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618795555783" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610629609332" />
-    <state width="1899" height="347" key="GridCell.Tab.1.center" timestamp="1618788855537">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="949" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
+    <state width="949" height="347" key="GridCell.Tab.1.center" timestamp="1618870470925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618788855537" />
+    <state width="1899" height="347" key="GridCell.Tab.1.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618795555783" />
     <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610629609332" />
-    <state width="1899" height="347" key="GridCell.Tab.1.left" timestamp="1618788855537">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="949" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
+    <state width="949" height="347" key="GridCell.Tab.1.left" timestamp="1618870470925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618788855537" />
+    <state width="1899" height="347" key="GridCell.Tab.1.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618795555783" />
     <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610629609332" />
-    <state width="1899" height="347" key="GridCell.Tab.1.right" timestamp="1618788855537">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="949" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
+    <state width="949" height="347" key="GridCell.Tab.1.right" timestamp="1618870470925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618788855537" />
+    <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618795555783" />
     <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610629609332" />
+    <state width="949" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
     <state x="413" y="-936" key="SettingsEditor" timestamp="1618781490310">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="413" y="-936" key="SettingsEditor/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618781490310" />
     <state x="330" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616454992420" />
-    <state x="451" y="-897" key="Vcs.Push.Dialog.v2" timestamp="1618790372421">
+    <state x="451" y="-897" key="Vcs.Push.Dialog.v2" timestamp="1618794281956">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state x="451" y="-897" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618790372421" />
+    <state x="451" y="-897" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618794281956" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618358493894" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616461190431" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1610774339057">
