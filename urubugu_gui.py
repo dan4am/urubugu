@@ -8,9 +8,56 @@ from network import Network
 import online_helper
 
 
+######################
+# Define some colors #
+######################
+
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+GREY = (220, 220, 220)
+GREEN = (0, 255, 0)
+RED = (255, 0, 0)
+
+##########################
+# Sizes and measurements #
+##########################
+
+BEAD = 5
+BETWEEN_SLOTS = 5
+SLOTS = 40
+BOARD_WIDTH = BETWEEN_SLOTS*6+ SLOTS*2 * 4
+BOARD_LENGTH = BETWEEN_SLOTS*9+ SLOTS*2 * 8
+
+
+#######################
+# Buttons coordinates #
+#######################
+
+back_button = [0,0]
+gukenyura_button=[0,0]
+start_button=[0,0]
+help_button =[0,0]
+language_button=[0,0]
+language_button_choice_1=[0,0]
+language_button_choice_2=[0,0]
+
+
+##########
+# States #
+##########
+
+done = False
+Current_state = 0 #menu = 0, game = 1, gameover=2, gukenyura = 3, waiting from menu = 5, waiting from set board = 6
+GUKENYURA=3
+MENU=0
+REPLAY=2
+PLAY=1
+HELP=4
+WAITING_FROM_MENU = 5
+WAITING_FROM_SET_BOARD = 6
+
 _image_library = {}
 
-online_game = True
 
 config_language = "fr"
 languages = ["bi", "en"]
@@ -22,14 +69,21 @@ DATABASE = []
 #######################
 # Online gaming assets#
 #######################
+
+online_game = True
+# online_game = False
+online_player_id = 0
+
 waiting_for_player1_banner_path="buttons/"+design+config_language+"/waiting_for_player1_banner.png"
 waiting_for_player2_banner_path="buttons/"+design+config_language+"/waiting_for_player2_banner.png"
 
 
+######################
+# Vs Computer assets #
+######################
 
-
-
-
+# vs_computer = True
+vs_computer = False
 
 
 ####################
@@ -65,9 +119,9 @@ menu_gukenyura_button_unclicked_path="buttons/"+design+"/menu_gukenyura_button_u
 menu_gukenyura_button_clicked_path="buttons/"+design+"/menu_gukenyura_button_clicked.png"
 
 
-##################
-# language assets#
-##################
+####################
+# Menu State assets#
+####################
 
 
 dukenyure_button_unclicked_path = "buttons/"+design+config_language+"/dukenyure_button_unclicked.png"
@@ -78,7 +132,9 @@ dukine_button_clicked_path = "buttons/"+design+config_language+"/dukine_button_c
 ingeneBakina_button_unclicked_path = "buttons/"+design+config_language+"/ingeneBakina_button_uncliked.png"
 ingeneBakina_button_clicked_path = "buttons/"+design+config_language+"/ingeneBakina_button_cliked.png"
 
-#language button
+##################
+# language assets#
+##################
 
 bi_flag_path = "buttons/flag_bi.png"
 fr_flag_path = "buttons/flag_fr.png"
@@ -142,7 +198,6 @@ def animate_drop_down_button(clock):
         time += 1
 
 
-
 selection_flag_path = "buttons/"+design+"selection_of_flag.png"
 selection_flag_path_white = "buttons/"+design+"selection_of_flag_white.png"
 selection_flag_path2 = "buttons/"+design+"selection_of_flag2.png"
@@ -151,7 +206,7 @@ background_click_path = "buttons/background_click.png"
 
 
 def getpath(beads):
-    result ="compressed_pictures/"+str(beads)+"_beads.png"
+    result ="beads_pictures/"+str(beads)+"_beads.png"
     # print (result)
     return result
 def get_image(path):
@@ -176,40 +231,6 @@ def get_img(beads):
     # return get_image(path)
     return DATABASE[beads - 1 ]
 
-# Define some colors
-
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-GREY = (220, 220, 220)
-GREEN = (0, 255, 0)
-RED = (255, 0, 0)
-BEAD = 5
-BETWEEN_SLOTS = 5
-SLOTS = 40
-BOARD_WIDTH = BETWEEN_SLOTS*6+ SLOTS*2 * 4
-BOARD_LENGTH = BETWEEN_SLOTS*9+ SLOTS*2 * 8
-back_button = [0,0]
-gukenyura_button=[0,0]
-start_button=[0,0]
-help_button =[0,0]
-language_button=[0,0]
-language_button_choice_1=[0,0]
-language_button_choice_2=[0,0]
-done = False
-Current_state = 0 #menu = 0, game = 1, gameover=2, gukenyura = 3
-GUKENYURA=3
-MENU=0
-REPLAY=2
-PLAY=1
-HELP=4
-WAITING_FROM_MENU = 5
-WAITING_FROM_SET_BOARD = 6
-click_on_hole = 5
-vs_computer = False
-online_player_id = 0
-# vs_computer = False
-# def Draw_board():
-
 
 
 pygame.init()
@@ -217,7 +238,7 @@ pygame.init()
 # Set the width and height of the screen [width, height]
 size = (800,600)
 screen = pygame.display.set_mode(size)
-circle_filled=pygame.Surface(size)
+circle_filled = pygame.Surface(size)
 place =[int((800-BOARD_LENGTH) / 2 ), int((600 - BOARD_WIDTH) / 2), BOARD_LENGTH, BOARD_WIDTH]
 
 def change_language(language):
@@ -259,8 +280,6 @@ def draw_frame():
 
 
 
-
-
 def board_coordinates_to_screen_coordinates(line, row):
         # result = board.hole_to_index(hole)
     if (line > 1):
@@ -271,7 +290,6 @@ def board_coordinates_to_screen_coordinates(line, row):
         x = 57+BETWEEN_SLOTS + BETWEEN_SLOTS * row + SLOTS * 2 * row + SLOTS
         y =125+ BETWEEN_SLOTS + BETWEEN_SLOTS * line + SLOTS * 2 * line + SLOTS
         return [x, y]
-
 
 
 
@@ -313,12 +331,14 @@ def draw(back = None):
         player_display(back = 1)
     else:
         player_display()
-#https://fr.chaturbate.com/janet_rossreborn/"
+
+
 def draw_end():
     screen.fill(BLACK)
     screen.blit(get_image(menu_path), (150,200))
     screen.blit(get_image(restart_path), (450,200))
     pygame.display.flip()
+
 
 def draw_gukenyura(default = None, done = None, menu = None, waiting = None):
     screen.fill(WHITE)
@@ -338,14 +358,9 @@ def draw_gukenyura(default = None, done = None, menu = None, waiting = None):
     if (waiting):
         screen.blit(get_image(background_click_path), (0, 0))
         global online_player_id
-        # print(online_player_id)
         if (online_player_id == 2):
-            # print("waiting for player 1")
-            # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player1_banner_path), (310, 63)), (447, 485))
             screen.blit(get_image(waiting_for_player1_banner_path), (65, 223))
         else:
-            # print("waiting for player 2")
-            # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player2_banner_path), (310, 63)), (47, 55))
             screen.blit( get_image(waiting_for_player2_banner_path), (65, 223))
         pygame.display.flip()
 
@@ -474,7 +489,7 @@ def draw_menu(play = None, set = None, lang = None, help = None, waiting = None)
     pygame.display.flip()
 
 
-def game_coordinates_to_hole(x, y):
+def game_coordinates_to_data(x, y):
     result =[0,0]
     if(Current_state == MENU):
         if (x >= start_button[0] and x <= start_button[0] + 350 and y >= start_button[1] and y <= start_button[1] + 69  ):
@@ -729,8 +744,6 @@ def player_display(back = None):
         screen.blit(pygame.transform.smoothscale(get_image(player2_banner_path), (310, 63)), (47, 55))
 
 
-###########################""online helper methods################################
-
 
 def waiting_banner():
     # for event in pygame.event.get():
@@ -880,7 +893,7 @@ def main():
                 if event.button == 1:
                     position =pygame.mouse.get_pos()
                     print(position)
-                    data = game_coordinates_to_hole(position[0],int(position[1]))
+                    data = game_coordinates_to_data(position[0], int(position[1]))
                     print(data)
                     if(not data[0] == 0):
                         clicked_button = data[0]
@@ -1223,7 +1236,7 @@ def main():
                                 tmp_position[1] = position[1]
                                 done_gukenyura = False
                                 while(not done_gukenyura):
-                                    tmp_data = game_coordinates_to_hole(tmp_position[0],
+                                    tmp_data = game_coordinates_to_data(tmp_position[0],
                                                                         int(tmp_position[1]))
                                     beads_to_take = board.beads(tmp_data[1])
                                     draw_left_click(clicked,tmp_position,maximum,beads_to_take)
@@ -1236,7 +1249,7 @@ def main():
                                             if event.button == 1:
                                                 if(clicked == False):
                                                     position = pygame.mouse.get_pos()
-                                                    data = game_coordinates_to_hole(position[0], int(position[1]))
+                                                    data = game_coordinates_to_data(position[0], int(position[1]))
                                                     print(position)
                                                     print(data)
                                                     if((data[1] >=1 and data[1]<=16)):
@@ -1366,7 +1379,7 @@ def main():
 
                                                 else:
                                                     position = pygame.mouse.get_pos()
-                                                    data = game_coordinates_to_hole(position[0], int(position[1]))
+                                                    data = game_coordinates_to_data(position[0], int(position[1]))
                                                     if (data[1] >=1 and data[1]<=16):
                                                         if (not( (position[0] > tmp_position[0] and position[0] <= tmp_position[
                                                             0] + 85) and (position[1] > tmp_position[1] and position[1]<= tmp_position[1] + 175))):
@@ -1385,8 +1398,8 @@ def main():
                                                             if temp_x == 1 : number_of_beads = temp
                                                             elif temp_x == 2 : number_of_beads = temp + 16
                                                             print(maximum)
-                                                            tmp_data = game_coordinates_to_hole(tmp_position[0],
-                                                                                            int(tmp_position[1]))
+                                                            tmp_data = game_coordinates_to_data(tmp_position[0],
+                                                                                                int(tmp_position[1]))
                                                             beads_to_take = board.beads(tmp_data[1])
                                                             tmp_max = maximum - (number_of_beads - beads_to_take)
                                                             # maximum = maximum - (number_of_beads - beads_to_take)
@@ -1397,7 +1410,7 @@ def main():
                                                                 for i in range(1, number_of_beads + 1):
                                                                     board.add_bead(tmp_data[1])
                                                             print(position)
-                                                            data = game_coordinates_to_hole(position[0], int(position[1]))
+                                                            data = game_coordinates_to_data(position[0], int(position[1]))
                                                             print(data)
 
                                                     elif(data[1]==17):
@@ -1531,7 +1544,7 @@ def main():
                                                             elif temp_x == 2:
                                                                 number_of_beads = temp + 16
 
-                                                            tmp_data = game_coordinates_to_hole(tmp_position[0],
+                                                            tmp_data = game_coordinates_to_data(tmp_position[0],
                                                                                                 int(tmp_position[1]))
                                                             beads_to_take = board.beads(tmp_data[1])
                                                             tmp_max = maximum - (number_of_beads - beads_to_take)
@@ -1543,7 +1556,7 @@ def main():
                                                                 for i in range(1, number_of_beads + 1):
                                                                     board.add_bead(tmp_data[1])
                                                             print(position)
-                                                            data = game_coordinates_to_hole(position[0], int(position[1]))
+                                                            data = game_coordinates_to_data(position[0], int(position[1]))
                                                             print(data)
 
                                     clock.tick(60)
