@@ -70,8 +70,8 @@ DATABASE = []
 # Online gaming assets#
 #######################
 
-online_game = True
-# online_game = False
+# online_game = True
+online_game = False
 online_player_id = 0
 
 waiting_for_player1_banner_path="buttons/"+design+config_language+"/waiting_for_player1_banner.png"
@@ -1024,10 +1024,10 @@ def main():
                                                         board.player(2)
                                                         board.current_player = 2
                                                     change_state(PLAY)
-                                                    # break
-                                            # board.player(2)
-                                            # print(board.stringify())
-                                            # continue
+
+                                            else:
+                                                board.choose_board(board.BOARD_DEFAULT)
+                                                change_state(PLAY)
                                 clock.tick(60)
 
                         elif(clicked_button == 5):#menu state click on dukenyure (setting up board) button
