@@ -2,7 +2,356 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd5aca37-0f33-4257-9c8a-65b68e48c840" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/10_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/11_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/12_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/13_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/14_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/15_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/16_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/17_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/18_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/19_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/1_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/20_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/21_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/22_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/23_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/24_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/25_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/26_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/27_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/28_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/29_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/2_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/30_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/31_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/32_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/33_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/34_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/35_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/36_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/37_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/38_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/39_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/3_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/40_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/41_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/42_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/43_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/44_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/45_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/46_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/47_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/48_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/49_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/4_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/50_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/51_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/52_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/53_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/54_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/55_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/56_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/57_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/58_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/59_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/5_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/60_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/61_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/62_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/63_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/64_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/6_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/7_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/8_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/beads_pictures/9_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/AGENCYB.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/ARLRDBD.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/ComicSansMS3.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/FreeSans-LrmZ.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/FreeSansBold-Xgdd.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Orbitron_Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/game.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/online_game.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/server.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/10_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/11_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/12_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/13_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/14_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/15_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/16_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/17_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/18_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/19_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/1_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/20_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/21_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/22_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/23_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/24_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/25_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/26_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/27_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/28_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/29_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/2_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/30_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/31_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/32_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/33_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/34_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/35_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/36_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/37_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/38_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/39_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/3_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/40_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/41_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/42_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/43_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/44_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/45_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/46_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/47_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/48_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/49_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/4_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/50_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/51_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/52_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/53_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/54_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/55_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/56_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/57_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/58_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/59_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/5_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/60_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/61_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/62_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/63_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/64_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/6_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/7_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/8_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/beads_pictures/9_beads.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/buttons.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/code for server.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/fonts/AGENCYB.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/fonts/ARLRDBD.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/fonts/ComicSansMS3.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/fonts/FreeSans-LrmZ.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/fonts/FreeSansBold-Xgdd.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/fonts/Orbitron_Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/icons/game.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/icons/online_game.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/icons/server.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/assets/imikenyuro.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/background_click.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/default_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/default_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/dukenyure_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/dukenyure_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/dukine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/dukine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/ingeneBakina_button_cliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/ingeneBakina_button_uncliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/kinanIMachine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/kinanIMachine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/bi/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/done_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/done_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/default_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/default_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/dukenyure_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/dukenyure_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/dukine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/dukine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/ingeneBakina_button_cliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/ingeneBakina_button_uncliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/kinanIMachine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/kinanIMachine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/en/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/default_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/default_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/dukenyure_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/dukenyure_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/dukine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/dukine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/ingeneBakina_button_cliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/ingeneBakina_button_uncliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/kinanIMachine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/kinanIMachine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/fr/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/hider_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/language_drop_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/language_drop_down_menu_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/language_drop_down_menu_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/menu_gukenyura_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/menu_gukenyura_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/selection_of_flag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/selection_of_flag2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/selection_of_flag2_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_1/selection_of_flag_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/background_click.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/default_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/default_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/dukenyure_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/dukenyure_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/dukine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/dukine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/ingeneBakina_button_cliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/ingeneBakina_button_uncliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/kinanIMachine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/kinanIMachine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/bi/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/done_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/done_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/default_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/default_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/dukenyure_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/dukenyure_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/dukine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/dukine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/ingeneBakina_button_cliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/ingeneBakina_button_uncliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/kinanIMachine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/kinanIMachine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/en/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/back_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/back_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/default_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/default_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/dukenyure_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/dukenyure_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/dukine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/dukine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/ingeneBakina_button_cliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/ingeneBakina_button_uncliked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/kinanIMachine_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/kinanIMachine_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/waiting_for_player1_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/waiting_for_player2_banner.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/fr/waiting_for_player2_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/hider_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/language_drop_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/language_drop_down_menu_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/language_drop_down_menu_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/masquer scroll down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/menu_gukenyura_button_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/menu_gukenyura_button_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/selection_of_flag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/selection_of_flag2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/selection_of_flag2_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/design_2/selection_of_flag_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/flag_bi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/flag_en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/flag_fr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/language_drop_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/language_drop_down_menu_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/language_drop_down_menu_unclicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/menu_button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/restart_button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/selection_of_flag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/selection_of_flag2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/selection_of_flag2_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/selection_of_flag_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/buttons/transparent-d-icon-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/urubugu.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/urubugu_online.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu/urubugu_server.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urubugu_gui.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ibizungu/.idea/Ibizungu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ibizungu/.idea/Ibizungu.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/10_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/11_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/12_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/13_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/14_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/15_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/16_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/17_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/18_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/19_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/1_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/20_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/21_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/22_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/23_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/24_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/25_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/26_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/27_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/28_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/29_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/2_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/30_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/31_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/32_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/33_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/34_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/35_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/36_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/37_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/38_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/39_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/3_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/40_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/41_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/42_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/43_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/44_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/45_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/46_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/47_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/48_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/49_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/4_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/50_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/51_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/52_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/53_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/54_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/55_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/56_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/57_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/58_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/59_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/5_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/60_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/61_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/62_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/63_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/64_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/6_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/7_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/8_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beads_pictures/9_beads.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/urubugu_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/urubugu_gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,62 +404,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/papers on AI for games" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dan4a\PycharmProjects\urubugu\assets" />
-      <recent name="C:\Users\dan4a\PycharmProjects\urubugu" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dan4a\PycharmProjects\urubugu" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dan4a\PycharmProjects\UI" />
+      <recent name="C:\Users\dan4a\PycharmProjects\urubugu\assets" />
+      <recent name="C:\Users\dan4a\PycharmProjects\urubugu" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.urubugu_gui">
-    <configuration name="network" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="urubugu" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\dan4a\AppData\Local\Microsoft\WindowsApps\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/network.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="online_helper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="first-game" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\dan4a\PycharmProjects\urubugu\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/online_helper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.server">
     <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="urubugu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,9 +426,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\dan4a\AppData\Local\Microsoft\WindowsApps\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
@@ -132,19 +440,18 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="urubugu_gui" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+    <configuration name="urubugu_gui" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true" nameIsGenerated="true">
       <module name="urubugu" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\dan4a\AppData\Local\Microsoft\WindowsApps\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/urubugu_gui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -172,17 +479,13 @@
     </configuration>
     <list>
       <item itemvalue="Python.urubugu_gui" />
-      <item itemvalue="Python.network" />
       <item itemvalue="Python.server" />
-      <item itemvalue="Python.online_helper" />
       <item itemvalue="Python tests.Unittests in urubugu" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.urubugu_gui" />
         <item itemvalue="Python.server" />
-        <item itemvalue="Python.online_helper" />
-        <item itemvalue="Python.network" />
+        <item itemvalue="Python.urubugu_gui" />
       </list>
     </recent_temporary>
   </component>
@@ -318,7 +621,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618937457976</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="minor refactoring">
+      <created>1618938089293</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1618938089293</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,26 +668,32 @@
     <option name="LAST_COMMIT_MESSAGE" value="minor refactoring" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="279" y="-995" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618702091601">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state x="279" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619050329314">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="279" y="-995" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618702091601" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1618587285386" />
-    <state x="537" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1618560739460">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="279" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619050329314" />
+    <state x="671" y="270" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1619112794872">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="537" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618560739460" />
+    <state x="671" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619112794872" />
     <state x="548" y="117" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1618761252840">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="117" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.824@0.0.1536.824" timestamp="1618761252840" />
-    <state x="494" y="0" key="CommitChangelistDialog2" timestamp="1618937456665">
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1619001523945">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619001523945" />
+    <state x="494" y="0" key="CommitChangelistDialog2" timestamp="1618938087840">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="494" y="-1080" key="CommitChangelistDialog2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618794237792" />
     <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618358485298" />
     <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616461179470" />
-    <state x="494" y="0" key="CommitChangelistDialog2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1618937456665" />
+    <state x="494" y="0" key="CommitChangelistDialog2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1618938087840" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1610774339057">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -386,46 +702,51 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="637" y="167" width="736" height="489" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1618761290589" />
-    <state x="691" y="-826" key="FileChooserDialogImpl" timestamp="1618781462763">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state x="691" y="254" key="FileChooserDialogImpl" timestamp="1619036061244">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="691" y="-826" key="FileChooserDialogImpl/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618781462763" />
     <state x="553" y="201" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1618761225841" />
-    <state width="949" height="140" key="GridCell.Tab.0.bottom" timestamp="1618937962590">
+    <state x="691" y="254" key="FileChooserDialogImpl/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619036061244" />
+    <state width="1899" height="140" key="GridCell.Tab.0.bottom" timestamp="1619122527814">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="669" height="140" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
     <state width="949" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
     <state width="757" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
-    <state width="949" height="140" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1618937962590" />
+    <state width="1899" height="140" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1619004486437" />
+    <state width="1899" height="140" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619122527814" />
     <state width="949" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
-    <state width="949" height="140" key="GridCell.Tab.0.center" timestamp="1618937962590">
+    <state width="1899" height="140" key="GridCell.Tab.0.center" timestamp="1619122527813">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="669" height="140" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
     <state width="949" height="140" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
     <state width="757" height="140" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
-    <state width="949" height="140" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1618937962590" />
+    <state width="1899" height="140" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1619004486437" />
+    <state width="1899" height="140" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619122527813" />
     <state width="949" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
-    <state width="949" height="140" key="GridCell.Tab.0.left" timestamp="1618937962590">
+    <state width="1899" height="140" key="GridCell.Tab.0.left" timestamp="1619122527813">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="669" height="140" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
     <state width="949" height="140" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
     <state width="757" height="140" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
-    <state width="949" height="140" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1618937962590" />
+    <state width="1899" height="140" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1619004486437" />
+    <state width="1899" height="140" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619122527813" />
     <state width="949" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
-    <state width="949" height="140" key="GridCell.Tab.0.right" timestamp="1618937962590">
+    <state width="1899" height="140" key="GridCell.Tab.0.right" timestamp="1619122527813">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="669" height="140" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
     <state width="949" height="140" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
     <state width="757" height="140" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
-    <state width="949" height="140" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1618937962590" />
+    <state width="1899" height="140" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1619004486437" />
+    <state width="1899" height="140" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619122527813" />
     <state width="949" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
     <state width="949" height="347" key="GridCell.Tab.1.bottom" timestamp="1618870470925">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -451,18 +772,19 @@
     <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618795555783" />
     <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610629609332" />
     <state width="949" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
-    <state x="413" y="-936" key="SettingsEditor" timestamp="1618781490310">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state x="539" y="175" key="SettingsEditor" timestamp="1619050260186">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="413" y="-936" key="SettingsEditor/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618781490310" />
     <state x="330" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616454992420" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1618937459410">
+    <state x="539" y="175" key="SettingsEditor/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619050260186" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1618938097353">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="451" y="-897" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618794281956" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618358493894" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616461190431" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1618937459410" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1618938097353" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1610774339057">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

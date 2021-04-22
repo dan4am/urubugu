@@ -6,7 +6,7 @@ import time
 import artificial_intelligence
 from network import Network
 import online_helper
-
+import sys
 
 ######################
 # Define some colors #
@@ -48,11 +48,11 @@ language_button_choice_2=[0,0]
 
 done = False
 Current_state = 0 #menu = 0, game = 1, gameover=2, gukenyura = 3, waiting from menu = 5, waiting from set board = 6
-GUKENYURA=3
-MENU=0
-REPLAY=2
-PLAY=1
-HELP=4
+GUKENYURA = 3
+MENU = 0
+REPLAY = 2
+PLAY = 1
+HELP = 4
 WAITING_FROM_MENU = 5
 WAITING_FROM_SET_BOARD = 6
 
@@ -70,12 +70,12 @@ DATABASE = []
 # Online gaming assets#
 #######################
 
-# online_game = True
-online_game = False
+online_game = True
+# online_game = False
 online_player_id = 0
 
-waiting_for_player1_banner_path="buttons/"+design+config_language+"/waiting_for_player1_banner.png"
-waiting_for_player2_banner_path="buttons/"+design+config_language+"/waiting_for_player2_banner.png"
+waiting_for_player1_banner_path = "buttons/"+design+config_language+"/waiting_for_player1_banner.png"
+waiting_for_player2_banner_path = "buttons/"+design+config_language+"/waiting_for_player2_banner.png"
 
 
 ######################
@@ -90,8 +90,8 @@ vs_computer = False
 # play state assets#
 ####################
 
-player1_banner_path="buttons/"+design+config_language+"/player1_banner.png"
-player2_banner_path="buttons/"+design+config_language+"/player2_banner.png"
+player1_banner_path = "buttons/"+design+config_language+"/player1_banner.png"
+player2_banner_path = "buttons/"+design+config_language+"/player2_banner.png"
 back_button_clicked_path = "buttons/"+design+config_language+"/back_button_clicked.png"
 back_button_unclicked_path = "buttons/"+design+config_language+"/back_button_unclicked.png"
 hider_pannel_path = "buttons/"+design+"/hider_white.png"
@@ -105,7 +105,6 @@ menu_path = "buttons/menu_button.png"
 restart_path = "buttons/restart_button.png"
 
 ###################
-# gukenyura assets#
 ###################
 
 done_path = "buttons/"+design+"/done_button_unclicked.png"
@@ -115,8 +114,8 @@ player2_path = "compressed_pictures1/player2.png"
 default_path="buttons/"+design+"/bi/default_button_unclicked.png"
 default_unclicked_path = "buttons/"+design+config_language+"/default_button_unclicked.png"
 default_clicked_path = "buttons/"+design+config_language+"/default_button_clicked.png"
-menu_gukenyura_button_unclicked_path="buttons/"+design+"/menu_gukenyura_button_unclicked.png"
-menu_gukenyura_button_clicked_path="buttons/"+design+"/menu_gukenyura_button_clicked.png"
+menu_gukenyura_button_unclicked_path = "buttons/"+design+"/menu_gukenyura_button_unclicked.png"
+menu_gukenyura_button_clicked_path = "buttons/"+design+"/menu_gukenyura_button_clicked.png"
 
 
 ####################
@@ -126,7 +125,7 @@ menu_gukenyura_button_clicked_path="buttons/"+design+"/menu_gukenyura_button_cli
 
 dukenyure_button_unclicked_path = "buttons/"+design+config_language+"/dukenyure_button_unclicked.png"
 dukenyure_button_clicked_path = "buttons/"+design+config_language+"/dukenyure_button_clicked.png"
-dukenyure_button_clicked_path = "buttons/"+design+config_language+"/dukenyure_button_clicked.png"
+# dukenyure_button_clicked_path = "buttons/"+design+config_language+"/dukenyure_button_clicked.png"
 dukine_button_unclicked_path = "buttons/"+design+config_language+"/dukine_button_unclicked.png"
 dukine_button_clicked_path = "buttons/"+design+config_language+"/dukine_button_clicked.png"
 ingeneBakina_button_unclicked_path = "buttons/"+design+config_language+"/ingeneBakina_button_uncliked.png"
@@ -206,7 +205,7 @@ background_click_path = "buttons/background_click.png"
 
 
 def getpath(beads):
-    result ="beads_pictures/"+str(beads)+"_beads.png"
+    result ="assets/beads_pictures/"+str(beads)+"_beads.png"
     # print (result)
     return result
 def get_image(path):
@@ -295,16 +294,18 @@ def board_coordinates_to_screen_coordinates(line, row):
 
 def draw_slots():
     # pygame.draw.circle(screen, WHITE, hole_to_coordinates(hole),40, 1)
+    myfont = pygame.font.Font("assets/fonts/ARLRDBD.TTF", 11)
     for line in range (len(board.BOARD)):
         for row in range (len(board.BOARD[0])):
             # circle_filled=pygame.Surface(size)
             pygame.draw.circle(screen, GREY, board_coordinates_to_screen_coordinates(line, row), SLOTS - 5)
             pygame.draw.circle(screen, WHITE, board_coordinates_to_screen_coordinates(line, row), SLOTS - 2, 1)# à revoir
-            font_obj = pygame.font.SysFont('comicsans.ttf', 15)
+            # font_obj = pygame.font.SysFont('FreeSans.ttf', 15)
+            font_obj = myfont
             text_surface_obj = font_obj.render(" "+str(board.BOARD[line][row]), False, BLACK, GREY)
             text_rect_obj = text_surface_obj.get_rect()
-            x = board_coordinates_to_screen_coordinates(line, row)[0] + 32
-            y=board_coordinates_to_screen_coordinates(line, row)[1] - 32
+            x = board_coordinates_to_screen_coordinates(line, row)[0] + 38
+            y=board_coordinates_to_screen_coordinates(line, row)[1] - 30
             text_rect_obj.center = (x, y)
             screen.blit(text_surface_obj, text_rect_obj)
             if(not board.BOARD[line][row] == 0):
@@ -398,7 +399,7 @@ def draw_left_click(clicked, tmp_position,maximum,beads):
         draw_slots()
         draw_gukenyura_buttons()
         for i in range(0, 32):
-            font_obj = pygame.font.SysFont('comicsans.ttf', 12)
+            font_obj = pygame.font.Font("assets/fonts/ARLRDBD.TTF", 8)
             if (maximum - (i+1 - beads) >= 0 and maximum - (i+1 - beads) <= 32):
                 text_surface_obj = font_obj.render(" " + str(i + 1) + " BEADS ", True, BLACK, GREY)
             else:
@@ -947,7 +948,7 @@ def main():
                                 pass
                         elif(clicked_button == 3): # play state back button clicked
                             while not event.type == pygame.MOUSEBUTTONUP:
-                                tmp_pos = pygame.mouse.get_pos();
+                                tmp_pos = pygame.mouse.get_pos()
                                 if (tmp_pos[0] >= back_button[0] and tmp_pos[0] <= back_button[0] + 105
                                         and tmp_pos[1] >= back_button[1] and tmp_pos[1] <= back_button[1] + 50):
                                     screen.blit(
@@ -977,13 +978,14 @@ def main():
                                         tmp_pos = pygame.mouse.get_pos()
                                         if (tmp_pos[0] >= back_button[0] and tmp_pos[0] <= back_button[0] + 105
                                         and tmp_pos[1] >= back_button[1] and tmp_pos[1] <= back_button[1] + 50):
-                                            board.back(board.back_Board)
+                                            # board.back(board.back_Board)
+                                            change_state(MENU)
 
 
                         elif(clicked_button == 4): # menu state click on Dukine (Play) button
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
-                                tmp_pos = pygame.mouse.get_pos();
+                                tmp_pos = pygame.mouse.get_pos()
                                 if (tmp_pos[0] >= start_button[0] and tmp_pos[0] <= start_button[0] + 350 and
                                         tmp_pos[1] >= start_button[1] and tmp_pos[1] <= start_button[1] + 69):
                                     draw_menu(play=1)
@@ -997,7 +999,7 @@ def main():
                                         pygame.quit()
                                         # done = done or board.game_over()
                                     elif event.type == pygame.MOUSEBUTTONUP:
-                                        tmp_pos = pygame.mouse.get_pos();
+                                        tmp_pos = pygame.mouse.get_pos()
                                         if (tmp_pos[0] >= start_button[0] and tmp_pos[0] <= start_button[0] + 350 and tmp_pos[1] >= start_button[
                                             1] and tmp_pos[1] <= start_button[1] + 69):
                                             board.choose_board(board.BOARD_DEFAULT_P1)
@@ -1033,7 +1035,7 @@ def main():
                         elif(clicked_button == 5):#menu state click on dukenyure (setting up board) button
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
-                                tmp_pos = pygame.mouse.get_pos();
+                                tmp_pos = pygame.mouse.get_pos()
                                 if (tmp_pos[0] >= gukenyura_button[0] and tmp_pos[0] <= gukenyura_button[0] + 350 and
                                         tmp_pos[1] >= gukenyura_button[1] and tmp_pos[1] <= gukenyura_button[1] + 69):
                                     draw_menu(set=1)
@@ -1047,7 +1049,7 @@ def main():
                                         done = True
                                         # done = done or board.game_over()
                                     elif event.type == pygame.MOUSEBUTTONUP:
-                                        tmp_pos = pygame.mouse.get_pos();
+                                        tmp_pos = pygame.mouse.get_pos()
                                         if (tmp_pos[0] >= gukenyura_button[0] and tmp_pos[0] <= gukenyura_button[0] + 350 and
                                                 tmp_pos[1] >= gukenyura_button[1] and tmp_pos[1] <= gukenyura_button[1] + 69):
                                             change_state(3)
@@ -1058,7 +1060,7 @@ def main():
                         elif (clicked_button == 20): #Menu state language menu drop down clicked
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
-                                tmp_pos = pygame.mouse.get_pos();
+                                tmp_pos = pygame.mouse.get_pos()
                                 if (tmp_pos[0] >= language_button[0] and tmp_pos[0] <= language_button[0] + 74
                                         and tmp_pos[1] >= language_button[1] and tmp_pos[1] <= language_button[1] + 35):
                                     draw_menu(lang=1)
@@ -1185,7 +1187,7 @@ def main():
                         elif (clicked_button == 21):
                             while not event.type == pygame.MOUSEBUTTONUP:
                                 screen.fill(WHITE)
-                                tmp_pos = pygame.mouse.get_pos();
+                                tmp_pos = pygame.mouse.get_pos()
                                 if (tmp_pos[0] >= help_button[0] and tmp_pos[0] <= help_button[0] + 350 and
                                         tmp_pos[1] >= help_button[1] and tmp_pos[1] <= help_button[1] + 69):
                                     draw_menu(help=1)
@@ -1199,7 +1201,7 @@ def main():
                                         done = True
                                         # done = done or board.game_over()
                                     elif event.type == pygame.MOUSEBUTTONUP:
-                                        tmp_pos = pygame.mouse.get_pos();
+                                        tmp_pos = pygame.mouse.get_pos()
                                         if (tmp_pos[0] >= help_button[0] and tmp_pos[0] <= help_button[0] + 350 and
                                         tmp_pos[1] >= help_button[1] and tmp_pos[1] <= help_button[1] + 69):
                                             pass
@@ -1263,7 +1265,7 @@ def main():
                                                     elif(data[1]==17):
                                                         while not event.type == pygame.MOUSEBUTTONUP:
                                                             screen.fill(WHITE)
-                                                            tmp_pos = pygame.mouse.get_pos();
+                                                            tmp_pos = pygame.mouse.get_pos()
                                                             if (tmp_pos[0] >= 678 and tmp_pos[0] <=
                                                                     770 and
                                                                     tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1279,7 +1281,7 @@ def main():
                                                                     pygame.quit()
                                                                     # done = done or board.game_over()
                                                                 elif event.type == pygame.MOUSEBUTTONUP:
-                                                                    tmp_pos = pygame.mouse.get_pos();
+                                                                    tmp_pos = pygame.mouse.get_pos()
                                                                     if (tmp_pos[0] >= 678 and tmp_pos[0] <=
                                                                             770 and
                                                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1296,7 +1298,7 @@ def main():
 
                                                         while not event.type == pygame.MOUSEBUTTONUP:
                                                             screen.fill(WHITE)
-                                                            tmp_pos = pygame.mouse.get_pos();
+                                                            tmp_pos = pygame.mouse.get_pos()
                                                             if (tmp_pos[0] >= 30 and tmp_pos[0] <=
                                                                     122 and
                                                                     tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1312,7 +1314,7 @@ def main():
                                                                     pygame.quit()
                                                                     # done = done or board.game_over()
                                                                 elif event.type == pygame.MOUSEBUTTONUP:
-                                                                    tmp_pos = pygame.mouse.get_pos();
+                                                                    tmp_pos = pygame.mouse.get_pos()
                                                                     if (tmp_pos[0] >= 30 and tmp_pos[0] <=
                                                                             122 and
                                                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1366,7 +1368,7 @@ def main():
                                                                     pygame.quit()
                                                                     # done = done or board.game_over()
                                                                 elif event.type == pygame.MOUSEBUTTONUP:
-                                                                    tmp_pos = pygame.mouse.get_pos();
+                                                                    tmp_pos = pygame.mouse.get_pos()
                                                                     if (tmp_pos[0] >= 30 and tmp_pos[0] <=
                                                                     70 and
                                                                     tmp_pos[1] >= 30 and tmp_pos[1] <=
@@ -1416,7 +1418,7 @@ def main():
                                                     elif(data[1]==17):
                                                         while not event.type == pygame.MOUSEBUTTONUP:
                                                             screen.fill(WHITE)
-                                                            tmp_pos = pygame.mouse.get_pos();
+                                                            tmp_pos = pygame.mouse.get_pos()
                                                             if (tmp_pos[0] >= 678 and tmp_pos[0] <=
                                                                     770 and
                                                                     tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1432,7 +1434,7 @@ def main():
                                                                     pygame.quit()
                                                                     # done = done or board.game_over()
                                                                 elif event.type == pygame.MOUSEBUTTONUP:
-                                                                    tmp_pos = pygame.mouse.get_pos();
+                                                                    tmp_pos = pygame.mouse.get_pos()
                                                                     if (tmp_pos[0] >= 678 and tmp_pos[0] <=
                                                                     770 and
                                                                     tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1448,7 +1450,7 @@ def main():
 
                                                         while not event.type == pygame.MOUSEBUTTONUP:
                                                             screen.fill(WHITE)
-                                                            tmp_pos = pygame.mouse.get_pos();
+                                                            tmp_pos = pygame.mouse.get_pos()
                                                             if (tmp_pos[0] >= 30 and tmp_pos[0] <=
                                                                     122 and
                                                                     tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1464,7 +1466,7 @@ def main():
                                                                     pygame.quit()
                                                                     # done = done or board.game_over()
                                                                 elif event.type == pygame.MOUSEBUTTONUP:
-                                                                    tmp_pos = pygame.mouse.get_pos();
+                                                                    tmp_pos = pygame.mouse.get_pos()
                                                                     if (tmp_pos[0] >= 30 and tmp_pos[0] <=
                                                                             122 and
                                                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1517,7 +1519,7 @@ def main():
                                                                     pygame.quit()
                                                                     # done = done or board.game_over()
                                                                 elif event.type == pygame.MOUSEBUTTONUP:
-                                                                    tmp_pos = pygame.mouse.get_pos();
+                                                                    tmp_pos = pygame.mouse.get_pos()
                                                                     if (tmp_pos[0] >= 30 and tmp_pos[0] <=
                                                                     70 and
                                                                     tmp_pos[1] >= 30 and tmp_pos[1] <=
@@ -1550,7 +1552,7 @@ def main():
                                                             tmp_max = maximum - (number_of_beads - beads_to_take)
                                                             # maximum = maximum - (number_of_beads - beads_to_take)
                                                             print(tmp_max)
-                                                            if(tmp_max >= 0 and tmp_max <= 32):
+                                                            if tmp_max >= 0 and tmp_max <= 32:
                                                                 maximum = tmp_max
                                                                 board.take_beads(tmp_data[1], beads_to_take)
                                                                 for i in range(1, number_of_beads + 1):
@@ -1563,7 +1565,7 @@ def main():
                             elif(data[1] == 17):
                                 while not event.type == pygame.MOUSEBUTTONUP:
                                     screen.fill(WHITE)
-                                    tmp_pos = pygame.mouse.get_pos();
+                                    tmp_pos = pygame.mouse.get_pos()
                                     if (tmp_pos[0] >= 678 and tmp_pos[0] <=
                                             770 and
                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1579,7 +1581,7 @@ def main():
                                             pygame.quit
                                             # done = done or board.game_over()
                                         elif event.type == pygame.MOUSEBUTTONUP:
-                                            tmp_pos = pygame.mouse.get_pos();
+                                            tmp_pos = pygame.mouse.get_pos()
                                             if (tmp_pos[0] >= 678 and tmp_pos[0] <=
                                                     770 and
                                                     tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1594,7 +1596,7 @@ def main():
                             elif (data[1] == 18):
                                 while not event.type == pygame.MOUSEBUTTONUP:
                                     screen.fill(WHITE)
-                                    tmp_pos = pygame.mouse.get_pos();
+                                    tmp_pos = pygame.mouse.get_pos()
                                     if (tmp_pos[0] >= 30 and tmp_pos[0] <=
                                             122 and
                                             tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1610,7 +1612,7 @@ def main():
                                             pygame.quit()
                                             # done = done or board.game_over()
                                         elif event.type == pygame.MOUSEBUTTONUP:
-                                            tmp_pos = pygame.mouse.get_pos();
+                                            tmp_pos = pygame.mouse.get_pos()
                                             if (tmp_pos[0] >= 30 and tmp_pos[0] <=
                                                     122 and
                                                     tmp_pos[1] >= 520 and tmp_pos[1] <=
@@ -1663,7 +1665,7 @@ def main():
                                             pygame.quit()
                                             # done = done or board.game_over()
                                         elif event.type == pygame.MOUSEBUTTONUP:
-                                            tmp_pos = pygame.mouse.get_pos();
+                                            tmp_pos = pygame.mouse.get_pos()
                                             if (tmp_pos[0] >= 30 and tmp_pos[0] <=
                                                     70 and
                                                     tmp_pos[1] >= 30 and tmp_pos[1] <=
@@ -1680,5 +1682,6 @@ def main():
     # pygame.quit()
     print ("fin")
     print (board.BOARD)
+
 if __name__ == '__main__':
     main()
