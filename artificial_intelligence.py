@@ -3,6 +3,38 @@ import numpy as np
 
 
 
+def merge_sort(arr):
+    # The last array split
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    # Perform merge_sort recursively on both halves
+    left, right = merge_sort(arr[:mid]), merge_sort(arr[mid:])
+
+    # Merge each side together
+    return merge(left, right, arr.copy())
+
+
+def merge(left, right, merged):
+    left_cursor, right_cursor = 0, 0
+    while left_cursor < len(left) and right_cursor < len(right):
+
+        # Sort each one and place into the result
+        if left[left_cursor][1] <= right[right_cursor][1]:
+            merged[left_cursor + right_cursor]= left[left_cursor]
+            left_cursor += 1
+        else:
+            merged[left_cursor + right_cursor] = right[right_cursor]
+            right_cursor += 1
+
+    for left_cursor in range(left_cursor, len(left)):
+        merged[left_cursor + right_cursor] = left[left_cursor]
+
+    for right_cursor in range(right_cursor, len(right)):
+        merged[left_cursor + right_cursor] = right[right_cursor]
+
+    return merged
+
 
 def beads_left(player):
 
@@ -51,42 +83,21 @@ def simulate_all_the_plays():
     return merge_sort(result)
 
 
+def hole_to_play_hard():
+    result = simulate_all_the_plays()
 
-def merge_sort(arr):
-    # The last array split
-    if len(arr) <= 1:
-        return arr
-    mid = len(arr) // 2
-    # Perform merge_sort recursively on both halves
-    left, right = merge_sort(arr[:mid]), merge_sort(arr[mid:])
+    if not result[0][2] == 0:
+        if result[0][1] == 0:
+            return result[0][0]
+    elif result[0][2] == 0:
+        pass
 
-    # Merge each side together
-    return merge(left, right, arr.copy())
-
-
-def merge(left, right, merged):
-    left_cursor, right_cursor = 0, 0
-    while left_cursor < len(left) and right_cursor < len(right):
-
-        # Sort each one and place into the result
-        if left[left_cursor][1] <= right[right_cursor][1]:
-            merged[left_cursor + right_cursor]= left[left_cursor]
-            left_cursor += 1
-        else:
-            merged[left_cursor + right_cursor] = right[right_cursor]
-            right_cursor += 1
-
-    for left_cursor in range(left_cursor, len(left)):
-        merged[left_cursor + right_cursor] = left[left_cursor]
-
-    for right_cursor in range(right_cursor, len(right)):
-        merged[left_cursor + right_cursor] = right[right_cursor]
-
-    return merged
 
 
 def hole_to_play_medium():
     return (simulate_all_the_plays()[0][0])
+
+
 
 
 def main():

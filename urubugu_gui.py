@@ -65,13 +65,86 @@ languages = ["bi", "en"]
 design = "design_2/"
 DATABASE = []
 
+def change_design():
+    global design, config_language, dukenyure_button_clicked_path, dukenyure_button_unclicked_path, dukine_button_clicked_path, \
+        dukine_button_unclicked_path, ingeneBakina_button_unclicked_path, ingeneBakina_button_clicked_path,\
+        default_clicked_path,default_unclicked_path,back_button_unclicked_path,back_button_clicked_path,player1_banner_path,player2_banner_path,\
+        selection_flag_path, selection_flag_path_white, selection_flag_path2, selection_flag_path2_white, background_click_path,\
+        language_drop_down_button_clicked_path, language_drop_down_button_unclicked_path, language_drop_down_path,waiting_for_player1_banner_path,\
+        waiting_for_player2_banner_path,hider_pannel_path,done_path,done_unclicked_path,done_clicked_path,player2_path,\
+        menu_gukenyura_button_unclicked_path,menu_gukenyura_button_clicked_path
+
+    if design == "design_1/":
+        design ="design_2/"
+
+    else:
+        design = "design_1/"
+
+    waiting_for_player1_banner_path = "buttons/" + design + config_language + "/waiting_for_player1_banner.png"
+    waiting_for_player2_banner_path = "buttons/" + design + config_language + "/waiting_for_player2_banner.png"
+
+    ####################
+    # play state assets#
+    ####################
+
+    player1_banner_path = "buttons/" + design + config_language + "/player1_banner.png"
+    player2_banner_path = "buttons/" + design + config_language + "/player2_banner.png"
+    back_button_clicked_path = "buttons/" + design + config_language + "/back_button_clicked.png"
+    back_button_unclicked_path = "buttons/" + design + config_language + "/back_button_unclicked.png"
+    hider_pannel_path = "buttons/" + design + "/hider_white.png"
+
+
+
+    ###################
+    ###################
+
+    done_path = "buttons/" + design + "/done_button_unclicked.png"
+    done_unclicked_path = "buttons/" + design + "/done_button_unclicked.png"
+    done_clicked_path = "buttons/" + design + "/done_button_clicked.png"
+    player2_path = "compressed_pictures1/player2.png"
+    default_unclicked_path = "buttons/" + design + config_language + "/default_button_unclicked.png"
+    default_clicked_path = "buttons/" + design + config_language + "/default_button_clicked.png"
+    menu_gukenyura_button_unclicked_path = "buttons/" + design + "/menu_gukenyura_button_unclicked.png"
+    menu_gukenyura_button_clicked_path = "buttons/" + design + "/menu_gukenyura_button_clicked.png"
+
+    ####################
+    # Menu State assets#
+    ####################
+
+    dukenyure_button_unclicked_path = "buttons/" + design + config_language + "/dukenyure_button_unclicked.png"
+    dukenyure_button_clicked_path = "buttons/" + design + config_language + "/dukenyure_button_clicked.png"
+    dukine_button_unclicked_path = "buttons/" + design + config_language + "/dukine_button_unclicked.png"
+    dukine_button_clicked_path = "buttons/" + design + config_language + "/dukine_button_clicked.png"
+    ingeneBakina_button_unclicked_path = "buttons/" + design + config_language + "/ingeneBakina_button_uncliked.png"
+    ingeneBakina_button_clicked_path = "buttons/" + design + config_language + "/ingeneBakina_button_cliked.png"
+
+    selection_flag_path = "buttons/" + design + "selection_of_flag.png"
+    selection_flag_path_white = "buttons/" + design + "selection_of_flag_white.png"
+    selection_flag_path2 = "buttons/" + design + "selection_of_flag2.png"
+    selection_flag_path2_white = "buttons/" + design + "selection_of_flag2_white.png"
+    background_click_path = "buttons/background_click.png"
+
+    language_drop_down_button_clicked_path = "buttons/" + design + "language_drop_down_menu_clicked.png"
+    language_drop_down_button_unclicked_path = "buttons/" + design + "language_drop_down_menu_unclicked.png"
+    language_drop_down_path = "buttons/" + design + "language_drop_down.png"
+
+
+
+
+
+
+
+
+
+
+
 
 #######################
 # Online gaming assets#
 #######################
 
-online_game = True
-# online_game = False
+# online_game = True
+online_game = False
 online_player_id = 0
 
 waiting_for_player1_banner_path = "buttons/"+design+config_language+"/waiting_for_player1_banner.png"
@@ -82,8 +155,8 @@ waiting_for_player2_banner_path = "buttons/"+design+config_language+"/waiting_fo
 # Vs Computer assets #
 ######################
 
-# vs_computer = True
-vs_computer = False
+vs_computer = True
+# vs_computer = False
 
 
 ####################
@@ -412,6 +485,12 @@ def draw_left_click(clicked, tmp_position,maximum,beads):
             else:
                 text_rect_obj.center = (tmp_position[0] + 22 + 43, tmp_position[1] + (i - 16) * 11 + 4)
                 screen.blit(text_surface_obj, text_rect_obj)
+
+        font_obj = pygame.font.Font("assets/fonts/ARLRDBD.TTF", 10)
+        text_surface_obj = font_obj.render(" " + " CLEAR   BEADS ", True, BLACK, GREY)
+        text_rect_obj.center = (tmp_position[0] + 22, tmp_position[1] + 16 * 11 + 4)
+        screen.blit(text_surface_obj, text_rect_obj)
+
         pygame.display.flip()
     else:
         screen.fill(WHITE)
@@ -695,7 +774,7 @@ def play(hole):
                     time.sleep(0.5)
                     board.take_beads(row2_crsp,beads_row2)
                     draw()
-                # time.sleep(0.5)
+
                 if (not board.player_one):board.player(1)
                 else:board.player(2)
             else: # if the corresponding rows in P2 are empty
@@ -713,10 +792,7 @@ def play(hole):
                     time.sleep(0.5)
                     board.take_beads(current_hole, board.beads(current_hole))
         else:
-            # if (not player_one):
-            #     player(1)
-            # else:
-            #     player(2)
+
             if (board.beads(temp_hole) == 1):
                 loop_can_go_on = False
             else:
@@ -775,7 +851,7 @@ pygame.display.set_caption("URUBUGU")
 
 def main():
 
-    global done, online_player_id
+    global done, online_player_id,design
     clock = pygame.time.Clock()
 
 
@@ -809,7 +885,34 @@ def main():
     clicked_default = False
     while ( (not done)):
 
-        if(Current_state == PLAY):  draw()
+        if(Current_state == PLAY):
+            draw()
+            if (online_game):
+                if board.current_player == 2:
+                    result = online_helper.decode_reply(online_helper.get_other_player_move(n))
+                    if result == "waiting":
+                        print(result)
+                    else:
+                        play(int(result))
+                        board.player(1)
+                        board.current_player = 1
+                        if (board.game_over()):
+                            time.sleep(0.5)
+                            change_state(REPLAY)
+            if (vs_computer and not board.game_over()):
+                time.sleep(0.5)
+                hole_to_play = artificial_intelligence.hole_to_play_medium()
+                beads = board.beads(hole_to_play)
+                if (not board.player_one and (not beads == 0)):
+                    play(hole_to_play)
+                    board.player(1)
+                    board.current_player = 1
+                    if (board.game_over()):
+                        time.sleep(0.5)
+                        change_state(2)
+                else:
+                    # something to prevent the other player to play
+                    pass
         elif(Current_state == MENU):
             if(design == "design_2/"):
                 position_menu = pygame.mouse.get_pos()
@@ -872,18 +975,6 @@ def main():
 
 
         place =[(800-BOARD_LENGTH) / 2 , (600 - BOARD_WIDTH) / 2, BOARD_LENGTH, BOARD_WIDTH]
-        if (online_game):
-            if board.current_player == 2:
-                result = online_helper.decode_reply(online_helper.get_other_player_move(n))
-                if result == "waiting":
-                    print (result)
-                else:
-                    play(int(result))
-                    board.player(1)
-                    board.current_player = 1
-                    if (board.game_over()):
-                        time.sleep(0.5)
-                        change_state(REPLAY)
 
 
         pygame.event.pump()
@@ -916,22 +1007,7 @@ def main():
                                 # something to prevent the other player to play
                                 pass
 
-                            if (vs_computer):
-                                time.sleep(0.5)
-                                hole_to_play = artificial_intelligence.hole_to_play_medium() #TODO if the game is over by the time player one finishes
-                                #add averification for game over
-                                beads = board.beads(hole_to_play)
-                                if (not board.player_one and (not beads == 0)):
-                                    # play(hole)
-                                    play(hole_to_play)
-                                    board.player(1)
-                                    board.current_player = 1
-                                    if (board.game_over()):
-                                        time.sleep(0.5)
-                                        change_state(2)
-                                else:
-                                    # something to prevent the other player to play
-                                    pass
+
                         elif(clicked_button == 2 and (not vs_computer) and (not online_game)):
                             beads = board.beads(hole)
                             # hole_to_play = artificial_intelligence.hole_to_play()
@@ -1382,9 +1458,9 @@ def main():
                                                 else:
                                                     position = pygame.mouse.get_pos()
                                                     data = game_coordinates_to_data(position[0], int(position[1]))
-                                                    if (data[1] >=1 and data[1]<=16):
-                                                        if (not( (position[0] > tmp_position[0] and position[0] <= tmp_position[
-                                                            0] + 85) and (position[1] > tmp_position[1] and position[1]<= tmp_position[1] + 175))):
+                                                    if (data[1] >=1 and data[1]<=16):##if the player clicks outside the buttons to chose the number of beads
+                                                        if (not( (position[0] >= tmp_position[0] and position[0] <= tmp_position[
+                                                            0] + 85) and (position[1] > tmp_position[1] and position[1]<= tmp_position[1] + 175+13))):
                                                             clicked = True
                                                             tmp_position[0] = position[0]
                                                             tmp_position[1] = position[1]
@@ -1393,12 +1469,18 @@ def main():
                                                         else:
                                                             clicked = False
                                                             number_of_beads = 0
-                                                            temp =   position[1] - tmp_position[1]
-                                                            temp = int (temp /11) + 1
-                                                            temp_x = position[0]- tmp_position[0]
-                                                            temp_x = int(temp_x / 42) + 1
-                                                            if temp_x == 1 : number_of_beads = temp
-                                                            elif temp_x == 2 : number_of_beads = temp + 16
+                                                            temp =   position[1] - tmp_position[1] # temp helps us to retrieve how many beads the palyer clicked on based on the y axis
+
+                                                            if temp >= 0 and temp <= 175 : #beads buttons
+                                                                temp = int (temp /11) + 1
+                                                                temp_x = position[0]- tmp_position[0]
+                                                                temp_x = int(temp_x / 42) + 1
+                                                                if temp_x == 1 : number_of_beads = temp
+                                                                elif temp_x == 2 : number_of_beads = temp + 16
+                                                            else:# the clear beads button
+                                                                number_of_beads = 0
+                                                                print ("ici on vide le trou")
+
                                                             print(maximum)
                                                             tmp_data = game_coordinates_to_data(tmp_position[0],
                                                                                                 int(tmp_position[1]))
@@ -1409,142 +1491,33 @@ def main():
                                                             if (tmp_max >= 0 and tmp_max <= 32):
                                                                 maximum = tmp_max
                                                                 board.take_beads(tmp_data[1], beads_to_take)
-                                                                for i in range(1, number_of_beads + 1):
-                                                                    board.add_bead(tmp_data[1])
+                                                                # for i in range(1, number_of_beads + 1):
+                                                                board.add_beads(tmp_data[1], number_of_beads)
                                                             print(position)
                                                             data = game_coordinates_to_data(position[0], int(position[1]))
                                                             print(data)
 
-                                                    elif(data[1]==17):
-                                                        while not event.type == pygame.MOUSEBUTTONUP:
-                                                            screen.fill(WHITE)
-                                                            tmp_pos = pygame.mouse.get_pos()
-                                                            if (tmp_pos[0] >= 678 and tmp_pos[0] <=
-                                                                    770 and
-                                                                    tmp_pos[1] >= 520 and tmp_pos[1] <=
-                                                                    572):
-                                                                draw_gukenyura(default=1)
-                                                            else:
-                                                                draw_gukenyura()
 
-                                                            pygame.display.flip()
-                                                            pygame.event.pump()
-                                                            for event in pygame.event.get():
-                                                                if event.type == pygame.QUIT:
-                                                                    pygame.quit()
-                                                                    # done = done or board.game_over()
-                                                                elif event.type == pygame.MOUSEBUTTONUP:
-                                                                    tmp_pos = pygame.mouse.get_pos()
-                                                                    if (tmp_pos[0] >= 678 and tmp_pos[0] <=
-                                                                    770 and
-                                                                    tmp_pos[1] >= 520 and tmp_pos[1] <=
-                                                                    572):
-                                                                        clicked = False
-                                                                        board.default_player1()
-                                                                        maximum = 0
-                                                            clock.tick(60)
-                                                        # clicked = False
-                                                        # board.default_player1()
-                                                        # maximum = 0
-                                                    elif (data[1] == 18):
-
-                                                        while not event.type == pygame.MOUSEBUTTONUP:
-                                                            screen.fill(WHITE)
-                                                            tmp_pos = pygame.mouse.get_pos()
-                                                            if (tmp_pos[0] >= 30 and tmp_pos[0] <=
-                                                                    122 and
-                                                                    tmp_pos[1] >= 520 and tmp_pos[1] <=
-                                                                    572):
-                                                                draw_gukenyura(done=1)
-                                                            else:
-                                                                draw_gukenyura()
-
-                                                            pygame.display.flip()
-                                                            pygame.event.pump()
-                                                            for event in pygame.event.get():
-                                                                if event.type == pygame.QUIT:
-                                                                    pygame.quit()
-                                                                    # done = done or board.game_over()
-                                                                elif event.type == pygame.MOUSEBUTTONUP:
-                                                                    tmp_pos = pygame.mouse.get_pos()
-                                                                    if (tmp_pos[0] >= 30 and tmp_pos[0] <=
-                                                                            122 and
-                                                                            tmp_pos[1] >= 520 and tmp_pos[1] <=
-                                                                            572):
-                                                                        if online_game:  # online game handler
-
-                                                                            print(online_helper.send_starting_setting(n,
-                                                                                                                      board.stringify()))
-                                                                            reply = online_helper.decode_reply(
-                                                                                online_helper.get_starting_setting(n))
-                                                                            print(reply)
-                                                                            if (reply == "waiting"):
-                                                                                change_state(WAITING_FROM_SET_BOARD)
-
-                                                                            else:
-                                                                                result2 = online_helper.string_to_list(
-                                                                                    reply)
-                                                                                board.player(2)
-                                                                                for i in range(len(result2)):
-                                                                                    board.add_beads(i + 1, result2[i])
-                                                                                if online_player_id == 1:
-                                                                                    board.player(1)
-                                                                                    board.current_player = 1
-                                                                                else:
-                                                                                    board.player(2)
-                                                                                    board.current_player = 2
-                                                                                change_state(PLAY)
-                                                                        else:
-                                                                            change_state(1)
-                                                                            board.default_player2()
-                                                                        done_gukenyura = True
-                                                            clock.tick(60)
-
-                                                    elif(data[1] == 19):
-                                                        while not event.type == pygame.MOUSEBUTTONUP:
-                                                            screen.fill(WHITE)
-                                                            tmp_pos = pygame.mouse.get_pos()
-                                                            if (tmp_pos[0] >= 30 and tmp_pos[0] <=
-                                                                    70 and
-                                                                    tmp_pos[1] >= 30 and tmp_pos[1] <=
-                                                                    70):
-                                                                draw_gukenyura(menu=1)
-                                                            else:
-                                                                draw_gukenyura()
-
-                                                            pygame.display.flip()
-                                                            pygame.event.pump()
-                                                            for event in pygame.event.get():
-                                                                if event.type == pygame.QUIT:
-                                                                    pygame.quit()
-                                                                    # done = done or board.game_over()
-                                                                elif event.type == pygame.MOUSEBUTTONUP:
-                                                                    tmp_pos = pygame.mouse.get_pos()
-                                                                    if (tmp_pos[0] >= 30 and tmp_pos[0] <=
-                                                                    70 and
-                                                                    tmp_pos[1] >= 30 and tmp_pos[1] <=
-                                                                    70):
-                                                                        change_state(0)
-                                                                        done_gukenyura = True
-
-                                                            clock.tick(60)
-
-                                                    elif(data[1] == 0):
+                                                    else:# if the wanted number of beads is printed out of the board zone in the white empty zone or on the other buttons
                                                         clicked = False
                                                         if (((position[0] > tmp_position[0] and position[0] <=
                                                                   tmp_position[
                                                                       0] + 85) and (
                                                                          position[1] > tmp_position[1] and position[
-                                                                     1] <= tmp_position[1] + 175))):
+                                                                     1] <= tmp_position[1] + 175+15))):
                                                             number_of_beads = 0
                                                             temp = position[1] - tmp_position[1]
-                                                            temp = int(temp / 11) + 1
-                                                            temp_x = position[0] - tmp_position[0]
-                                                            temp_x = int(temp_x / 42) + 1
-                                                            if temp_x == 1:
-                                                                number_of_beads = temp
-                                                            elif temp_x == 2:
-                                                                number_of_beads = temp + 16
+                                                            if temp >= 0 and temp <= 175:  # beads buttons
+                                                                temp = int(temp / 11) + 1
+                                                                temp_x = position[0] - tmp_position[0]
+                                                                temp_x = int(temp_x / 42) + 1
+                                                                if temp_x == 1:
+                                                                    number_of_beads = temp
+                                                                elif temp_x == 2:
+                                                                    number_of_beads = temp + 16
+                                                            else:  # the clear beads button
+                                                                number_of_beads = 0
+                                                                # print("ici on vide le trou")
 
                                                             tmp_data = game_coordinates_to_data(tmp_position[0],
                                                                                                 int(tmp_position[1]))
@@ -1555,8 +1528,7 @@ def main():
                                                             if tmp_max >= 0 and tmp_max <= 32:
                                                                 maximum = tmp_max
                                                                 board.take_beads(tmp_data[1], beads_to_take)
-                                                                for i in range(1, number_of_beads + 1):
-                                                                    board.add_bead(tmp_data[1])
+                                                                board.add_beads(tmp_data[1], number_of_beads)
                                                             print(position)
                                                             data = game_coordinates_to_data(position[0], int(position[1]))
                                                             print(data)
@@ -1674,6 +1646,10 @@ def main():
                                                 done_gukenyura = True
 
                                     clock.tick(60)
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_d:
+
+                    change_design()
 
 
 
