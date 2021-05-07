@@ -40,6 +40,8 @@ help_button =[0,0]
 language_button=[0,0]
 language_button_choice_1=[0,0]
 language_button_choice_2=[0,0]
+vs_computer_button = [0,0]
+slider_button = [0,0]
 
 
 ##########
@@ -63,6 +65,9 @@ config_language = "fr"
 languages = ["bi", "en"]
 # design = "design_1/"
 design = "design_2/"
+design_2 = True
+# design_2 = False
+
 DATABASE = []
 
 def change_design():
@@ -72,7 +77,7 @@ def change_design():
         selection_flag_path, selection_flag_path_white, selection_flag_path2, selection_flag_path2_white, background_click_path,\
         language_drop_down_button_clicked_path, language_drop_down_button_unclicked_path, language_drop_down_path,waiting_for_player1_banner_path,\
         waiting_for_player2_banner_path,hider_pannel_path,done_path,done_unclicked_path,done_clicked_path,player2_path,\
-        menu_gukenyura_button_unclicked_path,menu_gukenyura_button_clicked_path
+        menu_gukenyura_button_unclicked_path,menu_gukenyura_button_clicked_path,vs_cpu_button_clicked_path,vs_cpu_button_unclicked_path
 
     if design == "design_1/":
         design ="design_2/"
@@ -117,6 +122,8 @@ def change_design():
     dukine_button_clicked_path = "buttons/" + design + config_language + "/dukine_button_clicked.png"
     ingeneBakina_button_unclicked_path = "buttons/" + design + config_language + "/ingeneBakina_button_uncliked.png"
     ingeneBakina_button_clicked_path = "buttons/" + design + config_language + "/ingeneBakina_button_cliked.png"
+    vs_cpu_button_clicked_path = "buttons/" + design + config_language + "/kinanIMachine_button_clicked.png"
+    vs_cpu_button_unclicked_path = "buttons/" + design + config_language + "/kinanIMachine_button_unclicked.png"
 
     selection_flag_path = "buttons/" + design + "selection_of_flag.png"
     selection_flag_path_white = "buttons/" + design + "selection_of_flag_white.png"
@@ -155,8 +162,8 @@ waiting_for_player2_banner_path = "buttons/"+design+config_language+"/waiting_fo
 # Vs Computer assets #
 ######################
 
-vs_computer = True
-# vs_computer = False
+# vs_computer = True
+vs_computer = False
 
 
 ####################
@@ -203,6 +210,12 @@ dukine_button_unclicked_path = "buttons/"+design+config_language+"/dukine_button
 dukine_button_clicked_path = "buttons/"+design+config_language+"/dukine_button_clicked.png"
 ingeneBakina_button_unclicked_path = "buttons/"+design+config_language+"/ingeneBakina_button_uncliked.png"
 ingeneBakina_button_clicked_path = "buttons/"+design+config_language+"/ingeneBakina_button_cliked.png"
+vs_cpu_button_clicked_path="buttons/"+design+config_language+"/kinanIMachine_button_clicked.png"
+vs_cpu_button_unclicked_path="buttons/"+design+config_language+"/kinanIMachine_button_unclicked.png"
+slider_activated_path = "buttons/slider_activated.png"
+circle_activated_path = "buttons/slide_circle_right.png"
+slider_deactivated_path = "buttons/slider_deactivated.png"
+circle_deactivated_path = "buttons/slide_circle_left.png"
 
 ##################
 # language assets#
@@ -224,20 +237,53 @@ language_drop_down_button_clicked_path = "buttons/"+design+"language_drop_down_m
 language_drop_down_button_unclicked_path = "buttons/"+design+"language_drop_down_menu_unclicked.png"
 language_drop_down_path = "buttons/"+design+"language_drop_down.png"
 
+def animate_slider(clock):
+    time = 0
+    destination = 0
+
+    vitesse = 0.5
+    acceleration = 0.04
+
+    if vs_computer:
+
+        while(destination < 21):
+            screen.blit(pygame.transform.smoothscale(get_image(hider_pannel_path), (50, 30)), (375, 30))
+            screen.blit(pygame.transform.smoothscale(get_image(slider_activated_path), (50, 20)), (375, 35))
+            destination = int(-0.5 * acceleration * time * time) + int(vitesse * time) + destination
+            screen.blit(pygame.transform.smoothscale(get_image(circle_activated_path), (30, 30)), (395 - destination, 30))
+
+            pygame.display.flip()
+            clock.tick(60)
+            time += 1
+
+    else:
+        while (destination < 21):
+            screen.blit(pygame.transform.smoothscale(get_image(hider_pannel_path), (50, 30)), (375, 30))
+            screen.blit(pygame.transform.smoothscale(get_image(slider_deactivated_path), (50, 20)), (375, 35))
+            destination = int(-0.5 * acceleration * time * time) + (vitesse * time) + destination
+            screen.blit(pygame.transform.smoothscale(get_image(circle_deactivated_path), (30, 30)),
+                        (375 + destination, 30))
+
+            pygame.display.flip()
+            clock.tick(60)
+            time += 1
+
+
 def animate_drop_down_button(clock):
     time = 0
     destination = 0
 
 
-    vitesse = 3
-    acceleration = 0.528
+    # vitesse = 3
+    vitesse = 0.9
+    # acceleration = 0.528
+    acceleration = 0.08
+    # acceleration = 0.0
     screen.blit(get_image(background_click_path), (0, 0))
     while (not destination >= 70):
 
-        destination = int(-0.5 * acceleration * time * time) + (vitesse * time) + destination
-        screen.blit(
-
-            pygame.transform.smoothscale(get_image(language_drop_down_path),
+        destination = int(-0.5 * acceleration * time * time) + int(vitesse * time) + destination
+        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_path),
                                          (75, 35+destination)), (50, 30 ))
 
         for i in range(2):
@@ -316,7 +362,8 @@ place =[int((800-BOARD_LENGTH) / 2 ), int((600 - BOARD_WIDTH) / 2), BOARD_LENGTH
 def change_language(language):
     global config_language, dukenyure_button_clicked_path, dukenyure_button_unclicked_path, dukine_button_clicked_path, \
         dukine_button_unclicked_path, ingeneBakina_button_unclicked_path, ingeneBakina_button_clicked_path,\
-        default_clicked_path,default_unclicked_path,back_button_unclicked_path,back_button_clicked_path,player1_banner_path,player2_banner_path
+        default_clicked_path,default_unclicked_path,back_button_unclicked_path,back_button_clicked_path,player1_banner_path,player2_banner_path\
+        ,vs_cpu_button_clicked_path,vs_cpu_button_unclicked_path
     if language == languages[0]:
         languages[0] = config_language
         config_language = language
@@ -336,6 +383,8 @@ def change_language(language):
     back_button_clicked_path = "buttons/"+design+"/"+ language +"/back_button_clicked.png"
     player1_banner_path="buttons/"+design+"/"+ language +"/player1_banner.png"
     player2_banner_path="buttons/"+design+"/"+ language +"/player2_banner.png"
+    vs_cpu_button_clicked_path = "buttons/" + design + config_language + "/kinanIMachine_button_clicked.png"
+    vs_cpu_button_unclicked_path = "buttons/" + design + config_language + "/kinanIMachine_button_unclicked.png"
 
 
 def change_state(state):
@@ -502,67 +551,142 @@ def draw_left_click(clicked, tmp_position,maximum,beads):
 
 
 
-def draw_menu(play = None, set = None, lang = None, help = None, waiting = None):
-    # for event in pygame.event.get():
-    #     if event.type == pygame.QUIT:
-    #         pygame.quit()
+def draw_menu(vs_cpu = None,play = None, set = None, lang = None, help = None, waiting = None):
+    global gukenyura_button, start_button,vs_computer_button,help_button, language_button, online_player_id,slider_button
 
+    if( not design_2): #if design_2 is False, the menu will use a normal button for v-s computer
+        screen.fill(WHITE)
 
-    screen.fill(WHITE)
-
-    if(play):
-        screen.blit(pygame.transform.smoothscale(get_image(dukine_button_clicked_path), (350,69)), (225, 185))
-    else:
-        screen.blit(pygame.transform.smoothscale(get_image(dukine_button_unclicked_path), (350,69)), (225, 185))
-    global start_button
-    start_button = [225,185]
-
-    if(set):
-        screen.blit(pygame.transform.smoothscale(get_image(dukenyure_button_clicked_path), (350,69)), (225, 265))
-    else:
-        screen.blit(pygame.transform.smoothscale(get_image(dukenyure_button_unclicked_path), (350, 69)), (225, 265))
-    global gukenyura_button
-    gukenyura_button = [225, 265]
-
-    if(help):
-        screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_clicked_path),(350,69)), (225, 345))
-    else:
-        screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_unclicked_path), (350, 69)), (225, 345))
-    global help_button
-    help_button = [225, 345]
-
-    if (lang == 2):
-        screen.blit(get_image(background_click_path), (0, 0))
-        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_path), (75, 105)), (50, 30))
-        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (75,35)), (50,30))
-
-        for i in range(2):
-            if(not languages[i] == config_language):
-                screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(languages[i])), (38, 25)), (56, 68 + i * 35 ))
-    elif(lang == 1):
-        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (75, 35)), (50, 30))
-    else:
-        screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_unclicked_path), (75, 35)),
-                    (50, 30))
-
-    global language_button
-    language_button = [50, 30]
-    screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(config_language)), (38,25)), (56,35))
-    # pygame.transform.smoothscale(get_image(getpath(self.intoke)), (105, 161))
-
-    if (waiting):
-        screen.blit(get_image(background_click_path), (0, 0))
-        global online_player_id
-        # print(online_player_id)
-        if (online_player_id == 2):
-            # print("waiting for player 1")
-            # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player1_banner_path), (310, 63)), (447, 485))
-            screen.blit(get_image(waiting_for_player1_banner_path), (65, 223))
+        if (vs_cpu):
+            screen.blit(pygame.transform.smoothscale(get_image(vs_cpu_button_clicked_path), (350, 69)), (225, 155))
         else:
-            # print("waiting for player 2")
-            # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player2_banner_path), (310, 63)), (47, 55))
-            screen.blit( get_image(waiting_for_player2_banner_path), (65, 223))
-        pygame.display.flip()
+            screen.blit(pygame.transform.smoothscale(get_image(vs_cpu_button_unclicked_path), (350, 69)), (225, 155))
+        vs_computer_button = [225, 155]
+
+        if(play):
+            screen.blit(pygame.transform.smoothscale(get_image(dukine_button_clicked_path), (350,69)), (225, 235))
+        else:
+            screen.blit(pygame.transform.smoothscale(get_image(dukine_button_unclicked_path), (350,69)), (225, 235))
+        start_button = [225,235]
+
+        if(set):
+            screen.blit(pygame.transform.smoothscale(get_image(dukenyure_button_clicked_path), (350,69)), (225, 315))
+        else:
+            screen.blit(pygame.transform.smoothscale(get_image(dukenyure_button_unclicked_path), (350, 69)), (225, 315))
+        gukenyura_button = [225, 315]
+
+        if(help):
+            screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_clicked_path),(350,69)), (225, 395))
+        else:
+            screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_unclicked_path), (350, 69)), (225, 395))
+        global help_button
+        help_button = [225, 395]
+
+        if (lang == 2):
+            screen.blit(get_image(background_click_path), (0, 0))
+            screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_path), (75, 105)), (50, 30))
+            screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (75,35)), (50,30))
+
+            for i in range(2):
+                if(not languages[i] == config_language):
+                    screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(languages[i])), (38, 25)), (56, 68 + i * 35 ))
+        elif(lang == 1):
+            screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (75, 35)), (50, 30))
+        else:
+            screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_unclicked_path), (75, 35)),
+                        (50, 30))
+
+        language_button = [50, 30]
+        screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(config_language)), (38,25)), (56,35))
+        # pygame.transform.smoothscale(get_image(getpath(self.intoke)), (105, 161))
+
+        if (waiting):
+            screen.blit(get_image(background_click_path), (0, 0))
+            # print(online_player_id)
+            if (online_player_id == 2):
+                # print("waiting for player 1")
+                # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player1_banner_path), (310, 63)), (447, 485))
+                screen.blit(get_image(waiting_for_player1_banner_path), (65, 223))
+            else:
+                # print("waiting for player 2")
+                # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player2_banner_path), (310, 63)), (47, 55))
+                screen.blit( get_image(waiting_for_player2_banner_path), (65, 223))
+            pygame.display.flip()
+
+    else:  #if design_2 is True, the menu will use a sliding button for v-s computer.
+        screen.fill(WHITE)
+        font_obj = pygame.font.Font("assets/fonts/ARLRDBD.TTF", 14)
+        text_surface_obj = font_obj.render(" " + " PvP ", True, BLACK, WHITE)
+        text_rect_obj = text_surface_obj.get_rect()
+        text_rect_obj.center = (290 , 45)
+        screen.blit(text_surface_obj, text_rect_obj)
+
+        text_surface_obj = font_obj.render(" " + " PvCPU ", True, BLACK, WHITE)
+        text_rect_obj = text_surface_obj.get_rect()
+        text_rect_obj.center = (500, 45)
+        screen.blit(text_surface_obj, text_rect_obj)
+        if (vs_computer):
+            screen.blit(pygame.transform.smoothscale(get_image(slider_activated_path), (50, 20)), (375,35))
+            screen.blit(pygame.transform.smoothscale(get_image(circle_activated_path), (30, 30)), (395, 30))
+        else:
+            screen.blit(pygame.transform.smoothscale(get_image(slider_deactivated_path), (50, 20)), (375,35))
+            screen.blit(pygame.transform.smoothscale(get_image(circle_deactivated_path), (30, 30)), (375, 30))
+        slider_button = [375, 30]
+
+        if (play):
+            screen.blit(pygame.transform.smoothscale(get_image(dukine_button_clicked_path), (350, 69)), (225, 185))
+        else:
+            screen.blit(pygame.transform.smoothscale(get_image(dukine_button_unclicked_path), (350, 69)), (225, 185))
+        start_button = [225, 185]
+
+        if (set):
+            screen.blit(pygame.transform.smoothscale(get_image(dukenyure_button_clicked_path), (350, 69)), (225, 265))
+        else:
+            screen.blit(pygame.transform.smoothscale(get_image(dukenyure_button_unclicked_path), (350, 69)), (225, 265))
+        gukenyura_button = [225, 265]
+
+        if (help):
+            screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_clicked_path), (350, 69)),
+                        (225, 345))
+        else:
+            screen.blit(pygame.transform.smoothscale(get_image(ingeneBakina_button_unclicked_path), (350, 69)),
+                        (225, 345))
+        help_button = [225, 345]
+
+        if (lang == 2):
+            screen.blit(get_image(background_click_path), (0, 0))
+            screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_path), (75, 105)), (50, 30))
+            screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (75, 35)),
+                        (50, 30))
+
+            for i in range(2):
+                if (not languages[i] == config_language):
+                    screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(languages[i])), (38, 25)),
+                                (56, 68 + i * 35))
+        elif (lang == 1):
+            screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_clicked_path), (75, 35)),
+                        (50, 30))
+        else:
+            screen.blit(pygame.transform.smoothscale(get_image(language_drop_down_button_unclicked_path), (75, 35)),
+                        (50, 30))
+
+        language_button = [50, 30]
+        screen.blit(pygame.transform.smoothscale(get_image(get_flag_path(config_language)), (38, 25)), (56, 35))
+        # pygame.transform.smoothscale(get_image(getpath(self.intoke)), (105, 161))
+
+        if (waiting):
+            screen.blit(get_image(background_click_path), (0, 0))
+
+            # print(online_player_id)
+            if (online_player_id == 2):
+                # print("waiting for player 1")
+                # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player1_banner_path), (310, 63)), (447, 485))
+                screen.blit(get_image(waiting_for_player1_banner_path), (65, 223))
+            else:
+                # print("waiting for player 2")
+                # screen.blit(pygame.transform.smoothscale(get_image(waiting_for_player2_banner_path), (310, 63)), (47, 55))
+                screen.blit(get_image(waiting_for_player2_banner_path), (65, 223))
+            pygame.display.flip()
 
 
 
@@ -582,6 +706,19 @@ def game_coordinates_to_data(x, y):
         # (74, 35)
         elif (x >= help_button[0] and x <= help_button[0] + 350 and y >= help_button[1] and y <= help_button[1] + 69  ):
             return [21,0]
+        elif (x >= vs_computer_button[0] and x <= vs_computer_button[0] + 350 and y >= vs_computer_button[1] and y <=
+              vs_computer_button[1] + 69):
+            if(not design_2):
+                return [22,0]
+            else:
+                return [0,0]
+        elif (x >= slider_button[0] and x <= slider_button[0] + 50 and y >= slider_button[1] and y <=
+              slider_button[1] + 30):
+            if ( design_2):
+                return [23, 0]
+            else:
+                return [0, 0]
+
 
         else:
             return[0,0]
@@ -851,7 +988,7 @@ pygame.display.set_caption("URUBUGU")
 
 def main():
 
-    global done, online_player_id,design
+    global done, online_player_id,design,vs_computer, design_2
     clock = pygame.time.Clock()
 
 
@@ -914,6 +1051,8 @@ def main():
                     # something to prevent the other player to play
                     pass
         elif(Current_state == MENU):
+            if(not design_2 and vs_computer):
+                vs_computer = False
             if(design == "design_2/"):
                 position_menu = pygame.mouse.get_pos()
                 x= position_menu[0]
@@ -930,6 +1069,9 @@ def main():
                 elif (x >= help_button[0] and x <= help_button[0] + 350 and y >= help_button[1] and y <=
                       help_button[1] + 69):
                     draw_menu(help=1)
+                elif (x >= vs_computer_button[0] and x <=vs_computer_button[0] + 350 and y >= vs_computer_button[1] and y <=
+                  vs_computer_button[1] + 69):
+                    draw_menu(vs_cpu=1)
                 else:
                     draw_menu()
             else:
@@ -1281,21 +1423,41 @@ def main():
                                         if (tmp_pos[0] >= help_button[0] and tmp_pos[0] <= help_button[0] + 350 and
                                         tmp_pos[1] >= help_button[1] and tmp_pos[1] <= help_button[1] + 69):
                                             pass
+
                                 clock.tick(40)
+                        elif (clicked_button == 22):
+                            while not event.type == pygame.MOUSEBUTTONUP:
+                                screen.fill(WHITE)
+                                tmp_pos = pygame.mouse.get_pos()
+                                if (tmp_pos[0] >= vs_computer_button[0] and tmp_pos[0] <= vs_computer_button[0] + 350 and
+                                        tmp_pos[1] >= vs_computer_button[1] and tmp_pos[1] <= vs_computer_button[1] + 69):
+                                    draw_menu(vs_cpu=1)
+                                else:
+                                    draw_menu()
+
+                                pygame.display.flip()
+                                pygame.event.pump()
+                                for event in pygame.event.get():
+                                    if event.type == pygame.QUIT:
+                                        done = True
+                                        # done = done or board.game_over()
+                                    elif event.type == pygame.MOUSEBUTTONUP:
+                                        tmp_pos = pygame.mouse.get_pos()
+                                        if (tmp_pos[0] >= vs_computer_button[0] and tmp_pos[0] <= vs_computer_button[0] + 350 and
+                                        tmp_pos[1] >= vs_computer_button[1] and tmp_pos[1] <= vs_computer_button[1] + 69):
+                                            vs_computer = True
+                                            board.choose_board(board.BOARD_DEFAULT)
+                                            change_state(1)
+                                            # pass
+
+                                clock.tick(40)
+                            clock.tick(60)
+                        elif(clicked_button == 23):
+                            animate_slider(clock)
+                            vs_computer = not vs_computer
+                            print(vs_computer)
 
 
-
-
-
-
-
-
-
-
-
-
-
-                                clock.tick(60)
                         elif (clicked_button == 6):
                             change_state(0)
                         elif (clicked_button == 7):
@@ -1648,8 +1810,9 @@ def main():
                                     clock.tick(60)
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_d:
-
                     change_design()
+                elif event.key == pygame.K_p:
+                    design_2 = not design_2
 
 
 
