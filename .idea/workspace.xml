@@ -3,15 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="bd5aca37-0f33-4257-9c8a-65b68e48c840" name="Default Changelist" comment="design change command + runtime optimization">
       <change afterPath="$PROJECT_DIR$/../UI/Contract Filler v1.0.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UI/Executable files/User Manuals/Manual_en.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UI/Executable files/User Manuals/Manuel_fr.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buttons/slide_circle_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buttons/slide_circle_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buttons/slider_activated.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buttons/slider_deactivated.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UI/Executable files/Outputs/test.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UI/Manuals/Manuel en.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UI/Manuals/Manuel.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UI/Outputs/coriance.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UI/gui.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UI/pyui.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/game.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/assets/game.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/assets/~$buttons.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/buttons/slide_circle_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/buttons/slide_circle_right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/buttons/slider_activated.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/buttons/slider_deactivated.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/urubugu v1.0.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/urubugu v1.1.1.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/urubugu v1.1.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/urubugu v1.1.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executables_files/urubugu_online.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ibizungu/.idea/Ibizungu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ibizungu/.idea/Ibizungu.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/gui/gui_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SudokuSolver/gui/gui_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/src/fill_by_square.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SudokuSolver/src/fill_by_square.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/src/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SudokuSolver/src/solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/Manuel en.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/Manuals/Manuel en.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/Manuel en.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/Executable files/User Manuals/Manual_en.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/Manuel.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/Manuals/Manuel.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/Manuel.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/Executable files/User Manuals/Manuel_fr.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/buttons.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/buttons.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executables_files/urubugu.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/urubugu_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/urubugu_gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +70,7 @@
         <option value="virt" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../SudokuSolver" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1Ziw0rxWexNyMZGK3SJddMsX7oH" />
@@ -65,64 +86,27 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UI/test.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SudokuSolver/assets" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dan4a\PycharmProjects\UI" />
-      <recent name="C:\Users\dan4a\PycharmProjects\urubugu" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dan4a\PycharmProjects\SudokuSolver\src" />
+      <recent name="C:\Users\dan4a\PycharmProjects\UI\Manuals" />
       <recent name="C:\Users\dan4a\PycharmProjects\UI" />
       <recent name="C:\Users\dan4a\PycharmProjects\urubugu\assets" />
       <recent name="C:\Users\dan4a\PycharmProjects\urubugu" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dan4a\PycharmProjects\SudokuSolver\assets" />
+      <recent name="C:\Users\dan4a\PycharmProjects\SudokuSolver\gui" />
+      <recent name="C:\Users\dan4a\PycharmProjects\SudokuSolver\src" />
+      <recent name="C:\Users\dan4a\PycharmProjects\SudokuSolver" />
+      <recent name="C:\Users\dan4a\PycharmProjects\UI" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.urubugu_gui">
-    <configuration name="artificial_intelligence" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="urubugu" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/artificial_intelligence.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="extract_pdf" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="UI" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../UI" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../UI/extract_pdf.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="UI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,19 +128,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pyui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="UI" />
+    <configuration name="gui_solver" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SudokuSolver" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../UI" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SudokuSolver/gui" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../UI/pyui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../SudokuSolver/gui/gui_solver.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,25 +149,60 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="UI" />
+    <configuration name="solver (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SudokuSolver" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../UI" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SudokuSolver/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../UI/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../SudokuSolver/src/solver.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="solver" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SudokuSolver" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SudokuSolver" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\dan4a\PycharmProjects\SudokuSolver\src\solver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_solver.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="SudokuSolver" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SudokuSolver/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SudokuSolver/tests/test_solver.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in urubugu" type="tests" factoryName="Unittests" nameIsGenerated="true">
@@ -204,20 +223,20 @@
     </configuration>
     <list>
       <item itemvalue="Python.urubugu_gui" />
-      <item itemvalue="Python.artificial_intelligence" />
-      <item itemvalue="Python.extract_pdf" />
+      <item itemvalue="Python.solver" />
+      <item itemvalue="Python.solver (1)" />
       <item itemvalue="Python.gui" />
-      <item itemvalue="Python.pyui" />
-      <item itemvalue="Python.test" />
+      <item itemvalue="Python.gui_solver" />
       <item itemvalue="Python tests.Unittests in urubugu" />
+      <item itemvalue="Python tests.Unittests in test_solver.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gui_solver" />
         <item itemvalue="Python.gui" />
-        <item itemvalue="Python.pyui" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.extract_pdf" />
-        <item itemvalue="Python.artificial_intelligence" />
+        <item itemvalue="Python.solver (1)" />
+        <item itemvalue="Python tests.Unittests in test_solver.py" />
+        <item itemvalue="Python.solver" />
       </list>
     </recent_temporary>
   </component>
@@ -409,7 +428,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620260832380</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="design changes: slider button for vs-computer, command for design changes ('d' and 'p')">
+      <created>1620357005799</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1620357005799</updated>
+    </task>
+    <task id="LOCAL-00026" summary="design : helper button added">
+      <created>1621040920443</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1621040920443</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +463,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="1 one bead move&#10;2 one bead capture opponent beads&#10;3 two players" />
     <MESSAGE value="starteg GUI, Drew Board" />
     <MESSAGE value="finalised the GUI mechanics for the Game&#10;left :&#10;a menu screen&#10;a back button&#10;a replay or quit screen" />
     <MESSAGE value="Added back button + logic" />
@@ -454,7 +486,9 @@
     <MESSAGE value="design change command + runtime optimization" />
     <MESSAGE value="desactivation of entry on defocus + repository refactoring + export command" />
     <MESSAGE value="added icon, executable and minor refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="added icon, executable and minor refactoring." />
+    <MESSAGE value="design changes: slider button for vs-computer, command for design changes ('d' and 'p')" />
+    <MESSAGE value="design : helper button added" />
+    <option name="LAST_COMMIT_MESSAGE" value="design : helper button added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="730" y="343" key="#Notifications" timestamp="1619775227023">
@@ -485,14 +519,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619434254668" />
-    <state x="494" y="0" key="CommitChangelistDialog2" timestamp="1620260830151">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="494" y="-1080" key="CommitChangelistDialog2" timestamp="1621040918699">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="494" y="-1080" key="CommitChangelistDialog2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618794237792" />
     <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618358485298" />
     <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616461179470" />
-    <state x="494" y="-1080" key="CommitChangelistDialog2/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620229342517" />
-    <state x="494" y="0" key="CommitChangelistDialog2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620260830151" />
+    <state x="494" y="-1080" key="CommitChangelistDialog2/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621040918699" />
+    <state x="494" y="0" key="CommitChangelistDialog2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620357002258" />
     <state x="494" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1619813943116" />
     <state x="796" y="211" width="736" height="489" key="EnvironmentVariablesDialog" timestamp="1619389535285">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -505,73 +539,73 @@
     <state x="691" y="-826" key="FileChooserDialogImpl/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618781462763" />
     <state x="553" y="201" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1618761225841" />
     <state x="691" y="254" key="FileChooserDialogImpl/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619738300341" />
-    <state width="1899" height="368" key="GridCell.Tab.0.bottom" timestamp="1620356853834">
+    <state width="1899" height="351" key="GridCell.Tab.0.bottom" timestamp="1621554964063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="669" height="140" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
     <state width="949" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
     <state width="757" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
-    <state width="1899" height="368" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620330695565" />
-    <state width="1899" height="368" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620356853834" />
-    <state width="1899" height="368" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1620256815413" />
-    <state width="1899" height="368" key="GridCell.Tab.0.center" timestamp="1620356853834">
+    <state width="1899" height="351" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621120976536" />
+    <state width="1899" height="351" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1621027521695" />
+    <state width="1899" height="351" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1621554964063" />
+    <state width="1899" height="351" key="GridCell.Tab.0.center" timestamp="1621554964061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="669" height="140" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
     <state width="949" height="140" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
     <state width="757" height="140" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
-    <state width="1899" height="368" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620330695565" />
-    <state width="1899" height="368" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620356853834" />
-    <state width="1899" height="368" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1620256815413" />
-    <state width="1899" height="368" key="GridCell.Tab.0.left" timestamp="1620356853834">
+    <state width="1899" height="351" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621120976535" />
+    <state width="1899" height="351" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1621027521695" />
+    <state width="1899" height="351" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1621554964061" />
+    <state width="1899" height="351" key="GridCell.Tab.0.left" timestamp="1621554964061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="669" height="140" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
     <state width="949" height="140" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
     <state width="757" height="140" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
-    <state width="1899" height="368" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620330695565" />
-    <state width="1899" height="368" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620356853834" />
-    <state width="1899" height="368" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1620256815413" />
-    <state width="1899" height="368" key="GridCell.Tab.0.right" timestamp="1620356853834">
+    <state width="1899" height="351" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621120976535" />
+    <state width="1899" height="351" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1621027521695" />
+    <state width="1899" height="351" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1621554964061" />
+    <state width="1899" height="351" key="GridCell.Tab.0.right" timestamp="1621554964061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="669" height="140" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1618859606943" />
     <state width="949" height="140" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618834456504" />
     <state width="1515" height="191" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618564570521" />
     <state width="757" height="140" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618867297766" />
-    <state width="1899" height="368" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620330695565" />
-    <state width="1899" height="368" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620356853834" />
-    <state width="1899" height="368" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1620256815413" />
-    <state width="1899" height="346" key="GridCell.Tab.1.bottom" timestamp="1620261013791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1899" height="351" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621120976536" />
+    <state width="1899" height="351" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1621027521695" />
+    <state width="1899" height="351" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1621554964061" />
+    <state width="1899" height="346" key="GridCell.Tab.1.bottom" timestamp="1620947506211">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618795555783" />
-    <state width="1899" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620167944308" />
-    <state width="1899" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620261013791" />
+    <state width="1899" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620947506211" />
+    <state width="1899" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620935104338" />
     <state width="949" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
-    <state width="1899" height="346" key="GridCell.Tab.1.center" timestamp="1620261013791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1899" height="346" key="GridCell.Tab.1.center" timestamp="1620947506211">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618795555783" />
-    <state width="1899" height="346" key="GridCell.Tab.1.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620167944308" />
-    <state width="1899" height="346" key="GridCell.Tab.1.center/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620261013791" />
+    <state width="1899" height="346" key="GridCell.Tab.1.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620947506211" />
+    <state width="1899" height="346" key="GridCell.Tab.1.center/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620935104338" />
     <state width="949" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
-    <state width="1899" height="346" key="GridCell.Tab.1.left" timestamp="1620261013791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1899" height="346" key="GridCell.Tab.1.left" timestamp="1620947506211">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618795555783" />
-    <state width="1899" height="346" key="GridCell.Tab.1.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620167944308" />
-    <state width="1899" height="346" key="GridCell.Tab.1.left/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620261013791" />
+    <state width="1899" height="346" key="GridCell.Tab.1.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620947506211" />
+    <state width="1899" height="346" key="GridCell.Tab.1.left/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620935104338" />
     <state width="949" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
-    <state width="1899" height="346" key="GridCell.Tab.1.right" timestamp="1620261013791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1899" height="346" key="GridCell.Tab.1.right" timestamp="1620947506211">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618795555783" />
-    <state width="1899" height="346" key="GridCell.Tab.1.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620167944308" />
-    <state width="1899" height="346" key="GridCell.Tab.1.right/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620261013791" />
+    <state width="1899" height="346" key="GridCell.Tab.1.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620947506211" />
+    <state width="1899" height="346" key="GridCell.Tab.1.right/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620935104338" />
     <state width="949" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618870470925" />
     <state x="791" y="240" key="RollbackChangesDialog" timestamp="1619710884209">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -584,22 +618,24 @@
     <state x="330" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616454992420" />
     <state x="539" y="175" key="SettingsEditor/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1619710760804" />
     <state x="539" y="175" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1620257335490" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1620260835550">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="451" y="-897" key="Vcs.Push.Dialog.v2" timestamp="1621040922745">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="451" y="-897" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618794281956" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1618358493894" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616461190431" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620260835550" />
+    <state x="451" y="-897" key="Vcs.Push.Dialog.v2/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621040922745" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620357013045" />
     <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1619813953995" />
     <state x="566" y="-950" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1618790515051">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="566" y="-950" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1618790515051" />
-    <state x="623" y="225" width="670" height="676" key="search.everywhere.popup" timestamp="1619980643465">
+    <state x="623" y="225" width="670" height="676" key="search.everywhere.popup" timestamp="1620831942864">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="-855" key="search.everywhere.popup/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1619638482620" />
+    <state x="623" y="225" width="670" height="676" key="search.everywhere.popup/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1620831942864" />
     <state x="623" y="225" width="670" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1619980643465" />
   </component>
   <component name="XDebuggerManager">

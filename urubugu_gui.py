@@ -976,6 +976,7 @@ def waiting_banner():
 
 
 pygame.display.set_caption("URUBUGU")
+pygame.display.set_icon(get_image("assets/game.png"))
 
 
 
