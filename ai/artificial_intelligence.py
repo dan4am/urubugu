@@ -1,4 +1,4 @@
-import board
+from src import board
 import numpy as np
 
 
@@ -61,7 +61,7 @@ def simulate_one_play(hole):
     # board.BOARD_AI = np.copy(board.BOARD)
 
     original_board = np.copy(board.BOARD_AI)
-    board.play_AI(hole,board.BOARD_AI)
+    board.play_AI(hole, board.BOARD_AI)
     remaining_opponents_beads = 0
     if (board.current_player == 1):
         remaining_opponents_beads = beads_left(2)

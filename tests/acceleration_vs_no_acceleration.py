@@ -1,13 +1,5 @@
-import board
-import numpy as np
 import pygame
 import os
-import time
-import artificial_intelligence
-from network import Network
-import online_helper
-import sys
-
 
 _image_library = {}
 ######################
@@ -38,9 +30,9 @@ def get_image(path):
 
 
 
-circle_activated_path = "../buttons/slide_circle_right.png"
-slider_deactivated_path = "../buttons/slider_deactivated.png"
-hider_pannel_path = "../buttons/design_2/hider_white.png"
+circle_activated_path = "../assets/buttons/slide_circle_right.png"
+slider_deactivated_path = "../assets/buttons/slider_deactivated.png"
+hider_pannel_path = "../assets/buttons/design_2/hider_white.png"
 
 def animate_slider(clock):
     time = 0

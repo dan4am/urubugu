@@ -1,12 +1,11 @@
-import board
+from src import board
 import numpy as np
 import pygame
 import os
 import time
-import artificial_intelligence
-from network import Network
-import online_helper
-import sys
+from ai import artificial_intelligence
+from network.network import Network
+from network import online_helper
 
 ######################
 # Define some colors #
@@ -85,55 +84,54 @@ def change_design():
     else:
         design = "design_1/"
 
-    waiting_for_player1_banner_path = "buttons/" + design + config_language + "/waiting_for_player1_banner.png"
-    waiting_for_player2_banner_path = "buttons/" + design + config_language + "/waiting_for_player2_banner.png"
+    waiting_for_player1_banner_path = "assets/buttons/" + design + config_language + "/waiting_for_player1_banner.png"
+    waiting_for_player2_banner_path = "assets/buttons/" + design + config_language + "/waiting_for_player2_banner.png"
 
     ####################
     # play state assets#
     ####################
 
-    player1_banner_path = "buttons/" + design + config_language + "/player1_banner.png"
-    player2_banner_path = "buttons/" + design + config_language + "/player2_banner.png"
-    back_button_clicked_path = "buttons/" + design + config_language + "/back_button_clicked.png"
-    back_button_unclicked_path = "buttons/" + design + config_language + "/back_button_unclicked.png"
-    hider_pannel_path = "buttons/" + design + "/hider_white.png"
+    player1_banner_path = "assets/buttons/" + design + config_language + "/player1_banner.png"
+    player2_banner_path = "assets/buttons/" + design + config_language + "/player2_banner.png"
+    back_button_clicked_path = "assets/buttons/" + design + config_language + "/back_button_clicked.png"
+    back_button_unclicked_path = "assets/buttons/" + design + config_language + "/back_button_unclicked.png"
+    hider_pannel_path = "assets/buttons/" + design + "/hider_white.png"
 
 
 
     ###################
     ###################
 
-    done_path = "buttons/" + design + "/done_button_unclicked.png"
-    done_unclicked_path = "buttons/" + design + "/done_button_unclicked.png"
-    done_clicked_path = "buttons/" + design + "/done_button_clicked.png"
-    player2_path = "compressed_pictures1/player2.png"
-    default_unclicked_path = "buttons/" + design + config_language + "/default_button_unclicked.png"
-    default_clicked_path = "buttons/" + design + config_language + "/default_button_clicked.png"
-    menu_gukenyura_button_unclicked_path = "buttons/" + design + "/menu_gukenyura_button_unclicked.png"
-    menu_gukenyura_button_clicked_path = "buttons/" + design + "/menu_gukenyura_button_clicked.png"
+    done_path = "assets/buttons/" + design + "/done_button_unclicked.png"
+    done_unclicked_path = "assets/buttons/" + design + "/done_button_unclicked.png"
+    done_clicked_path = "assets/buttons/" + design + "/done_button_clicked.png"
+    default_unclicked_path = "assets/buttons/" + design + config_language + "/default_button_unclicked.png"
+    default_clicked_path = "assets/buttons/" + design + config_language + "/default_button_clicked.png"
+    menu_gukenyura_button_unclicked_path = "assets/buttons/" + design + "/menu_gukenyura_button_unclicked.png"
+    menu_gukenyura_button_clicked_path = "assets/buttons/" + design + "/menu_gukenyura_button_clicked.png"
 
     ####################
     # Menu State assets#
     ####################
 
-    dukenyure_button_unclicked_path = "buttons/" + design + config_language + "/dukenyure_button_unclicked.png"
-    dukenyure_button_clicked_path = "buttons/" + design + config_language + "/dukenyure_button_clicked.png"
-    dukine_button_unclicked_path = "buttons/" + design + config_language + "/dukine_button_unclicked.png"
-    dukine_button_clicked_path = "buttons/" + design + config_language + "/dukine_button_clicked.png"
-    ingeneBakina_button_unclicked_path = "buttons/" + design + config_language + "/ingeneBakina_button_uncliked.png"
-    ingeneBakina_button_clicked_path = "buttons/" + design + config_language + "/ingeneBakina_button_cliked.png"
-    vs_cpu_button_clicked_path = "buttons/" + design + config_language + "/kinanIMachine_button_clicked.png"
-    vs_cpu_button_unclicked_path = "buttons/" + design + config_language + "/kinanIMachine_button_unclicked.png"
+    dukenyure_button_unclicked_path = "assets/buttons/" + design + config_language + "/dukenyure_button_unclicked.png"
+    dukenyure_button_clicked_path = "assets/buttons/" + design + config_language + "/dukenyure_button_clicked.png"
+    dukine_button_unclicked_path = "assets/buttons/" + design + config_language + "/dukine_button_unclicked.png"
+    dukine_button_clicked_path = "assets/buttons/" + design + config_language + "/dukine_button_clicked.png"
+    ingeneBakina_button_unclicked_path = "assets/buttons/" + design + config_language + "/ingeneBakina_button_uncliked.png"
+    ingeneBakina_button_clicked_path = "assets/buttons/" + design + config_language + "/ingeneBakina_button_cliked.png"
+    vs_cpu_button_clicked_path = "assets/buttons/" + design + config_language + "/kinanIMachine_button_clicked.png"
+    vs_cpu_button_unclicked_path = "assets/buttons/" + design + config_language + "/kinanIMachine_button_unclicked.png"
 
-    selection_flag_path = "buttons/" + design + "selection_of_flag.png"
-    selection_flag_path_white = "buttons/" + design + "selection_of_flag_white.png"
-    selection_flag_path2 = "buttons/" + design + "selection_of_flag2.png"
-    selection_flag_path2_white = "buttons/" + design + "selection_of_flag2_white.png"
-    background_click_path = "buttons/background_click.png"
+    selection_flag_path = "assets/buttons/" + design + "selection_of_flag.png"
+    selection_flag_path_white = "assets/buttons/" + design + "selection_of_flag_white.png"
+    selection_flag_path2 = "assets/buttons/" + design + "selection_of_flag2.png"
+    selection_flag_path2_white = "assets/buttons/" + design + "selection_of_flag2_white.png"
+    background_click_path = "assets/buttons/background_click.png"
 
-    language_drop_down_button_clicked_path = "buttons/" + design + "language_drop_down_menu_clicked.png"
-    language_drop_down_button_unclicked_path = "buttons/" + design + "language_drop_down_menu_unclicked.png"
-    language_drop_down_path = "buttons/" + design + "language_drop_down.png"
+    language_drop_down_button_clicked_path = "assets/buttons/" + design + "language_drop_down_menu_clicked.png"
+    language_drop_down_button_unclicked_path = "assets/buttons/" + design + "language_drop_down_menu_unclicked.png"
+    language_drop_down_path = "assets/buttons/" + design + "language_drop_down.png"
 
 
 
@@ -154,8 +152,8 @@ def change_design():
 online_game = False
 online_player_id = 0
 
-waiting_for_player1_banner_path = "buttons/"+design+config_language+"/waiting_for_player1_banner.png"
-waiting_for_player2_banner_path = "buttons/"+design+config_language+"/waiting_for_player2_banner.png"
+waiting_for_player1_banner_path = "assets/buttons/"+design+config_language+"/waiting_for_player1_banner.png"
+waiting_for_player2_banner_path = "assets/buttons/"+design+config_language+"/waiting_for_player2_banner.png"
 
 
 ######################
@@ -170,32 +168,31 @@ vs_computer = False
 # play state assets#
 ####################
 
-player1_banner_path = "buttons/"+design+config_language+"/player1_banner.png"
-player2_banner_path = "buttons/"+design+config_language+"/player2_banner.png"
-back_button_clicked_path = "buttons/"+design+config_language+"/back_button_clicked.png"
-back_button_unclicked_path = "buttons/"+design+config_language+"/back_button_unclicked.png"
-hider_pannel_path = "buttons/"+design+"/hider_white.png"
+player1_banner_path = "assets/buttons/"+design+config_language+"/player1_banner.png"
+player2_banner_path = "assets/buttons/"+design+config_language+"/player2_banner.png"
+back_button_clicked_path = "assets/buttons/"+design+config_language+"/back_button_clicked.png"
+back_button_unclicked_path = "assets/buttons/"+design+config_language+"/back_button_unclicked.png"
+hider_pannel_path = "assets/buttons/"+design+"/hider_white.png"
 
 
 ###################
 # game-over assets#
 ###################
 
-menu_path = "buttons/menu_button.png"
-restart_path = "buttons/restart_button.png"
+menu_path = "assets/buttons/menu_button.png"
+restart_path = "assets/buttons/restart_button.png"
 
 ###################
 ###################
 
-done_path = "buttons/"+design+"/done_button_unclicked.png"
-done_unclicked_path = "buttons/"+design+"/done_button_unclicked.png"
-done_clicked_path = "buttons/"+design+"/done_button_clicked.png"
-player2_path = "compressed_pictures1/player2.png"
-default_path="buttons/"+design+"/bi/default_button_unclicked.png"
-default_unclicked_path = "buttons/"+design+config_language+"/default_button_unclicked.png"
-default_clicked_path = "buttons/"+design+config_language+"/default_button_clicked.png"
-menu_gukenyura_button_unclicked_path = "buttons/"+design+"/menu_gukenyura_button_unclicked.png"
-menu_gukenyura_button_clicked_path = "buttons/"+design+"/menu_gukenyura_button_clicked.png"
+done_path = "assets/buttons/"+design+"/done_button_unclicked.png"
+done_unclicked_path = "assets/buttons/"+design+"/done_button_unclicked.png"
+done_clicked_path = "assets/buttons/"+design+"/done_button_clicked.png"
+default_path="assets/buttons/"+design+"/bi/default_button_unclicked.png"
+default_unclicked_path = "assets/buttons/"+design+config_language+"/default_button_unclicked.png"
+default_clicked_path = "assets/buttons/"+design+config_language+"/default_button_clicked.png"
+menu_gukenyura_button_unclicked_path = "assets/buttons/"+design+"/menu_gukenyura_button_unclicked.png"
+menu_gukenyura_button_clicked_path = "assets/buttons/"+design+"/menu_gukenyura_button_clicked.png"
 
 
 ####################
@@ -203,27 +200,27 @@ menu_gukenyura_button_clicked_path = "buttons/"+design+"/menu_gukenyura_button_c
 ####################
 
 
-dukenyure_button_unclicked_path = "buttons/"+design+config_language+"/dukenyure_button_unclicked.png"
-dukenyure_button_clicked_path = "buttons/"+design+config_language+"/dukenyure_button_clicked.png"
-# dukenyure_button_clicked_path = "buttons/"+design+config_language+"/dukenyure_button_clicked.png"
-dukine_button_unclicked_path = "buttons/"+design+config_language+"/dukine_button_unclicked.png"
-dukine_button_clicked_path = "buttons/"+design+config_language+"/dukine_button_clicked.png"
-ingeneBakina_button_unclicked_path = "buttons/"+design+config_language+"/ingeneBakina_button_uncliked.png"
-ingeneBakina_button_clicked_path = "buttons/"+design+config_language+"/ingeneBakina_button_cliked.png"
-vs_cpu_button_clicked_path="buttons/"+design+config_language+"/kinanIMachine_button_clicked.png"
-vs_cpu_button_unclicked_path="buttons/"+design+config_language+"/kinanIMachine_button_unclicked.png"
-slider_activated_path = "buttons/slider_activated.png"
-circle_activated_path = "buttons/slide_circle_right.png"
-slider_deactivated_path = "buttons/slider_deactivated.png"
-circle_deactivated_path = "buttons/slide_circle_left.png"
+dukenyure_button_unclicked_path = "assets/buttons/"+design+config_language+"/dukenyure_button_unclicked.png"
+dukenyure_button_clicked_path = "assets/buttons/"+design+config_language+"/dukenyure_button_clicked.png"
+# dukenyure_button_clicked_path = "assets/buttons/"+design+config_language+"/dukenyure_button_clicked.png"
+dukine_button_unclicked_path = "assets/buttons/"+design+config_language+"/dukine_button_unclicked.png"
+dukine_button_clicked_path = "assets/buttons/"+design+config_language+"/dukine_button_clicked.png"
+ingeneBakina_button_unclicked_path = "assets/buttons/"+design+config_language+"/ingeneBakina_button_uncliked.png"
+ingeneBakina_button_clicked_path = "assets/buttons/"+design+config_language+"/ingeneBakina_button_cliked.png"
+vs_cpu_button_clicked_path="assets/buttons/"+design+config_language+"/kinanIMachine_button_clicked.png"
+vs_cpu_button_unclicked_path="assets/buttons/"+design+config_language+"/kinanIMachine_button_unclicked.png"
+slider_activated_path = "assets/buttons/slider_activated.png"
+circle_activated_path = "assets/buttons/slide_circle_right.png"
+slider_deactivated_path = "assets/buttons/slider_deactivated.png"
+circle_deactivated_path = "assets/buttons/slide_circle_left.png"
 
 ##################
 # language assets#
 ##################
 
-bi_flag_path = "buttons/flag_bi.png"
-fr_flag_path = "buttons/flag_fr.png"
-en_flag_path = "buttons/flag_en.png"
+bi_flag_path = "assets/buttons/flag_bi.png"
+fr_flag_path = "assets/buttons/flag_fr.png"
+en_flag_path = "assets/buttons/flag_en.png"
 
 def get_flag_path(flag):
     if(flag == "bi" ):
@@ -233,9 +230,9 @@ def get_flag_path(flag):
     else:
         return en_flag_path
 
-language_drop_down_button_clicked_path = "buttons/"+design+"language_drop_down_menu_clicked.png"
-language_drop_down_button_unclicked_path = "buttons/"+design+"language_drop_down_menu_unclicked.png"
-language_drop_down_path = "buttons/"+design+"language_drop_down.png"
+language_drop_down_button_clicked_path = "assets/buttons/"+design+"language_drop_down_menu_clicked.png"
+language_drop_down_button_unclicked_path = "assets/buttons/"+design+"language_drop_down_menu_unclicked.png"
+language_drop_down_path = "assets/buttons/"+design+"language_drop_down.png"
 
 def animate_slider(clock):
     time = 0
@@ -298,7 +295,7 @@ def animate_drop_down_button(clock):
                     get_image(get_flag_path(languages[i])), (38, 25)),
                     (56, 68 + i * 35 - 70 + destination))
 
-        path = "buttons/design_2/masquer scroll down.png"
+        path = "assets/buttons/design_2/masquer scroll down.png"
         screen.blit(pygame.transform.smoothscale(
             get_image(path), (75, 30)),
             (50, 0))
@@ -316,11 +313,11 @@ def animate_drop_down_button(clock):
         time += 1
 
 
-selection_flag_path = "buttons/"+design+"selection_of_flag.png"
-selection_flag_path_white = "buttons/"+design+"selection_of_flag_white.png"
-selection_flag_path2 = "buttons/"+design+"selection_of_flag2.png"
-selection_flag_path2_white = "buttons/"+design+"selection_of_flag2_white.png"
-background_click_path = "buttons/background_click.png"
+selection_flag_path = "assets/buttons/"+design+"selection_of_flag.png"
+selection_flag_path_white = "assets/buttons/"+design+"selection_of_flag_white.png"
+selection_flag_path2 = "assets/buttons/"+design+"selection_of_flag2.png"
+selection_flag_path2_white = "assets/buttons/"+design+"selection_of_flag2_white.png"
+background_click_path = "assets/buttons/background_click.png"
 
 
 def getpath(beads):
@@ -371,20 +368,20 @@ def change_language(language):
         languages[1] = config_language
         config_language = language
 
-    dukenyure_button_unclicked_path = "buttons/"+design+"/"+ language +"/dukenyure_button_unclicked.png"
-    dukenyure_button_clicked_path="buttons/"+design+"/"+ language +"/dukenyure_button_clicked.png"
-    dukine_button_unclicked_path="buttons/"+design+"/"+ language +"/dukine_button_unclicked.png"
-    dukine_button_clicked_path = "buttons/"+design+"/"+ language +"/dukine_button_clicked.png"
-    ingeneBakina_button_clicked_path="buttons/"+design+"/"+ language +"/ingeneBakina_button_cliked.png"
-    ingeneBakina_button_unclicked_path="buttons/"+design+"/"+ language +"/ingeneBakina_button_uncliked.png"
-    default_clicked_path = "buttons/"+design+"/"+ language +"/default_button_clicked.png"
-    default_unclicked_path = "buttons/"+design+"/"+ language +"/default_button_unclicked.png"
-    back_button_unclicked_path = "buttons/"+design+"/"+ language +"/back_button_unclicked.png"
-    back_button_clicked_path = "buttons/"+design+"/"+ language +"/back_button_clicked.png"
-    player1_banner_path="buttons/"+design+"/"+ language +"/player1_banner.png"
-    player2_banner_path="buttons/"+design+"/"+ language +"/player2_banner.png"
-    vs_cpu_button_clicked_path = "buttons/" + design + config_language + "/kinanIMachine_button_clicked.png"
-    vs_cpu_button_unclicked_path = "buttons/" + design + config_language + "/kinanIMachine_button_unclicked.png"
+    dukenyure_button_unclicked_path = "assets/buttons/"+design+"/"+ language +"/dukenyure_button_unclicked.png"
+    dukenyure_button_clicked_path="assets/buttons/"+design+"/"+ language +"/dukenyure_button_clicked.png"
+    dukine_button_unclicked_path="assets/buttons/"+design+"/"+ language +"/dukine_button_unclicked.png"
+    dukine_button_clicked_path = "assets/buttons/"+design+"/"+ language +"/dukine_button_clicked.png"
+    ingeneBakina_button_clicked_path="assets/buttons/"+design+"/"+ language +"/ingeneBakina_button_cliked.png"
+    ingeneBakina_button_unclicked_path="assets/buttons/"+design+"/"+ language +"/ingeneBakina_button_uncliked.png"
+    default_clicked_path = "assets/buttons/"+design+"/"+ language +"/default_button_clicked.png"
+    default_unclicked_path = "assets/buttons/"+design+"/"+ language +"/default_button_unclicked.png"
+    back_button_unclicked_path = "assets/buttons/"+design+"/"+ language +"/back_button_unclicked.png"
+    back_button_clicked_path = "assets/buttons/"+design+"/"+ language +"/back_button_clicked.png"
+    player1_banner_path="assets/buttons/"+design+"/"+ language +"/player1_banner.png"
+    player2_banner_path="assets/buttons/"+design+"/"+ language +"/player2_banner.png"
+    vs_cpu_button_clicked_path = "assets/buttons/" + design + config_language + "/kinanIMachine_button_clicked.png"
+    vs_cpu_button_unclicked_path = "assets/buttons/" + design + config_language + "/kinanIMachine_button_unclicked.png"
 
 
 def change_state(state):
@@ -424,7 +421,7 @@ def draw_slots():
             pygame.draw.circle(screen, WHITE, board_coordinates_to_screen_coordinates(line, row), SLOTS - 2, 1)# à revoir
             # font_obj = pygame.font.SysFont('FreeSans.ttf', 15)
             font_obj = myfont
-            text_surface_obj = font_obj.render(" "+str(board.BOARD[line][row]), False, BLACK, GREY)
+            text_surface_obj = font_obj.render(" " + str(board.BOARD[line][row]), False, BLACK, GREY)
             text_rect_obj = text_surface_obj.get_rect()
             x = board_coordinates_to_screen_coordinates(line, row)[0] + 38
             y=board_coordinates_to_screen_coordinates(line, row)[1] - 30
@@ -882,7 +879,7 @@ def play(hole):
             remainder = a_hole % 16
             if( remainder == 0):
                 remainder = 16
-            board.add_bead(remainder )
+            board.add_bead(remainder)
             draw()
             temp_hole = (remainder )
             # print(BOARD)
@@ -893,7 +890,8 @@ def play(hole):
             row2_crsp = result2[1]
             row1_crsp = result2[0]
 
-            if(board.player_one) :board.player(2)
+            if(board.player_one) :
+                board.player(2)
             else: board.player(1)
 
             empty_p2_holes = board.beads(row1_crsp) == 0 and board.beads(row2_crsp) == 0
@@ -905,15 +903,17 @@ def play(hole):
                 tmp_beads = beads_row1 + beads_row2
                 if (not board.beads(row1_crsp) == 0):
                     time.sleep(0.5)
-                    board.take_beads(row1_crsp,beads_row1)
+                    board.take_beads(row1_crsp, beads_row1)
                     draw()
                 if (not board.beads(row2_crsp) == 0):
                     time.sleep(0.5)
-                    board.take_beads(row2_crsp,beads_row2)
+                    board.take_beads(row2_crsp, beads_row2)
                     draw()
 
-                if (not board.player_one):board.player(1)
-                else:board.player(2)
+                if (not board.player_one):
+                    board.player(1)
+                else:
+                    board.player(2)
             else: # if the corresponding rows in P2 are empty
                 if (not board.player_one):
                     board.player(1)
@@ -1223,8 +1223,9 @@ def main():
                                             1] and tmp_pos[1] <= start_button[1] + 69):
                                             board.choose_board(board.BOARD_DEFAULT_P1)
                                             if online_game:
-                                                print(online_helper.send_starting_setting( n, board.stringify()))
-                                                reply = online_helper.decode_reply(online_helper.get_starting_setting(n))
+                                                print(online_helper.send_starting_setting(n, board.stringify()))
+                                                reply = online_helper.decode_reply(
+                                                    online_helper.get_starting_setting(n))
                                                 print(reply)
                                                 if (reply == "waiting"):
                                                     change_state(WAITING_FROM_MENU)
@@ -1237,7 +1238,7 @@ def main():
                                                     result2 = online_helper.string_to_list(reply)
                                                     board.player(2)
                                                     for i in range (len (result2)):
-                                                        board.add_beads(i+1, result2[i])
+                                                        board.add_beads(i + 1, result2[i])
                                                     if online_player_id == 1:
                                                         board.player(1)
                                                         board.current_player = 1
