@@ -37,6 +37,7 @@ The user can download the following file "Executable Files/urubugu v1.1.zip" and
 
 ### c.The GUI.
 When the code is executed, this pygame window will appear.
+
 ![initial state](https://user-images.githubusercontent.com/39918471/129624035-34fb3747-79e3-47bd-ae4b-9260fdb60a7c.png)
 
 On the menu screen, the user can switch between the "versus computer mode" or "player versus player"
