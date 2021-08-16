@@ -75,9 +75,15 @@ Our version gives the possibility to only one of the players to do so, the other
 ## 3. Strategies.
 ### a. Defensive strategies.
 #### a.1 Spreading.
+![spreading 1](https://user-images.githubusercontent.com/39918471/129629986-5cbbb5b5-e62d-47c3-9935-5e114c9f6b16.png)
+![Spreading 2](https://user-images.githubusercontent.com/39918471/129630032-4cb6941b-5751-44c2-8baa-b12b975896d4.png)
+
+
+
 
 ### b. Offensive strategies.
-#####b.1 Decapitation.
+##### b.1 Decapitation.
+
 ![decapitation](https://user-images.githubusercontent.com/39918471/129628783-69781ef8-8c6e-4f75-871a-7cbd2522b80e.png)
 
 
