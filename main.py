@@ -60,8 +60,8 @@ WAITING_FROM_SET_BOARD = 6
 _image_library = {}
 
 
-config_language = "fr"
-languages = ["bi", "en"]
+config_language = "en"
+languages = ["bi", "fr"]
 # design = "design_1/"
 design = "design_2/"
 design_2 = True
