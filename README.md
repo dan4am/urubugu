@@ -45,14 +45,15 @@ mode by clicking on the slider button in the top center of the window. The defau
 
 ![VS CPU](https://user-images.githubusercontent.com/39918471/129623963-977a5714-f33f-4df7-844a-c8ca01fe7436.png)
 
-The player can also choose his favorite language by clicking on the flag appearing in the top left corner of the window.
+The user can also choose his favorite language by clicking on the flag appearing in the top left corner of the window.
 The displayed flag is the current language, by default, the language is English.
 
 ![changing language](https://user-images.githubusercontent.com/39918471/129624885-0b186ba6-6e94-494a-91e7-17ea0dba621a.png)
 
+To start a game, the user has to click on the play button.
 
- #### Play.
- 
+![image](https://user-images.githubusercontent.com/39918471/129625572-ef986605-4545-4bf2-a3c6-42fd73acf5d6.png)
+
  #### Set Up Board.
 
 ### d. commands.
