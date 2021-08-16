@@ -54,20 +54,32 @@ To start a game, the user has to click on the play button.
 
 ![start playing](https://user-images.githubusercontent.com/39918471/129625572-ef986605-4545-4bf2-a3c6-42fd73acf5d6.png)
 
- #### Set Up Board.
+According to the rules of "URUBUGU", the players can set up their board as they wish before the start of the game.
+Our version gives the possibility to only one of the players to do so, the other one has to use a default setting.
+
+![setting up board](https://user-images.githubusercontent.com/39918471/129626389-99fa0edf-8b33-4f07-9ca1-dd36a6e2e8c2.png)
 
 ### d. commands.
 
 `d` → change design.
 
-## 2. Rules 
+![Skin change](https://user-images.githubusercontent.com/39918471/129626543-f0b74fc6-ef2e-41af-9aec-877dead5dd1f.png)
+
+## 2. Rules.
+
+###a. Setting up the board.
+###b. playing.
+###c. Winning.
 
 
 ## 3. Strategies.
 ### a. Defensive strategies.
-#####a.1 Decapitation.
+#### a.1 Spreading.
+
 ### b. Offensive strategies.
-#### b.1 Spreading.
+#####b.1 Decapitation.
+![decapitation](https://user-images.githubusercontent.com/39918471/129628485-6fe81ca1-04f4-457e-aee1-44af16354971.png)
+
 
 ## 4. Future work.
 
