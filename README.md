@@ -105,6 +105,10 @@ origin of his play.
 
 If the adjacent cells in the opponent's base are empty, then the player will take the beads of that cell (if the cell was not empty) and spread it's content in the direction of the play (counter-clockwise) until the end of his turn.
 
+![Adjacent empty 1/2](https://user-images.githubusercontent.com/39918471/129643110-bad6834b-d622-4cf0-8354-41a1ad2a254b.png)
+![adjacent empty 2/2](https://user-images.githubusercontent.com/39918471/129643151-ff7ae1b1-4327-492e-a723-1183c8ba9a97.png)
+
+
 #### End of turn :
 ---
 A turn is ended in two cases:
