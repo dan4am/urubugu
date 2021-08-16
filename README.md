@@ -4,7 +4,7 @@ This repository contains the code for URUBUGU (ikibuguzo, Igisoro): a variant of
 ## Structure:
 - [Getting started.](https://github.com/dan4am/urubugu/blob/master/README.md#1-getting-started)
    - [Prerequisites.](https://github.com/dan4am/urubugu/blob/master/README.md#a-prerequesites)
-   - [Execute the code.](https://github.com/dan4am/urubugu/blob/master/README.md#b-run-the-code)
+   - [Run the code.](https://github.com/dan4am/urubugu/blob/master/README.md#b-run-the-code)
    - [The GUI.](https://github.com/dan4am/urubugu/blob/master/README.md#cthe-gui)
    - [Commands.](https://github.com/dan4am/urubugu/blob/master/README.md#d-commands)
 - [Rules.](https://github.com/dan4am/urubugu/blob/master/README.md#2-rules)
@@ -63,7 +63,7 @@ Our version gives the possibility to only one of the players to do so, the other
 
 ![setting up board](https://user-images.githubusercontent.com/39918471/129626389-99fa0edf-8b33-4f07-9ca1-dd36a6e2e8c2.png)
 
-### d. commands.
+### d. Commands.
 
 `d` → change design.
 
