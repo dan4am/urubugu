@@ -1,8 +1,11 @@
 # Description.
 This repository contains the code for URUBUGU (ikibuguzo, Igisoro): a variant of the [Bao game](https://en.wikipedia.org/wiki/Bao_(game)) that is played in Burundi.
 
-##structure:
+## Structure:
 - Getting started.
+   - Prerequisites.
+   - Execute the code.
+   - The GUI.
 - Rules.
 - Strategies.
    - defensive strategies.
