@@ -2,18 +2,19 @@
 This repository contains the code for URUBUGU (ikibuguzo, Igisoro): a variant of the [Bao game](https://en.wikipedia.org/wiki/Bao_(game)) that is played in Burundi.
 
 ## Structure:
-- Getting started.
-   - Prerequisites.
-   - Execute the code.
-   - The GUI.
-- Rules.
-- Strategies.
-   - defensive strategies.
-   - Offensive strategies.
-- Future work.
-    - Online version.
-    - AI.
-    - Research topics.
+- [Getting started.](https://github.com/dan4am/urubugu/blob/master/README.md#1-getting-started)
+   - [Prerequisites.](https://github.com/dan4am/urubugu/blob/master/README.md#a-prerequesites)
+   - [Execute the code.](https://github.com/dan4am/urubugu/blob/master/README.md#b-run-the-code)
+   - [The GUI.](https://github.com/dan4am/urubugu/blob/master/README.md#cthe-gui)
+   - [Commands.](https://github.com/dan4am/urubugu/blob/master/README.md#d-commands)
+- [Rules.](https://github.com/dan4am/urubugu/blob/master/README.md#2-rules)
+- [Strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#3-strategies)
+   - [defensive strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#a-defensive-strategies)
+   - [Offensive strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#b-offensive-strategies)
+- [Future work.](https://github.com/dan4am/urubugu/blob/master/README.md#4-future-work)
+    - [Online version.](https://github.com/dan4am/urubugu/blob/master/README.md#a-online-version)
+    - [AI.](https://github.com/dan4am/urubugu/blob/master/README.md#b-artificial-intelligence-ai)
+    - [Research topics.](https://github.com/dan4am/urubugu/blob/master/README.md#c-research-topics)
    
 ## 1. Getting started 
 ### a. Prerequesites.
