@@ -78,7 +78,7 @@ Our version gives the possibility to only one of the players to do so, the other
 
 ### b. Offensive strategies.
 #####b.1 Decapitation.
-![decapitation](https://user-images.githubusercontent.com/39918471/129628485-6fe81ca1-04f4-457e-aee1-44af16354971.png)
+![decapitation](https://user-images.githubusercontent.com/39918471/129628783-69781ef8-8c6e-4f75-871a-7cbd2522b80e.png)
 
 
 ## 4. Future work.
