@@ -1,5 +1,6 @@
 # Description.
 This repository contains the code for URUBUGU (ikibuguzo, Igisoro): a variant of the [Bao game](https://en.wikipedia.org/wiki/Bao_(game)) that is played in Burundi.
+URUBUGU is a two player turn-based board game.
 
 ## Structure:
 - [Getting started.](https://github.com/dan4am/urubugu/blob/master/README.md#1-getting-started)
@@ -70,16 +71,50 @@ Our version gives the possibility to only one of the players to do so, the other
 ![Skin change](https://user-images.githubusercontent.com/39918471/129630271-e699303c-1487-44fe-a9d8-9c7d46cc36d2.png)
 
 ## 2. Rules.
+The board is divided in two, each player has half of the board as his base. Players play facing each other.
+image board divided in two symmetrical parts.
+![empty board](https://user-images.githubusercontent.com/39918471/129637005-c293ba46-0743-47b6-9148-138cfa32ba47.png)
+
+In each players base there are two zones, an active zone and a "cemetery".
+The active zone is the zone where a player can capture opponent's beads, in the "cemetery", the player can either go around and come back in the active zone or he might end his turn (more details in the [playing] section.
+
+![player 1 half.](https://user-images.githubusercontent.com/39918471/129637485-63ebdecc-105b-4fc7-a721-e10c479f7e6a.png)
 
 ### a. Setting up the board.
+At the beginning, each player has 32 beads and each player is free as to the disposition of his beads.
+There no prohibited settings.
+
+The default setting is a two-beads-by-cell setting.
+
+![image](https://user-images.githubusercontent.com/39918471/129638535-6863c633-cee8-4808-9363-db7131ab1eaa.png)
+
 
 ### b. playing.
+#### Start of turn:
+---
+To start a turn, the player takes the beads in any non-empty cell and spreads it's content in the direction of the play (counter-clockwise).
+
+
+#### Capturing beads:
+---
+
+If the last bead falls in the active zone, and if the adjacent cells in the opponent half there are beads, the player will capture those beads and restart to play from the 
+origin of his play
+
+#### End of turn :
+---
+
+
 ### c. Winning.
 
 
 ## 3. Strategies.
+In this section, we give two strategies (among a plethora of other strategies) to give a gist of what can be done in this game.
+
 ### a. Defensive strategies.
 #### a.1. Spreading.
+Spreading is a strategy where the player spreads the content of one cell, so as to fill the most cells. That strategy gives more chances to the player to capture ennemy's beads in two turns.
+
 ![spreading 1](https://user-images.githubusercontent.com/39918471/129629986-5cbbb5b5-e62d-47c3-9935-5e114c9f6b16.png)
 ![Spreading 2](https://user-images.githubusercontent.com/39918471/129630032-4cb6941b-5751-44c2-8baa-b12b975896d4.png)
 
@@ -89,11 +124,29 @@ Our version gives the possibility to only one of the players to do so, the other
 ### b. Offensive strategies.
 ##### b.1. Decapitation.
 
+The decapitation's main objective is to prohibit the opponent to captuure any of our beads in his turn.
+The player will capture the beads from the left corner of the opponents board (the head) .
+ 
 ![decapitation](https://user-images.githubusercontent.com/39918471/129628783-69781ef8-8c6e-4f75-871a-7cbd2522b80e.png)
 
 
 ## 4. Future work.
 
 ### a. Online version.
-### b. Artificial Intelligence (AI)
-### c. Research topics.
+The online version of this game is in developpement, a first step has been reached: players can play against one another on a local network, the next step is to launch it over the internet for players to interact from all over the world. But a deployment on internet comes with financial costs, that is why it has been put on hold for now.
+### b. Artificial Intelligence (AI).
+One of the next steps of this project is to develop an artificial intelligence model capable of playing against a player.
+This AI would also facilitate simulations in the context of research.
+### c. Research questions.
+This game has many opportunities to explore in terms of research, the intuitive questions are:
+> " Is there a counter setting for each setting?"
+> 
+> " If there is a counter-setting, how can we compute it?"
+
+But there are also some non-trivial questions like:
+> " How initial settings influence the game? "
+
+In Conclusion, there are many avenues to be explored in this game.
+
+---
+We define by counter-setting a setting that insures a "one-play-win" (impaga) to the player who starts.
