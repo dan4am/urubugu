@@ -98,15 +98,24 @@ To start a turn, the player takes the beads in any non-empty cell and spreads it
 #### Capturing beads:
 ---
 
-If the last bead falls in the active zone, and if the adjacent cells in the opponent half there are beads, the player will capture those beads and restart to play from the 
-origin of his play
+If the last bead falls in the active zone, and if the adjacent cells in the opponent's base there are beads, the player will capture those beads and restart to play from the 
+origin of his play.
+![capturing 1/2](https://user-images.githubusercontent.com/39918471/129642497-4d5f8238-af46-4819-8c3a-820acdad35b3.png)
+![capturing 2/2](https://user-images.githubusercontent.com/39918471/129642561-0138541d-5a52-41b4-bf4e-b23b88e94987.png)
+
+If the adjacent cells in the opponent's base are empty, then the player will take the beads of that cell (if the cell was not empty) and spread it's content in the direction of the play (counter-clockwise) until the end of his turn.
 
 #### End of turn :
 ---
-
+A turn is ended in two cases:
+1. When the last bead of a play falls into an empty cell in the cemetery.
+ ![end turn 1](https://user-images.githubusercontent.com/39918471/129640197-36219d29-1824-46ed-b1c7-a15ec8f042f6.png)
+2. When the last bead of a play falls into an empty cell in the active zone and the adjacent cells in the opponent's base are also empty.
+![end turn 2](https://user-images.githubusercontent.com/39918471/129640690-b2760140-5cf8-4381-a966-06305a5f9133.png)
 
 ### c. Winning.
 
+TO win, a player must capture all the beads from the opponent, in other world, a player wins, iff all 64 beads are in his base.
 
 ## 3. Strategies.
 In this section, we give two strategies (among a plethora of other strategies) to give a gist of what can be done in this game.
