@@ -71,9 +71,10 @@ Our version gives the possibility to only one of the players to do so, the other
 
 ## 2. Rules.
 
-###a. Setting up the board.
-###b. playing.
-###c. Winning.
+### a. Setting up the board.
+
+### b. playing.
+### c. Winning.
 
 
 ## 3. Strategies.
