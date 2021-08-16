@@ -48,11 +48,11 @@ mode by clicking on the slider button in the top center of the window. The defau
 The user can also choose his favorite language by clicking on the flag appearing in the top left corner of the window.
 The displayed flag is the current language, by default, the language is English.
 
-![changing language](https://user-images.githubusercontent.com/39918471/129624885-0b186ba6-6e94-494a-91e7-17ea0dba621a.png)
+![changing language](https://user-images.githubusercontent.com/39918471/129625799-a8a3976c-cb28-4b6d-8698-17864068d3ff.png)
 
 To start a game, the user has to click on the play button.
 
-![image](https://user-images.githubusercontent.com/39918471/129625572-ef986605-4545-4bf2-a3c6-42fd73acf5d6.png)
+![start playing](https://user-images.githubusercontent.com/39918471/129625572-ef986605-4545-4bf2-a3c6-42fd73acf5d6.png)
 
  #### Set Up Board.
 
