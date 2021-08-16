@@ -43,7 +43,7 @@ When the code is executed, this pygame window will appear.
 On the menu screen, the user can switch between the "versus computer mode" or "player versus player"
 mode by clicking on the slider button in the top center of the window. The default setting is "player versus player".
 
-![VS CPU](https://user-images.githubusercontent.com/39918471/129623963-977a5714-f33f-4df7-844a-c8ca01fe7436.png)
+![VS CPU](https://user-images.githubusercontent.com/39918471/129625941-8cf297b1-cb4a-441a-9c24-860aef31c22b.png)
 
 The user can also choose his favorite language by clicking on the flag appearing in the top left corner of the window.
 The displayed flag is the current language, by default, the language is English.
