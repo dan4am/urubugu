@@ -13,7 +13,7 @@ This repository contains the code for URUBUGU (ikibuguzo, Igisoro): a variant of
     - Research topics.
    
 ## 1. Getting started 
-###a. Prerequesites.
+### a. Prerequesites.
 - [python 3.9](https://www.python.org/downloads/)
 - [pygame 2.0.1](https://www.pygame.org/wiki/GettingStarted)
 - [numpy 1.20.3](https://numpy.org/install/)
@@ -63,7 +63,7 @@ Our version gives the possibility to only one of the players to do so, the other
 
 `d` → change design.
 
-![Skin change](https://user-images.githubusercontent.com/39918471/129626543-f0b74fc6-ef2e-41af-9aec-877dead5dd1f.png)
+![Skin change](https://user-images.githubusercontent.com/39918471/129630271-e699303c-1487-44fe-a9d8-9c7d46cc36d2.png)
 
 ## 2. Rules.
 
@@ -74,7 +74,7 @@ Our version gives the possibility to only one of the players to do so, the other
 
 ## 3. Strategies.
 ### a. Defensive strategies.
-#### a.1 Spreading.
+#### a.1. Spreading.
 ![spreading 1](https://user-images.githubusercontent.com/39918471/129629986-5cbbb5b5-e62d-47c3-9935-5e114c9f6b16.png)
 ![Spreading 2](https://user-images.githubusercontent.com/39918471/129630032-4cb6941b-5751-44c2-8baa-b12b975896d4.png)
 
@@ -82,7 +82,7 @@ Our version gives the possibility to only one of the players to do so, the other
 
 
 ### b. Offensive strategies.
-##### b.1 Decapitation.
+##### b.1. Decapitation.
 
 ![decapitation](https://user-images.githubusercontent.com/39918471/129628783-69781ef8-8c6e-4f75-871a-7cbd2522b80e.png)
 
