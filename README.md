@@ -9,6 +9,9 @@ URUBUGU is a two player turn-based board game.
    - [The GUI.](https://github.com/dan4am/urubugu/blob/master/README.md#cthe-gui)
    - [Commands.](https://github.com/dan4am/urubugu/blob/master/README.md#d-commands)
 - [Rules.](https://github.com/dan4am/urubugu/blob/master/README.md#2-rules)
+   - [Setting up the board.](https://github.com/dan4am/urubugu/blob/master/README.md#a-setting-up-the-board)
+   - [Playing.](https://github.com/dan4am/urubugu/blob/master/README.md#b-playing)
+   - [Winning] (https://github.com/dan4am/urubugu/blob/master/README.md#c-winning)
 - [Strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#3-strategies)
    - [defensive strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#a-defensive-strategies)
    - [Offensive strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#b-offensive-strategies)
@@ -89,7 +92,7 @@ The default setting is a two-beads-by-cell setting.
 ![image](https://user-images.githubusercontent.com/39918471/129638535-6863c633-cee8-4808-9363-db7131ab1eaa.png)
 
 
-### b. playing.
+### b. Playing.
 #### Start of turn:
 ---
 To start a turn, the player takes the beads in any non-empty cell and spreads it's content in the direction of the play (counter-clockwise).
@@ -120,6 +123,8 @@ A turn is ended in two cases:
 ### c. Winning.
 
 TO win, a player must capture all the beads from the opponent, in other world, a player wins, iff all 64 beads are in his base.
+![image](https://user-images.githubusercontent.com/39918471/129643735-a0f1cb1f-1d8a-4ccb-9e1d-6006f6c7da6b.png)
+
 
 ## 3. Strategies.
 In this section, we give two strategies (among a plethora of other strategies) to give a gist of what can be done in this game.
