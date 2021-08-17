@@ -167,4 +167,4 @@ But there are also some non-trivial questions like:
 In Conclusion, there are many avenues to be explored in this game.
 
 ---
-We define by counter-setting a setting that insures a "one-play-win" (impaga) to the player who starts.
+We define by counter-setting a setting that insures a "one-play-win" ("IMPAGA") to the player who starts.
