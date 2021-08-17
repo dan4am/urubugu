@@ -9,6 +9,9 @@ URUBUGU is a two player turn-based board game.
    - [The GUI.](https://github.com/dan4am/urubugu/blob/master/README.md#cthe-gui)
    - [Commands.](https://github.com/dan4am/urubugu/blob/master/README.md#d-commands)
 - [Rules.](https://github.com/dan4am/urubugu/blob/master/README.md#2-rules)
+   - [Setting up the board.](https://github.com/dan4am/urubugu/blob/master/README.md#a-setting-up-the-board)
+   - [Playing.](https://github.com/dan4am/urubugu/blob/master/README.md#b-playing)
+   - [Winning](https://github.com/dan4am/urubugu/blob/master/README.md#c-winning)
 - [Strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#3-strategies)
    - [defensive strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#a-defensive-strategies)
    - [Offensive strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#b-offensive-strategies)
@@ -71,12 +74,56 @@ Our version gives the possibility to only one of the players to do so, the other
 ![Skin change](https://user-images.githubusercontent.com/39918471/129630271-e699303c-1487-44fe-a9d8-9c7d46cc36d2.png)
 
 ## 2. Rules.
+The board is divided in two, each player has half of the board as his base. Players play facing each other.
+image board divided in two symmetrical parts.
+![empty board](https://user-images.githubusercontent.com/39918471/129637005-c293ba46-0743-47b6-9148-138cfa32ba47.png)
+
+In each players base there are two zones, an active zone and a "cemetery".
+The active zone is the zone where a player can capture opponent's beads, in the "cemetery", the player can either go around and come back in the active zone or he might end his turn (more details in the [playing] section.
+
+![player 1 half.](https://user-images.githubusercontent.com/39918471/129637485-63ebdecc-105b-4fc7-a721-e10c479f7e6a.png)
 
 ### a. Setting up the board.
-The board is divided in two, each player has half of the board as his base. Players play facing each other.
-image board divided in two symmetrical parts
-### b. playing.
+At the beginning, each player has 32 beads and each player is free as to the disposition of his beads.
+There no prohibited settings.
+
+The default setting is a two-beads-by-cell setting.
+
+![image](https://user-images.githubusercontent.com/39918471/129638535-6863c633-cee8-4808-9363-db7131ab1eaa.png)
+
+
+### b. Playing.
+#### Start of turn:
+---
+To start a turn, the player takes the beads in any non-empty cell and spreads it's content in the direction of the play (counter-clockwise).
+
+
+#### Capturing beads:
+---
+
+If the last bead falls in the active zone, and if the adjacent cells in the opponent's base there are beads, the player will capture those beads and restart to play from the 
+origin of his play.
+![capturing 1/2](https://user-images.githubusercontent.com/39918471/129642497-4d5f8238-af46-4819-8c3a-820acdad35b3.png)
+![capturing 2/2](https://user-images.githubusercontent.com/39918471/129642561-0138541d-5a52-41b4-bf4e-b23b88e94987.png)
+
+If the adjacent cells in the opponent's base are empty, then the player will take the beads of that cell (if the cell was not empty) and spread it's content in the direction of the play (counter-clockwise) until the end of his turn.
+
+![Adjacent empty 1/2](https://user-images.githubusercontent.com/39918471/129643110-bad6834b-d622-4cf0-8354-41a1ad2a254b.png)
+![adjacent empty 2/2](https://user-images.githubusercontent.com/39918471/129643151-ff7ae1b1-4327-492e-a723-1183c8ba9a97.png)
+
+
+#### End of turn :
+---
+A turn is ended in two cases:
+1. When the last bead of a play falls into an empty cell in the cemetery.
+ ![end turn 1](https://user-images.githubusercontent.com/39918471/129640197-36219d29-1824-46ed-b1c7-a15ec8f042f6.png)
+2. When the last bead of a play falls into an empty cell in the active zone and the adjacent cells in the opponent's base are also empty.
+![end turn 2](https://user-images.githubusercontent.com/39918471/129640690-b2760140-5cf8-4381-a966-06305a5f9133.png)
+
 ### c. Winning.
+
+TO win, a player must capture all the beads from the opponent, in other world, a player wins, iff all 64 beads are in his base.
+![image](https://user-images.githubusercontent.com/39918471/129643735-a0f1cb1f-1d8a-4ccb-9e1d-6006f6c7da6b.png)
 
 
 ## 3. Strategies.
@@ -95,8 +142,8 @@ Spreading is a strategy where the player spreads the content of one cell, so as 
 ### b. Offensive strategies.
 ##### b.1. Decapitation.
 
-The decapitation's main objective, is to captures all the beads that might cause damage to the player in the next round.
-The player will capture the beads from the left corner of the opponents board.
+The decapitation's main objective is to prohibit the opponent to captuure any of our beads in his turn.
+The player will capture the beads from the left corner of the opponents board (the head) .
  
 ![decapitation](https://user-images.githubusercontent.com/39918471/129628783-69781ef8-8c6e-4f75-871a-7cbd2522b80e.png)
 
@@ -120,4 +167,4 @@ But there are also some non-trivial questions like:
 In Conclusion, there are many avenues to be explored in this game.
 
 ---
-We define by counter-setting a setting that inssures a "one-play-win" (impaga) to the player who starts.
+We define by counter-setting a setting that insures a "one-play-win" (impaga) to the player who starts.
