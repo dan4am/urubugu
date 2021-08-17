@@ -11,7 +11,7 @@ URUBUGU is a two player turn-based board game.
 - [Rules.](https://github.com/dan4am/urubugu/blob/master/README.md#2-rules)
    - [Setting up the board.](https://github.com/dan4am/urubugu/blob/master/README.md#a-setting-up-the-board)
    - [Playing.](https://github.com/dan4am/urubugu/blob/master/README.md#b-playing)
-   - [Winning] (https://github.com/dan4am/urubugu/blob/master/README.md#c-winning)
+   - [Winning](https://github.com/dan4am/urubugu/blob/master/README.md#c-winning)
 - [Strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#3-strategies)
    - [defensive strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#a-defensive-strategies)
    - [Offensive strategies.](https://github.com/dan4am/urubugu/blob/master/README.md#b-offensive-strategies)
