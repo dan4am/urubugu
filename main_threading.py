@@ -1,11 +1,19 @@
 from src import board
 import numpy as np
+import threading
 import pygame
 import os
 import time
 from ai import artificial_intelligence
 from network.network import Network
 from network import online_helper
+import asyncio
+
+
+list_threads=[]
+time_to_sleep = 0.03
+restart_game  =  threading.Event()
+restart_game.set()
 
 ######################
 # Define some colors #
@@ -355,6 +363,64 @@ size = (800,600)
 screen = pygame.display.set_mode(size)
 circle_filled = pygame.Surface(size)
 place =[int((800-BOARD_LENGTH) / 2 ), int((600 - BOARD_WIDTH) / 2), BOARD_LENGTH, BOARD_WIDTH]
+
+
+def wait_for_all_threads(font_size,clock):
+        counter = 0
+    # if(len (list_threads != 0)):
+        # while(list_threads[0].is_alive):
+        print (threading.active_count())
+        while(threading.active_count()>1):
+            pygame.event.pump()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+            # draw_menu()
+            counter += 1
+            screen.blit(pygame.transform.smoothscale(
+                get_image(background_click_path), (810, 610)), (0, 0))
+            pygame.display.flip()
+
+            if (counter <= 4):
+                font = pygame.font.Font('assets/fonts/lcd.ttf', font_size)
+                text = font.render('Loading   ', True, WHITE)
+                textRect = text.get_rect()
+                textRect.center = (400, 300)
+                screen.blit(text, textRect)
+                pygame.display.update(textRect)
+
+                # pass
+            elif (counter > 4 and counter <= 8):
+                font = pygame.font.Font('assets/fonts/lcd.ttf', font_size)
+                text = font.render('Loading.  ', True, WHITE)
+                textRect = text.get_rect()
+                textRect.center = (400, 300)
+                screen.blit(text, textRect)
+                pygame.display.update(textRect)
+
+            elif (counter > 8 and counter <= 12):
+                font = pygame.font.Font('assets/fonts/lcd.ttf', font_size)
+                text = font.render('Loading.. ', True, WHITE)
+                textRect = text.get_rect()
+                textRect.center = (400, 300)
+                screen.blit(text, textRect)
+                pygame.display.update(textRect)
+                # pass
+            elif (counter > 12 and counter <= 16):
+                font = pygame.font.Font('assets/fonts/lcd.ttf', font_size)
+                text = font.render('Loading...', True, WHITE)
+                textRect = text.get_rect()
+                textRect.center = (400, 300)
+                screen.blit(text, textRect)
+                pygame.display.update(textRect)
+
+            else:
+                counter = 0
+
+            clock.tick(30)
+
+
+
 
 def change_language(language):
     global config_language, dukenyure_button_clicked_path, dukenyure_button_unclicked_path, dukine_button_clicked_path, \
@@ -791,134 +857,162 @@ def game_coordinates_to_data(x, y):
 
 
 def play(hole):
-    board.copier()
-    loop_can_go_on = True
-    result = board.beads(hole)
-    current_hole = hole
-    tmp_beads = board.beads(current_hole)
-    board.take_beads(current_hole, board.beads(current_hole))
-    tmp_beads_at_previous_play = 0
-    loop = 0
-    if (tmp_beads == 1):
-        # board.take_beads(current_hole,1)
-        draw()
-        time.sleep(0.5)
-        if (current_hole == 16):
-            current_hole = 1
-        else:
-            current_hole += 1
-        board.add_bead(current_hole)
-        draw()
-        time.sleep(0.5)
-        tmp_beads_at_previous_play = tmp_beads
+    if(restart_game.isSet()): # checks a threading event to block write operations if the event is set
+        global time_to_sleep
+        board.copier()
+        loop_can_go_on = True
+        result = board.beads(hole)
+        current_hole = hole
         tmp_beads = board.beads(current_hole)
-
-        # print(board.BOARD)
-        if(current_hole > 8):
-            result3 = board.hole_correspondance(current_hole)
-            row2_crsp = result3[1]
-            row1_crsp = result3[0]
-
-            if (board.player_one):
-                board.player(2)
+        if (restart_game.isSet()):# checks a threading event to block write operations if the event is set
+            board.take_beads(current_hole, board.beads(current_hole))
+        tmp_beads_at_previous_play = 0
+        loop = 0
+        if (tmp_beads == 1):
+            # board.take_beads(current_hole,1)
+            # draw()
+            time.sleep(time_to_sleep)
+            # asyncio.sleep(20)
+            if (current_hole == 16):
+                current_hole = 1
             else:
-                board.player(1)
+                current_hole += 1
+            if (restart_game.isSet()): # checks a threading event to block write operations if the event is set
+                board.add_bead(current_hole)
+            # draw()
+            time.sleep(time_to_sleep)
+            # asyncio.sleep(20)
+            tmp_beads_at_previous_play = tmp_beads
+            tmp_beads = board.beads(current_hole)
 
-            empty_p2_holes = board.beads(row1_crsp) == 0 and board.beads(row2_crsp) == 0
-            if (not empty_p2_holes):
-                beads_row1 = board.beads(row1_crsp)
-                beads_row2 = board.beads(row2_crsp)
-                tmp_beads_at_previous_play = tmp_beads
-                tmp_beads = beads_row1 + beads_row2
-                if (not board.beads(row1_crsp) == 0):
-                    time.sleep(0.5)
-                    board.take_beads(row1_crsp, beads_row1)
-                    draw()
-                if (not board.beads(row2_crsp) == 0):
-                    time.sleep(0.5)
-                    board.take_beads(row2_crsp, beads_row2)
-                    draw()
-                current_hole -= 1
-                if (not board.player_one):
-                    board.player(1)
-                else:
-                    board.player(2)
+            # print(board.BOARD)
+            if(current_hole > 8):
+                if (restart_game.isSet()):  # checks a threading event to block write operations if the event is not set
+                    result3 = board.hole_correspondance(current_hole)
+                    row2_crsp = result3[1]
+                    row1_crsp = result3[0]
+
+                    if (board.player_one):
+                        board.player(2)
+                    else:
+                        board.player(1)
+
+                    empty_p2_holes = board.beads(row1_crsp) == 0 and board.beads(row2_crsp) == 0
+                    if (not empty_p2_holes):
+                        beads_row1 = board.beads(row1_crsp)
+                        beads_row2 = board.beads(row2_crsp)
+                        tmp_beads_at_previous_play = tmp_beads
+                        tmp_beads = beads_row1 + beads_row2
+                        if (not board.beads(row1_crsp) == 0):
+                            time.sleep(time_to_sleep)
+                            # asyncio.sleep(20)
+                            board.take_beads(row1_crsp, beads_row1)
+                            # draw()
+                        if (not board.beads(row2_crsp) == 0):
+                            time.sleep(time_to_sleep)
+                            # asyncio.sleep(20)
+                            board.take_beads(row2_crsp, beads_row2)
+                            # draw()
+                        current_hole -= 1
+                        if (not board.player_one):
+                            board.player(1)
+                        else:
+                            board.player(2)
+                    else:
+                        if (not board.player_one):
+                            board.player(1)
+                        else:
+                            board.player(2)
+
+                        if (board.beads(current_hole) == 1):
+                            loop_can_go_on = False
+                        else:
+                            time.sleep(time_to_sleep)
+                            loop_can_go_on = True
+                            tmp_beads = board.beads(current_hole)
+                            board.take_beads(current_hole, board.beads(current_hole))
+
             else:
-                if (not board.player_one):
-                    board.player(1)
-                else:
-                    board.player(2)
+                if (restart_game.isSet()):  # checks a threading event to block write operations if the event is set
+                    if(board.beads(current_hole) == 1):
+                        loop_can_go_on = False
+                    else:
+                        time.sleep(time_to_sleep)
+                        loop_can_go_on = True
+                        tmp_beads = board.beads(current_hole)
+                        board.take_beads(current_hole, board.beads(current_hole))
+                    ##if (tmp_beads >15 ):
+        while(loop_can_go_on):
+            loop += 1
+            print (loop)
+            # print (BOARD)
+            temp_hole = 0
+            # if(loop_can_go_on):
 
-                if (board.beads(current_hole) == 1):
-                    loop_can_go_on = False
+            # draw()
+            # time.sleep(0.5)
+
+            for a_hole in range (current_hole+1, current_hole+tmp_beads+1):
+                time.sleep(time_to_sleep)
+                # asyncio.sleep(20)
+                remainder = a_hole % 16
+                if( remainder == 0):
+                    remainder = 16
+                board.add_bead(remainder)
+                # draw()
+                temp_hole = (remainder)
+                # print(BOARD)
+
+                # gui.draw_frame()
+            if(temp_hole>8):
+                result2 = board.hole_correspondance(temp_hole)
+                row2_crsp = result2[1]
+                row1_crsp = result2[0]
+
+                if(board.player_one) :
+                    board.player(2)
                 else:
+                    board.player(1)
+
+                empty_p2_holes = board.beads(row1_crsp) == 0 and board.beads(row2_crsp) == 0
+                if(not empty_p2_holes):
                     loop_can_go_on = True
-                    tmp_beads = board.beads(current_hole)
-                    board.take_beads(current_hole, board.beads(current_hole))
+                    beads_row1 = board.beads(row1_crsp)
+                    beads_row2 = board.beads(row2_crsp)
+                    tmp_beads_at_previous_play = tmp_beads
+                    tmp_beads = beads_row1 + beads_row2
+                    if (not board.beads(row1_crsp) == 0):
+                        time.sleep(time_to_sleep)
+                        # asyncio.sleep(20)
+                        board.take_beads(row1_crsp, beads_row1)
+                        # draw()
+                    if (not board.beads(row2_crsp) == 0):
+                        time.sleep(time_to_sleep)
+                        # asyncio.sleep(20)
+                        board.take_beads(row2_crsp, beads_row2)
+                        # draw()
 
-        else:
-            if(board.beads(current_hole) == 1):
-                loop_can_go_on = False
+                    if (not board.player_one):
+                        board.player(1)
+                    else:
+                        board.player(2)
+                else: # if the corresponding rows in P2 are empty
+                    if (not board.player_one):
+                        board.player(1)
+                    else:
+                        board.player(2)
+                    if (board.beads(temp_hole) == 1):
+                        loop_can_go_on = False
+                    else:
+                        loop_can_go_on = True
+                        current_hole = temp_hole
+                        tmp_beads_at_previous_play = tmp_beads
+                        tmp_beads = board.beads(current_hole)
+                        time.sleep(time_to_sleep)
+                        # asyncio.sleep(20)
+                        board.take_beads(current_hole, board.beads(current_hole))
             else:
-                loop_can_go_on = True
-                tmp_beads = board.beads(current_hole)
-                board.take_beads(current_hole, board.beads(current_hole))
-            ##if (tmp_beads >15 ):
-    while(loop_can_go_on):
-        loop += 1
-        print (loop)
-        # print (BOARD)
-        temp_hole = 0
-        # if(loop_can_go_on):
 
-        draw()
-        # time.sleep(0.5)
-
-        for a_hole in range (current_hole+1, current_hole+tmp_beads+1):
-            time.sleep(0.5)
-            remainder = a_hole % 16
-            if( remainder == 0):
-                remainder = 16
-            board.add_bead(remainder)
-            draw()
-            temp_hole = (remainder )
-            # print(BOARD)
-
-            # gui.draw_frame()
-        if(temp_hole>8):
-            result2 = board.hole_correspondance(temp_hole)
-            row2_crsp = result2[1]
-            row1_crsp = result2[0]
-
-            if(board.player_one) :
-                board.player(2)
-            else: board.player(1)
-
-            empty_p2_holes = board.beads(row1_crsp) == 0 and board.beads(row2_crsp) == 0
-            if(not empty_p2_holes):
-                loop_can_go_on = True
-                beads_row1 = board.beads(row1_crsp)
-                beads_row2 = board.beads(row2_crsp)
-                tmp_beads_at_previous_play = tmp_beads
-                tmp_beads = beads_row1 + beads_row2
-                if (not board.beads(row1_crsp) == 0):
-                    time.sleep(0.5)
-                    board.take_beads(row1_crsp, beads_row1)
-                    draw()
-                if (not board.beads(row2_crsp) == 0):
-                    time.sleep(0.5)
-                    board.take_beads(row2_crsp, beads_row2)
-                    draw()
-
-                if (not board.player_one):
-                    board.player(1)
-                else:
-                    board.player(2)
-            else: # if the corresponding rows in P2 are empty
-                if (not board.player_one):
-                    board.player(1)
-                else:
-                    board.player(2)
                 if (board.beads(temp_hole) == 1):
                     loop_can_go_on = False
                 else:
@@ -926,20 +1020,17 @@ def play(hole):
                     current_hole = temp_hole
                     tmp_beads_at_previous_play = tmp_beads
                     tmp_beads = board.beads(current_hole)
-                    time.sleep(0.5)
+                    time.sleep(time_to_sleep)
+                    # asyncio.sleep(20)
                     board.take_beads(current_hole, board.beads(current_hole))
-        else:
 
-            if (board.beads(temp_hole) == 1):
-                loop_can_go_on = False
-            else:
-                loop_can_go_on = True
-                current_hole = temp_hole
-                tmp_beads_at_previous_play = tmp_beads
-                tmp_beads = board.beads(current_hole)
-                time.sleep(0.5)
-                board.take_beads(current_hole, board.beads(current_hole))
-        print(board.BOARD)
+            print(board.BOARD)
+        if (not board.player_one):
+            board.player(1)
+            board.current_player = 1
+        else:
+            board.player(2)
+            board.current_player = 2
 
 def player_display(back = None):
     global back_button
@@ -987,9 +1078,9 @@ pygame.display.set_icon(get_image("assets/game.png"))
 
 
 
-def main():
+async def main():
 
-    global done, online_player_id,design,vs_computer, design_2
+    global done, online_player_id,design,vs_computer, design_2,time_to_sleep,restart_game
     clock = pygame.time.Clock()
 
 
@@ -1038,16 +1129,25 @@ def main():
                             time.sleep(0.5)
                             change_state(REPLAY)
             if (vs_computer and not board.game_over()):
-                time.sleep(0.5)
-                hole_to_play = artificial_intelligence.hole_to_play_medium()
-                beads = board.beads(hole_to_play)
+                def comp_play():
+                    time.sleep(0.5)
+                    hole_to_play = artificial_intelligence.hole_to_play_medium()
+                    beads = board.beads(hole_to_play)
+                    if (not board.player_one and (not beads == 0)):
+                        play(hole_to_play)
                 if (not board.player_one and (not beads == 0)):
-                    play(hole_to_play)
-                    board.player(1)
-                    board.current_player = 1
-                    if (board.game_over()):
-                        time.sleep(0.5)
-                        change_state(2)
+                    if (len(list_threads) != 0):
+                        if (not list_threads[0].is_alive()):
+                            list_threads.clear()
+                    else:
+                        t1 = threading.Thread(target=lambda: comp_play())
+                        list_threads.append(t1)
+                        t1.daemon = True
+                        t1.start()
+                        # board.current_player = 1
+                        if (board.game_over()):
+                            time.sleep(0.5)
+                            change_state(2)
                 else:
                     # something to prevent the other player to play
                     pass
@@ -1140,12 +1240,21 @@ def main():
                             if(board.player_one and(not beads == 0)):
                                 if (online_game):
                                     print(online_helper.send_my_move(n, str(hole)))
-                                play(hole)
-                                board.player(2)
-                                board.current_player = 2
-                                if(board.game_over()):
-                                    time.sleep(0.5)
-                                    change_state(REPLAY)
+                                # play(hole)
+                                # await play(hole)
+                                if (len(list_threads) != 0):
+                                    if (not list_threads[0].is_alive()):
+                                        list_threads.clear()
+                                else:
+                                    t2 = threading.Thread(target=lambda: play(hole))
+                                    list_threads.append(t2)
+                                    t2.daemon = True
+                                    t2.start()
+                                    # board.player(2)
+                                    # board.current_player = 2
+                                    if(board.game_over()):
+                                        time.sleep(0.5)
+                                        change_state(REPLAY)
                             else:
                                 # something to prevent the other player to play
                                 pass
@@ -1155,13 +1264,21 @@ def main():
                             beads = board.beads(hole)
                             # hole_to_play = artificial_intelligence.hole_to_play()
                             if(not board.player_one and (not beads == 0)):
-                                play(hole)
-                                # play(hole_to_play)
-                                board.player(1)
-                                board.current_player = 1
-                                if (board.game_over()):
-                                    time.sleep(0.5)
-                                    change_state(2)
+                                # play(hole)
+                                # await play(hole)
+                                if (len(list_threads) != 0):
+                                    if (not list_threads[0].is_alive()):
+                                        list_threads.clear()
+                                else:
+                                    t3 = threading.Thread(target=lambda: play(hole))
+                                    list_threads.append(t3)
+                                    t3.daemon = True
+                                    t3.start()
+                                    # board.player(1)
+                                    # board.current_player = 1
+                                    if (board.game_over()):
+                                        time.sleep(0.5)
+                                        change_state(2)
                             else:
                                 # something to prevent the other player to play
                                 pass
@@ -1177,7 +1294,7 @@ def main():
                                         pygame.transform.smoothscale(get_image(back_button_clicked_path), (105, 50)),
                                         (50, 510))
                                     # draw(back=1)
-                                    pass
+                                    # pass
                                 else:
                                     screen.blit(
                                         pygame.transform.smoothscale(get_image(hider_pannel_path), (105, 60)),
@@ -1197,8 +1314,16 @@ def main():
                                         tmp_pos = pygame.mouse.get_pos()
                                         if (tmp_pos[0] >= back_button[0] and tmp_pos[0] <= back_button[0] + 105
                                         and tmp_pos[1] >= back_button[1] and tmp_pos[1] <= back_button[1] + 50):
-                                            # board.back(board.back_Board)
+                                            restart_game.clear()
+                                            temp_time = time_to_sleep
+                                            time_to_sleep = 0.05
+                                            wait_for_all_threads(25, clock)
+                                            restart_game.set()
+                                            board.player(1)
+                                            board.current_player =  1
                                             change_state(MENU)
+                                            time_to_sleep = temp_time
+
 
 
                         elif(clicked_button == 4): # menu state click on Dukine (Play) button
@@ -1815,6 +1940,22 @@ def main():
                     change_design()
                 elif event.key == pygame.K_p:
                     design_2 = not design_2
+                elif event.key == pygame.K_DOWN:
+                    if (time_to_sleep > 0.2) :
+                        time_to_sleep -= 0.1
+                    else:
+                        time_to_sleep = 0.03
+                    print(time_to_sleep)
+
+                elif event.key == pygame.K_UP:
+                    if (time_to_sleep < 0.5) :
+                        time_to_sleep += 0.1
+                    else:
+                        time_to_sleep = 0.5
+                    print(time_to_sleep)
+                elif event.key == pygame.K_t:
+                    print(threading.active_count())
+
 
 
 
@@ -1825,4 +1966,4 @@ def main():
     print (board.BOARD)
 
 if __name__ == '__main__':
-    main()
+    asyncio.run(main())
