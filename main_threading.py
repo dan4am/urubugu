@@ -1078,7 +1078,7 @@ pygame.display.set_icon(get_image("assets/game.png"))
 
 
 
-async def main():
+def main():
 
     global done, online_player_id,design,vs_computer, design_2,time_to_sleep,restart_game
     clock = pygame.time.Clock()
@@ -1088,13 +1088,13 @@ async def main():
         n = Network()
         online_player_id = n.player_number
 
-        ######Preparing the online game###############
+        ######Preparing the online game ###############
 
         if (online_player_id):
             online_player_id = int (online_player_id[-1])
             # board.player(int(online_player_id))
             print("online player_id =" + str (online_player_id))
-            pygame.display.set_caption("URUBUGU + player" +str(online_player_id) )
+            pygame.display.set_caption("URUBUGU + player" + str(online_player_id) )
 
 
 
@@ -1316,7 +1316,7 @@ async def main():
                                         and tmp_pos[1] >= back_button[1] and tmp_pos[1] <= back_button[1] + 50):
                                             restart_game.clear()
                                             temp_time = time_to_sleep
-                                            time_to_sleep = 0.05
+                                            time_to_sleep = 0.03
                                             wait_for_all_threads(25, clock)
                                             restart_game.set()
                                             board.player(1)
@@ -1966,4 +1966,4 @@ async def main():
     print (board.BOARD)
 
 if __name__ == '__main__':
-    asyncio.run(main())
+        main()
