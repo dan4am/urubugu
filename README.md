@@ -122,7 +122,7 @@ A turn is ended in two cases:
 
 ### c. Winning.
 
-TO win, a player must capture all the beads from the opponent, in other world, a player wins, iff all 64 beads are in his base.
+To win, a player must capture all the beads from the opponent : player wins, if and only if all of the 64 opponent's beads are in his base.
 ![image](https://user-images.githubusercontent.com/39918471/129643735-a0f1cb1f-1d8a-4ccb-9e1d-6006f6c7da6b.png)
 
 
