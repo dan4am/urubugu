@@ -101,7 +101,7 @@ To start a turn, the player takes the beads in any non-empty cell and spreads it
 #### Capturing beads:
 ---
 
-If the last bead falls in the active zone, and if the adjacent cells in the opponent's base there are beads, the player will capture those beads and restart to play from the 
+If the last bead falls in the active zone, and there are beads the adjacent cells in the opponent's base , the player will capture those beads and restart to play from the 
 origin of his play.
 ![capturing 1/2](https://user-images.githubusercontent.com/39918471/129642497-4d5f8238-af46-4819-8c3a-820acdad35b3.png)
 ![capturing 2/2](https://user-images.githubusercontent.com/39918471/129642561-0138541d-5a52-41b4-bf4e-b23b88e94987.png)
