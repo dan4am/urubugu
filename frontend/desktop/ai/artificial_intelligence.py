@@ -1,4 +1,4 @@
-from src import board
+from urubugu_desktop.src import board
 import numpy as np
 
 

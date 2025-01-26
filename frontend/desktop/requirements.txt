@@ -1,0 +1,8 @@
+altgraph
+future
+numpy
+pefile
+pygame
+pyinstaller
+pyinstaller-hooks-contrib
+pywin32-ctypes

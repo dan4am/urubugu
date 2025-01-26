@@ -1,14 +1,12 @@
-from src import board
+from urubugu_desktop.src import board
 import numpy as np
 import threading
 import pygame
 import os
 import time
-from ai import artificial_intelligence
-from network.network import Network
-from network import online_helper
-import asyncio
-
+from urubugu_desktop.ai import artificial_intelligence
+from urubugu_desktop.network.network import Network
+from urubugu_desktop.network import online_helper
 
 list_threads=[]
 time_to_sleep = 0.03
@@ -857,14 +855,14 @@ def game_coordinates_to_data(x, y):
 
 
 def play(hole):
-    if(restart_game.isSet()): # checks a threading event to block write operations if the event is set
+    if(restart_game.is_set()): # checks a threading event to block write operations if the event is set
         global time_to_sleep
         board.copier()
         loop_can_go_on = True
         result = board.beads(hole)
         current_hole = hole
         tmp_beads = board.beads(current_hole)
-        if (restart_game.isSet()):# checks a threading event to block write operations if the event is set
+        if (restart_game.is_set()):# checks a threading event to block write operations if the event is set
             board.take_beads(current_hole, board.beads(current_hole))
         tmp_beads_at_previous_play = 0
         loop = 0
@@ -877,7 +875,7 @@ def play(hole):
                 current_hole = 1
             else:
                 current_hole += 1
-            if (restart_game.isSet()): # checks a threading event to block write operations if the event is set
+            if (restart_game.is_set()): # checks a threading event to block write operations if the event is set
                 board.add_bead(current_hole)
             # draw()
             time.sleep(time_to_sleep)
@@ -887,7 +885,7 @@ def play(hole):
 
             # print(board.BOARD)
             if(current_hole > 8):
-                if (restart_game.isSet()):  # checks a threading event to block write operations if the event is not set
+                if (restart_game.is_set()):  # checks a threading event to block write operations if the event is not set
                     result3 = board.hole_correspondance(current_hole)
                     row2_crsp = result3[1]
                     row1_crsp = result3[0]
@@ -933,7 +931,7 @@ def play(hole):
                             board.take_beads(current_hole, board.beads(current_hole))
 
             else:
-                if (restart_game.isSet()):  # checks a threading event to block write operations if the event is set
+                if (restart_game.is_set()):  # checks a threading event to block write operations if the event is set
                     if(board.beads(current_hole) == 1):
                         loop_can_go_on = False
                     else:
