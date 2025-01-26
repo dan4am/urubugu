@@ -1,12 +1,12 @@
-from urubugu_desktop.src import board
+from frontend.urubugu_desktop.src import board
 import numpy as np
 import threading
 import pygame
 import os
 import time
-from urubugu_desktop.ai import artificial_intelligence
-from urubugu_desktop.network.network import Network
-from urubugu_desktop.network import online_helper
+from frontend.urubugu_desktop.ai import artificial_intelligence
+from frontend.urubugu_desktop.network.network import Network
+from frontend.urubugu_desktop.network import online_helper
 
 list_threads=[]
 time_to_sleep = 0.03

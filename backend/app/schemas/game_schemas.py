@@ -1,3 +1,5 @@
 from pydantic import BaseModel
-
-pip install fastapi uvicorn
+class GameMove(BaseModel):
+    match_id: int
+    player_id: int
+    move: dict
