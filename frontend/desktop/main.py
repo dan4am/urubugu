@@ -1,11 +1,11 @@
-from frontend.urubugu_desktop.src import board
+from frontend.desktop.src import board
 import numpy as np
 import pygame
 import os
 import time
-from frontend.urubugu_desktop.ai import artificial_intelligence
-from frontend.urubugu_desktop.network.network import Network
-from frontend.urubugu_desktop.network import online_helper
+from frontend.desktop.ai import artificial_intelligence
+from frontend.desktop.network.network import Network
+from frontend.desktop.network import online_helper
 
 ######################
 # Define some colors #
@@ -418,8 +418,8 @@ def draw_slots():
             screen.blit(text_surface_obj, text_rect_obj)
             if (not board.BOARD[line][row] == 0):
                 screen.blit(get_img(board.BOARD[line][row]), (
-                board_coordinates_to_screen_coordinates(line, row)[0] - 65,
-                board_coordinates_to_screen_coordinates(line, row)[1] - 55))
+                    board_coordinates_to_screen_coordinates(line, row)[0] - 65,
+                    board_coordinates_to_screen_coordinates(line, row)[1] - 55))
                 pygame.draw.circle(screen, GREY, board_coordinates_to_screen_coordinates(line, row), SLOTS - 2, 1)
 
 
