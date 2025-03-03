@@ -1,4 +1,4 @@
-from frontend.urubugu_desktop.src import board
+from frontend.desktop.src import board
 import numpy as np
 
 

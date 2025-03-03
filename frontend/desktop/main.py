@@ -5,7 +5,7 @@ import os
 import time
 from frontend.desktop.ai import artificial_intelligence
 from frontend.desktop.network.network import Network
-from frontend.desktop.network import online_helper
+from frontend.desktop.network import online_helper_2 as online_helper
 
 ######################
 # Define some colors #
@@ -134,8 +134,8 @@ def change_design():
 # Online gaming assets#
 #######################
 
-# online_game = True
-online_game = False
+online_game = True
+# online_game = False
 online_player_id = 0
 
 waiting_for_player1_banner_path = "assets/buttons/" + design + config_language + "/waiting_for_player1_banner.png"
@@ -978,12 +978,13 @@ def main():
 
     if online_game:
         n = Network()
-        online_player_id = n.player_number
+        real_online_player_id = n.player_number
+        online_player_id = (real_online_player_id % 2) + 1
 
         ######Preparing the online game###############
 
         if (online_player_id):
-            online_player_id = int(online_player_id[-1])
+            online_player_id = int(online_player_id)
             # board.player(int(online_player_id))
             print("online player_id =" + str(online_player_id))
             pygame.display.set_caption("URUBUGU + player" + str(online_player_id))
@@ -1193,9 +1194,13 @@ def main():
                                                     1] and tmp_pos[1] <= start_button[1] + 69):
                                             board.choose_board(board.BOARD_DEFAULT_P1)
                                             if online_game:
-                                                print(online_helper.send_starting_setting(n, board.stringify()))
+                                                print(online_helper.send_starting_setting(network=n,
+                                                                                          user_id=real_online_player_id,
+                                                                                          start_sett=board.stringify()))
+
                                                 reply = online_helper.decode_reply(
-                                                    online_helper.get_starting_setting(n))
+                                                    online_helper.get_starting_setting(network=n,
+                                                                                       user_id=real_online_player_id))
                                                 print(reply)
                                                 if (reply == "waiting"):
                                                     change_state(WAITING_FROM_MENU)

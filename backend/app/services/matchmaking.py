@@ -2,11 +2,50 @@ from sqlalchemy.orm import Session
 from models.game import Match, User
 from fastapi import HTTPException
 
+
 class MatchmakingService:
     def __init__(self):
         self.waiting_queue = []  # Temporary in-memory queue for players
 
-    def join_queue(self, player_id: int, db: Session):
+    def get_match_by_player_id(self, player_id: int, db: Session):
+        ongoing_match = db.query(Match).filter(
+            (Match.player_one == player_id) | (Match.player_two == player_id)
+        ).first()
+
+        return ongoing_match.id
+
+    def get_other_player_id_in_game(self, player_id: int, db: Session):
+        ongoing_match = db.query(Match).filter(
+            (Match.player_one == player_id) | (Match.player_two == player_id)
+        ).first()
+
+        if ongoing_match.player_one == player_id:
+            return ongoing_match.player_two
+        else:
+            return ongoing_match.player_one
+
+    def get_other_player_setting(self, player_id: int, db: Session):
+        ongoing_match = db.query(Match).filter(
+            (Match.player_one == player_id) | (Match.player_two == player_id)
+        ).first()
+
+        if ongoing_match.player_one == player_id:
+            return ongoing_match.player_two_starting_setting
+        else:
+            return ongoing_match.player_one_starting_setting
+
+    def set_other_player_setting(self, player_id: int, db: Session, setting: str):
+        ongoing_match = db.query(Match).filter(
+            (Match.player_one == player_id) | (Match.player_two == player_id)
+        ).first()
+
+        if ongoing_match.player_one == player_id:
+            ongoing_match.player_two_starting_setting = setting
+        else:
+            ongoing_match.player_one_starting_setting = setting
+        db.commit()
+
+    def join_queue(self, db: Session, player_id: int=None):
         # Check if player is already in a match
         ongoing_match = db.query(Match).filter(
             (Match.player_one == player_id) | (Match.player_two == player_id)
@@ -29,12 +68,14 @@ class MatchmakingService:
             return {
                 "message": "Match created",
                 "match_id": match.id,
+                "player_id": player_id,
                 "players": [opponent_id, player_id],
             }
 
         # Otherwise, add the player to the queue
         self.waiting_queue.append(player_id)
-        return {"message": "Player added to queue, waiting for an opponent"}
+        return {"message": "Player added to queue, waiting for an opponent",
+                "player_id": player_id}
 
     def leave_queue(self, player_id: int):
         if player_id in self.waiting_queue:
@@ -57,6 +98,7 @@ class MatchmakingService:
             match.is_completed = True
             db.commit()
             return {"message": "Match marked as completed", "match_id": match_id}
+
     def delete_match(self, match_id: int, db: Session):
         # Retrieve the match from the database
         match = db.query(Match).filter(Match.id == match_id).first()

@@ -19,7 +19,7 @@ try:
 except socket.error as e:
     str(e)
 
-my_socket.listen(2)
+my_socket.listen(5)
 print("Server Started, Waiting for connection")
 
 def decode_data(data_string, player):
@@ -108,6 +108,7 @@ def main():
     current_player = 1
     while True:
         connection, addr = my_socket.accept()
+        print(addr)
         print("connected to: ", addr)
         start_new_thread(threaded_client, (connection, current_player))
         current_player += 1
