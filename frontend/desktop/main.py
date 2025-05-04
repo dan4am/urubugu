@@ -1109,7 +1109,11 @@ def main():
                             beads = board.beads(hole)
                             if (board.player_one and (not beads == 0)):
                                 if (online_game):
-                                    print(online_helper.send_my_move(n, str(hole)))
+                                    #todo check what is sent in send my move
+                                    print(online_helper.send_my_move(network=n,
+                                                                     match_id=1,
+                                                                     player_id=online_player_id,
+                                                                     my_move= hole))
                                 play(hole)
                                 board.player(2)
                                 board.current_player = 2
